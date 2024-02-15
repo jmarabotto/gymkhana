@@ -170,6 +170,38 @@ tw-sidebar {
 /*display: none;*/
 }
 
+#enter {
+ color:green;
+ background-color:none;
+  text-align:right;
+}
+
+tw-story command textarea{
+  background-color: black;
+  color:white;
+  border: 2px solid black;
+  border-radius: 2px;
+  height:150px;
+  font: 1.3rem Inconsolata, monospace;
+  text-shadow: 0 0 5px #C8C8C8;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(black, 0.15),
+      rgba(black, 0.15) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    pointer-events: none;
+  }
+}
+
 /*Style for the alert or dialog boxes, looks like terminal*/
 tw-dialog::before{
 content: "Scientastic shell (v1.0.0)\A Suivez les instructions de l'ordinateur \A \A C:Users/admin/scientastic$ ";
@@ -265,11 +297,13 @@ function updateHealthBar (maxHealth, health) {
 &lt;li&gt;Non merci, on [[passe notre tour.-&gt;Renoncer]]&lt;/li&gt;
 &lt;/ol&gt;
 
-(set: $connaissances to 0,$maxConnaissances to 5, num-type $santé to 6, $maxSanté to 6, $réseau to 0, $maxRéseau to 3, $chapitre to 1, $chapterHeader to &quot;&quot;, $passageBeforePause to &quot;Lecture_1&quot; ,$nChance to 0, $nMalchance to 0 , num-type $dureeProjet to 0, $coursDonné to 0, $coursDemande to 0, $solutionOrdi to &quot;1234&quot;,$reponseOrdi to 0, $computerUnlocked to false, num-type $nLecture to 0, num-type  $nPrototypage to 0, num-type $nLabo to 0, num-type $nAnalyse to 0, num-type $nRédaction to 0, $healthBar to &quot;&quot;,$immediateCase to (a:&#39;Setup&#39;,&#39;CREDITS&#39;,&#39;Start&#39;,&#39;PropositionDeProjet&#39;,&#39;Citations&#39;,&#39;openSource&#39;,&#39;randomLecture&#39;,&#39;randomPrototypage&#39;), $caseToInt to (dm:&quot;Lecture_1&quot;,1,&quot;Lecture_2&quot;,2,&quot;Lecture_3&quot;,3,&quot;Lecture_4&quot;,4,&quot;Lecture_5&quot;,5,&quot;Prototypage_1&quot;,6,&quot;Prototypage_2&quot;,7,&quot;Prototypage_3&quot;,8,&quot;Prototypage_4&quot;,9,&quot;Prototypage_5&quot;,10,&quot;Labo_1&quot;,11,&quot;Labo_2&quot;,12,&quot;Labo_3&quot;,13,&quot;Labo_4&quot;,14,&quot;Labo_5&quot;,15,&quot;Analyse_1&quot;,16,&quot;Analyse_2&quot;,17,&quot;Analyse_3&quot;,18,&quot;Analyse_4&quot;,19,&quot;Analyse_5&quot;,20,&quot;Redaction_1&quot;,21,&quot;Redaction_2&quot;,22,&quot;Redaction_3&quot;,23,&quot;Redaction_4&quot;,24,&quot;Redaction_5&quot;,25,&quot;End&quot;,26,&quot;pauseCafé&quot;, 27,&quot;ProblèmesTechniques&quot;,28,&quot;RechercheFonds&quot;,29,&quot;Enseignement&quot;,30,&quot;Conférence&quot;,31),$caseToChapInt to (dm:&quot;Lecture_1&quot;,1,&quot;Lecture_2&quot;,1,&quot;Lecture_3&quot;,1,&quot;Lecture_4&quot;,1,&quot;Lecture_5&quot;,1,&quot;Prototypage_1&quot;,2,&quot;Prototypage_2&quot;,2,&quot;Prototypage_3&quot;,2,&quot;Prototypage_4&quot;,2,&quot;Prototypage_5&quot;,2,&quot;Labo_1&quot;,3,&quot;Labo_2&quot;,3,&quot;Labo_3&quot;,3,&quot;Labo_4&quot;,3,&quot;Labo_5&quot;,3,&quot;Analyse_1&quot;,4,&quot;Analyse_2&quot;,4,&quot;Analyse_3&quot;,4,&quot;Analyse_4&quot;,4,&quot;Analyse_5&quot;,4,&quot;Redaction_1&quot;,5,&quot;Redaction_2&quot;,5,&quot;Redaction_3&quot;,5,&quot;Redaction_4&quot;,5,&quot;Redaction_5&quot;,5,&quot;End&quot;,6),$casesAnnexes to (a:&#39;Enseignement&#39;,&#39;pauseCafé&#39;,&#39;RechercheFonds&#39;,&#39;Conférence&#39;,&#39;ProblèmesTechniques&#39;))(display:&quot;Images&quot;)</tw-passagedata><tw-passagedata pid="2" name="Lecture_2" tags="" position="1125,500" size="100,100">&lt;h2&gt;2. Lecture de publications générales&lt;/h2&gt;
+(set: $solved to 0, $connaissances to 0,$maxConnaissances to 5, num-type $santé to 6, $maxSanté to 6, $réseau to 0, $maxRéseau to 3, $chapitre to 1, $chapterHeader to &quot;&quot;, $passageBeforePause to &quot;Lecture_1&quot; ,$nChance to 0, $nMalchance to 0 , num-type $dureeProjet to 0, $coursDonné to 0, $coursDemande to 0, $solutionOrdi to &quot;1234&quot;,$reponseOrdi to 0, $computerUnlocked to false, num-type $nLecture to 0, num-type  $nPrototypage to 0, num-type $nLabo to 0, num-type $nAnalyse to 0, num-type $nRédaction to 0, $healthBar to &quot;&quot;,$immediateCase to (a:&#39;Setup&#39;,&#39;CREDITS&#39;,&#39;Start&#39;,&#39;PropositionDeProjet&#39;,&#39;Citations&#39;,&#39;openSource&#39;,&#39;randomLecture&#39;,&#39;randomPrototypage&#39;), $caseToInt to (dm:&quot;Lecture_1&quot;,1,&quot;Lecture_2&quot;,2,&quot;Lecture_3&quot;,3,&quot;Lecture_4&quot;,4,&quot;Lecture_5&quot;,5,&quot;Prototypage_1&quot;,6,&quot;Prototypage_2&quot;,7,&quot;Prototypage_3&quot;,8,&quot;Prototypage_4&quot;,9,&quot;Prototypage_5&quot;,10,&quot;Labo_1&quot;,11,&quot;Labo_2&quot;,12,&quot;Labo_3&quot;,13,&quot;Labo_4&quot;,14,&quot;Labo_5&quot;,15,&quot;Analyse_1&quot;,16,&quot;Analyse_2&quot;,17,&quot;Analyse_3&quot;,18,&quot;Analyse_4&quot;,19,&quot;Analyse_5&quot;,20,&quot;Redaction_1&quot;,21,&quot;Redaction_2&quot;,22,&quot;Redaction_3&quot;,23,&quot;Redaction_4&quot;,24,&quot;Redaction_5&quot;,25,&quot;End&quot;,26,&quot;pauseCafé&quot;, 27,&quot;ProblèmesTechniques&quot;,28,&quot;RechercheFonds&quot;,29,&quot;Enseignement&quot;,30,&quot;Conférence&quot;,31),$caseToChapInt to (dm:&quot;Lecture_1&quot;,1,&quot;Lecture_2&quot;,1,&quot;Lecture_3&quot;,1,&quot;Lecture_4&quot;,1,&quot;Lecture_5&quot;,1,&quot;Prototypage_1&quot;,2,&quot;Prototypage_2&quot;,2,&quot;Prototypage_3&quot;,2,&quot;Prototypage_4&quot;,2,&quot;Prototypage_5&quot;,2,&quot;Labo_1&quot;,3,&quot;Labo_2&quot;,3,&quot;Labo_3&quot;,3,&quot;Labo_4&quot;,3,&quot;Labo_5&quot;,3,&quot;Analyse_1&quot;,4,&quot;Analyse_2&quot;,4,&quot;Analyse_3&quot;,4,&quot;Analyse_4&quot;,4,&quot;Analyse_5&quot;,4,&quot;Redaction_1&quot;,5,&quot;Redaction_2&quot;,5,&quot;Redaction_3&quot;,5,&quot;Redaction_4&quot;,5,&quot;Redaction_5&quot;,5,&quot;End&quot;,6),$casesAnnexes to (a:&#39;Enseignement&#39;,&#39;pauseCafé&#39;,&#39;RechercheFonds&#39;,&#39;Conférence&#39;,&#39;ProblèmesTechniques&#39;))(display:&quot;Images&quot;)</tw-passagedata><tw-passagedata pid="2" name="Lecture_2" tags="" position="1125,500" size="100,100">&lt;h2&gt;2. Lecture de publications générales&lt;/h2&gt;
 
-&lt;p&gt; La lecture de publication constitue une grande partie de votre quotidien. Cela est nécessaire pour rester au contact des nouvelles découverte et de |definition&gt;[[[l&#39;état de l&#39;art-&gt;etatdart]]] et pour apprendre toujours plus sur votre domaine&lt;/p&gt;
+&lt;p&gt; La lecture de publication constitue une grande partie de votre quotidien. Cela est nécessaire pour rester au contact des nouvelles découvertes et de |definition&gt;[[[l&#39;état de l&#39;art-&gt;etatdart]]] et pour en apprendre toujours plus sur votre domaine. Le système de |definition&gt;[[[références et citations-&gt;Citations]]] permet de lier les publications entre elles et baser sa recherche sur d&#39;autres travaux. &lt;/p&gt;
 
-&lt;div class = &quot;consigne&quot;&gt; Aidez vous de vos notes pour retrouver le nom de l&#39;auteur d&#39;un article qui vous a paru particulièrement intéressant.&lt;/div&gt; 
+&lt;div class = &quot;consigne&quot;&gt;  Vous avez lu beaucoup de documents et n&#39;arrivez plus à retrouver une publication particulièrement intéressante. Aidez vous de vos notes pour retrouver le nom de l&#39;auteur de cette fameuse publication. Commencez avec l&#39;article &quot;
+The sphere packing problem
+in dimension 8&quot; de |definition&gt;[[[Maryna S. Viazovska-&gt;Viaziovska]]]  et suivez les citations que vous aviez mises en évidence. Vers quel auteur.&lt;/div&gt; 
 
 &lt;div class = &quot;&quot;&gt;Rentrer solution: AUTEUR&lt;/div&gt;
 
@@ -279,7 +313,7 @@ function updateHealthBar (maxHealth, health) {
 &lt;/ol&gt;</tw-passagedata><tw-passagedata pid="3" name="Prototypage_1" tags="" position="1000,650" size="100,100">&lt;h2&gt;6. Reproduction de résultats&lt;/h2&gt;
 &lt;p&gt;Vous essayez de reproduire une méthode d&#39;une publication précédente. Cela vous fait mieux comprendre votre sujet. &lt;/p&gt; 
 &lt;ol class=&quot;passage-link&quot;&gt;
-(if:$nLecture &lt;3)[&lt;li&gt;Les résultats ne semblent ne pas faire de sens, vous (link: &quot;retournez dans vos bouquins&quot;) [(go-to: &quot;randomLecture&quot;)&lt;/li&gt;] pour en apprendre un peu plus.](else-if:$nPrototypage &lt;2)[&lt;li&gt; Cela vous fait avancer, et vous (link:&quot;donne des idées de ce qui pourrait être amélioré.&quot;)[(go-to:&quot;randomPrototypage&quot;)]. &lt;/li&gt;](else:)[&lt;li&gt;Ces métodes étaient ce qui vous manquait pour (link:&quot;optimiser votre processus de prise de mesure&quot;)[(go-to:&quot;randomLabo&quot;)]&lt;/li&gt;]
+(if:$nLecture &lt;3)[&lt;li&gt;Les résultats ne semblent ne pas faire de sens, vous (link: &quot;retournez dans vos bouquins&quot;) [(go-to: &quot;randomLecture&quot;)&lt;/li&gt;] pour en apprendre un peu plus.](else-if:$nPrototypage &lt;1)[&lt;li&gt; Cela vous fait avancer, et vous (link:&quot;donne des idées de ce qui pourrait être amélioré&quot;)[(go-to:&quot;randomPrototypage&quot;)]. &lt;/li&gt;](else:)[&lt;li&gt;Ces métodes étaient ce qui vous manquait pour (link:&quot;optimiser votre processus de prise de mesure&quot;)[(go-to:&quot;randomLabo&quot;)]&lt;/li&gt;]
 (display:&quot;RandomEvent&quot;)
 &lt;/ol&gt;</tw-passagedata><tw-passagedata pid="4" name="Lecture_3" tags="" position="1250,500" size="100,100">&lt;h2&gt;3. Lecture de publications hyper spécialisées.&lt;/h2&gt;
 
@@ -296,9 +330,10 @@ function updateHealthBar (maxHealth, health) {
 &lt;div class=&quot;consigne&quot;&gt;Docteur maboul&lt;/div&gt;
 
 &lt;ol class =&quot;passage-link&quot;&gt;
-(if:$nLecture &lt;3)[ Vous vous sentez prêt à un niveau pratique mais vous sentez que vous avez encore besoin de quelques connaissances théoriques et vous (link: &quot;retournez dans vos bouquins&quot;)[(go-to: &quot;randomLecture&quot;)] pour en apprendre un peu plus.](else-if:$nPrototypage &lt;2)[&lt;li&gt; Ce nouvel outil vous inspire pour (link:&quot;essayer de nouvelles idées&quot;)[(go-to:&quot;randomPrototypage&quot;)]. &lt;/li&gt;](else:)[Cet outil était la clé pour développer vos idées, vous pouvez directement (link:&quot;les tester en laboratoire&quot;)[(go-to:&quot;randomLabo&quot;)].]
+(if:$nLecture &lt;3)[ &lt;li&gt;Vous vous sentez prêt à un niveau pratique mais vous sentez que vous avez encore besoin de quelques connaissances théoriques et vous (link: &quot;retournez dans vos bouquins&quot;)[(go-to: &quot;randomLecture&quot;)] pour en apprendre un peu plus.&lt;/li&gt;](else-if:$nPrototypage &lt;1)[&lt;li&gt; Ce nouvel outil vous inspire pour (link:&quot;essayer de nouvelles idées&quot;)[(go-to:&quot;randomPrototypage&quot;)]. &lt;/li&gt;](else:)[&lt;li&gt;Cet outil était la clé pour développer vos idées, vous pouvez directement (link:&quot;les tester en laboratoire&quot;)[(go-to:&quot;randomLabo&quot;)].&lt;/li&gt;]
 (display:&quot;RandomEvent&quot;)
-&lt;/ol&gt;</tw-passagedata><tw-passagedata pid="6" name="CREDITS" tags="info no-footer no-header" position="1000,100" size="100,100">&lt;h1&gt;La recherche dont vous êtes les héros&lt;/h1&gt;
+&lt;/ol&gt;</tw-passagedata><tw-passagedata pid="6" name="CREDITS" tags="info no-footer no-header" position="1000,100" size="100,100">&lt;h1&gt;Le Gymkhana du labo&lt;/h1&gt;
+&lt;h4&gt;La recherche dont vous êtes les héros&lt;/h4&gt;
 &lt;h3&gt;Scientastic 2024 - EPFL&lt;/h3&gt;
 &lt;div class = &quot;authors&quot;&gt;A. Reverdin&lt;sup&gt;1&lt;/sup&gt;, J. Mégret &lt;sup&gt;1&lt;/sup&gt;, Inspiration&lt;sup&gt;2,3&lt;/sup&gt;, Remerciements&lt;sup&gt;4&lt;/sup&gt;&lt;/div&gt;
 
@@ -333,23 +368,24 @@ function updateHealthBar (maxHealth, health) {
 &lt;p&gt;&lt;/p&gt;
 &lt;div class=&quot;consigne&quot;&gt;&lt;/div&gt;
 &lt;ol class =&quot;passage-link&quot;&gt;
-(if:$nAnalyse&gt;1)[&lt;li&gt;Vos analyses sont concluantes et vous voulez maintenant (link:&quot;commencer à publier vos résultats&quot;)[(go-to:&quot;Redaction_1&quot;)]. &lt;/li&gt;](else:)[&lt;li&gt;C&#39;est un bon début, (link:&quot;continuez à analyser vos résultats&quot;)[(go-to:&quot;randomAnalyse&quot;)]&lt;/li&gt;]
+(if:$nAnalyse&gt;0)[&lt;li&gt;Vos analyses sont concluantes et vous voulez maintenant (link:&quot;commencer à publier vos résultats&quot;)[(go-to:&quot;Redaction_1&quot;)]. &lt;/li&gt;](else:)[&lt;li&gt;C&#39;est un bon début, (link:&quot;continuez à analyser vos résultats&quot;)[(go-to:&quot;randomAnalyse&quot;)]&lt;/li&gt;]
 (display:&quot;RandomEvent&quot;)
 &lt;/ol&gt;</tw-passagedata><tw-passagedata pid="8" name="Analyse_2" tags="" position="1125,950" size="100,100">&lt;h2&gt;17. Filtrer les données&lt;/h2&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;div class=&quot;consigne&quot;&gt;&lt;/div&gt;
 &lt;ol class =&quot;passage-link&quot;&gt;
-(if:$nAnalyse&gt;1)[&lt;li&gt;Vos analyses sont concluantes et vous voulez maintenant (link:&quot;commencer à publier vos résultats&quot;)[(go-to:&quot;Redaction_1&quot;)]. &lt;/li&gt;](else:)[&lt;li&gt;C&#39;est un bon début, (link:&quot;continuez à analyser vos résultats&quot;)[(go-to:&quot;randomAnalyse&quot;)]&lt;/li&gt;]
+(if:$nAnalyse&gt;0)[&lt;li&gt;Vos analyses sont concluantes et vous voulez maintenant (link:&quot;commencer à publier vos résultats&quot;)[(go-to:&quot;Redaction_1&quot;)]. &lt;/li&gt;](else:)[&lt;li&gt;C&#39;est un bon début, (link:&quot;continuez à analyser vos résultats&quot;)[(go-to:&quot;randomAnalyse&quot;)]&lt;/li&gt;]
 (display:&quot;RandomEvent&quot;)
 &lt;/ol&gt;</tw-passagedata><tw-passagedata pid="9" name="Analyse_3" tags="" position="1250,950" size="100,100">&lt;h2&gt;18. Décelez des patterns&lt;/h2&gt;
 &lt;p&gt;Trouvez les similitudes&lt;/p&gt;
 &lt;div class=&quot;consigne&quot;&gt;&lt;/div&gt;
 &lt;ol class =&quot;passage-link&quot;&gt;
-(if:$nAnalyse&gt;1)[&lt;li&gt;Vos analyses sont concluantes et vous voulez maintenant (link:&quot;commencer à publier vos résultats&quot;)[(go-to:&quot;Redaction_1&quot;)]. &lt;/li&gt;](else:)[&lt;li&gt;C&#39;est un bon début, (link:&quot;continuez à analyser vos résultats&quot;)[(go-to:&quot;randomAnalyse&quot;)]&lt;/li&gt;]
+(if:$nAnalyse&gt;0)[&lt;li&gt;Vos analyses sont concluantes et vous voulez maintenant (link:&quot;commencer à publier vos résultats&quot;)[(go-to:&quot;Redaction_1&quot;)]. &lt;/li&gt;](else:)[&lt;li&gt;C&#39;est un bon début, (link:&quot;continuez à analyser vos résultats&quot;)[(go-to:&quot;randomAnalyse&quot;)]&lt;/li&gt;]
 (display:&quot;RandomEvent&quot;)
 &lt;/ol&gt;</tw-passagedata><tw-passagedata pid="10" name="Enseignement" tags="spécial" position="1700,800" size="100,100">&lt;h2&gt;Supervision d&#39;une heure d&#39;exercice&lt;/h2&gt;
 
 &lt;p&gt;En plus de votre recherche, vous êtes |definition&gt;[[[assistant d&#39;enseignement-&gt;TA]]]. L&#39;enseignement fait partie intégrante de la vie des chercheurs et chercheuses universitaire. Cela permet de transmettre le savoir et accessoirement de revoir certaines notions de bases de son propre domaine de recherche.&lt;/p&gt;
+&lt;div class=&quot;consigne&quot;&gt;Résumez en moins de 5 mots un concept que vous avez appris aujourd&#39;hui aux membres de votre équipe.&lt;/div&gt;
 (link-goto:&quot;Revenir à sa recherche&quot;, $passageBeforePause)</tw-passagedata><tw-passagedata pid="11" name="RechercheFonds" tags="spécial" position="1700,700" size="100,100">&lt;h2&gt;Rédaction de propositions de subventions de recherche&lt;/h2&gt;
 &lt;p&gt;Pour financer vos recherche, il faut souvent rédiger des proposition de subvention afin que l&#39;universtié, des fondations ou des entreprises vous donne les fonds nécessaires pour poursuivre vos recherches.&lt;/p&gt;
 (link-goto:&quot;Revenez à votre recherche&quot;, $passageBeforePause)</tw-passagedata><tw-passagedata pid="12" name="Renoncer" tags="no-footer no-header" position="1500,100" size="100,100">&lt;h2&gt; Arrêt prématuré du projet &lt;/h2&gt;
@@ -359,7 +395,7 @@ Quel dommage, vous mettez un terme à votre projet de recherche! La communauté 
 
 (link:&quot;Essayez à nouveau&quot;)[(restart:)]
 
-[[Crédits-&gt;CREDITS]]</tw-passagedata><tw-passagedata pid="13" name="header" tags="header" position="700,600" size="100,100">(if:(passage:)&#39;s tags contains &quot;pause&quot;)[(dialog: [(char-style: via (t8n-delay:pos*60)+(t8n:&#39;instant&#39;))[Allez à la case pause.]],&quot;On y est &amp;#x21A9;&quot;)](unless: (passage:)&#39;s tags contains &quot;no-header&quot; or &quot;definition&quot; or &quot;spécial&quot;)[(set:$dureeProjet to it+1, $passageBeforePause to (passage:)&#39;s &quot;name&quot;)(set: $chapitre to $caseToChapInt&#39;s $passageBeforePause, $healthBar to &quot;&quot;,  _wentToLecture to (a:&quot;Lecture_1&quot;,&quot;Lecture_2&quot;,&quot;Lecture_3&quot;,&quot;Lecture_4&quot;,&quot;Lecture_5&quot;)-(history:),_wentToPrototypage to (a:&quot;Prototypage_1&quot;,&quot;Prototypage_2&quot;,&quot;Prototypage_3&quot;,&quot;Prototypage_4&quot;,&quot;Prototypage_5&quot;)-(history:), _wentToAnalyse to (a:&quot;Analyse_1&quot;,&quot;Analyse_2&quot;,&quot;Analyse_3&quot;,&quot;Analyse_4&quot;,&quot;Analyse_5&quot;)-(history:), _wentToLabo to (a:&quot;Labo_1&quot;,&quot;Labo_2&quot;,&quot;Labo_3&quot;,&quot;Labo_4&quot;,&quot;Labo_5&quot;)-(history:), _wentToRedaction to (a:&quot;Redaction_1&quot;,&quot;Redaction_2&quot;,&quot;Redaction_3&quot;,&quot;Redaction_4&quot;,&quot;Redaction_5&quot;)-(history:))(set: $nPrototypage to 5-_wentToPrototypage&#39;s length,$nLecture to 5-_wentToLecture&#39;s length,$nLabo to 5-_wentToLabo&#39;s length, $nAnalyse to 5-_wentToAnalyse&#39;s length, $nRedaction to 5-_wentToRedaction&#39;s length)(for: each _block, ...(range: 1 , $maxSanté))[(if: _block is &lt;= $santé)[(set: $healthBar to it + &quot;❤️&quot;)](else:)[(set: $healthBar to it + &quot;🤍&quot;)]](if:(history:) contains $passageBeforePause)[(dialog: [(char-style: via (t8n-delay:pos*60)+(t8n:&#39;instant&#39;))[Retournez à la case (print:$caseToInt&#39;s $passageBeforePause)]],&quot;On y est &amp;#x21A9;&quot;)](else:)[(dialog: [(char-style: via (t8n-delay:pos*60)+(t8n:&#39;instant&#39;))[Allez à la case (print:$caseToInt&#39;s $passageBeforePause)]],&quot;On y est &amp;#x21A9;&quot;)]{(if: $chapitre is 1)[
+[[Crédits-&gt;CREDITS]]</tw-passagedata><tw-passagedata pid="13" name="header" tags="header" position="700,600" size="100,100">(if:(passage:)&#39;s tags contains &quot;pause&quot;)[(dialog: [(char-style: via (t8n-delay:pos*60)+(t8n:&#39;instant&#39;))[Allez à la case pause.]],&quot;On y est &amp;#x21A9;&quot;)](unless: (passage:)&#39;s tags contains &quot;no-header&quot; or &quot;definition&quot; or &quot;spécial&quot;)[(set:$dureeProjet to it+1, $solved to 0, $passageBeforePause to (passage:)&#39;s &quot;name&quot;)(set: $chapitre to $caseToChapInt&#39;s $passageBeforePause, $healthBar to &quot;&quot;,  _wentToLecture to (a:&quot;Lecture_1&quot;,&quot;Lecture_2&quot;,&quot;Lecture_3&quot;,&quot;Lecture_4&quot;,&quot;Lecture_5&quot;)-(history:),_wentToPrototypage to (a:&quot;Prototypage_1&quot;,&quot;Prototypage_2&quot;,&quot;Prototypage_3&quot;,&quot;Prototypage_4&quot;,&quot;Prototypage_5&quot;)-(history:), _wentToAnalyse to (a:&quot;Analyse_1&quot;,&quot;Analyse_2&quot;,&quot;Analyse_3&quot;,&quot;Analyse_4&quot;,&quot;Analyse_5&quot;)-(history:), _wentToLabo to (a:&quot;Labo_1&quot;,&quot;Labo_2&quot;,&quot;Labo_3&quot;,&quot;Labo_4&quot;,&quot;Labo_5&quot;)-(history:), _wentToRedaction to (a:&quot;Redaction_1&quot;,&quot;Redaction_2&quot;,&quot;Redaction_3&quot;,&quot;Redaction_4&quot;,&quot;Redaction_5&quot;)-(history:))(set: $nPrototypage to 5-_wentToPrototypage&#39;s length,$nLecture to 5-_wentToLecture&#39;s length,$nLabo to 5-_wentToLabo&#39;s length, $nAnalyse to 5-_wentToAnalyse&#39;s length, $nRedaction to 5-_wentToRedaction&#39;s length)(for: each _block, ...(range: 1 , $maxSanté))[(if: _block is &lt;= $santé)[(set: $healthBar to it + &quot;❤️&quot;)](else:)[(set: $healthBar to it + &quot;🤍&quot;)]](if:$nAnnexes &lt; 2 and $dureeProjet &gt; 1)[(set: _outcome to (random:1,9))(if:_outcome is 1)[(set: $nAnnexes to it+1)(go-to:&quot;randomAnnex&quot;)]](if:$nChance is 0 and $chapitre &gt; 1)[(set: _outcome to (random:1,10-$dureeProjet))(if:_outcome is 1)[(set: $nChance to 1)(go-to:&quot;GoodChanceStrikes&quot;)]](if:$nMalchance is 0 and $chapitre &gt; 1)[(set: _outcome to (random:1,15-$dureeProjet))(if:_outcome is 1)[(set:$nMalchance to 1)(go-to:&quot;BadChanceStrikes&quot;)]](dialog: [(char-style: via (t8n-delay:pos*60)+(t8n:&#39;instant&#39;))[Allez à la case (print:$caseToInt&#39;s $passageBeforePause)]],&quot;On y est &amp;#x21A9;&quot;){(if: $chapitre is 1)[
 	(set: $chapterHeader to &quot;&amp;sect; 1 - Revue de littérature&quot;)
 ](else-if:$chapitre is 2)[
 	(set: $chapterHeader to &quot;&amp;sect; 2 - Développement des Méthodes&quot;)
@@ -395,7 +431,7 @@ Quel dommage, vous mettez un terme à votre projet de recherche! La communauté 
 </tw-passagedata><tw-passagedata pid="18" name="Labo_1" tags="" position="1000,800" size="100,100">&lt;h2&gt;11. Développement d&#39;un protocole expérimental&lt;/h2&gt;
 &lt;p&gt;Pour réaliser vos prises de mesure de manière controlée, il vous faut créer un protocole expérimental précis qui soit réplicable et robuste.&lt;/p&gt;
 
-&lt;div class=&quot;passage-link&quot;&gt;Remettez les étapes de votre protocole dans le bon ordre. Quel est le bon protocol à suivre?&lt;/div&gt;
+&lt;div class=&quot;consigne&quot;&gt;Remettez les étapes de votre protocole dans le bon ordre. Quel est le bon protocol à suivre?&lt;/div&gt;
 
 &lt;ol class =&quot;passage-link&quot;&gt;
 &lt;li&gt;Il faut maintenant (link: &quot;répéter le protocole maintes fois&quot;)[(go-to:(either:&quot;Labo_2&quot;,&quot;Labo_5&quot;))] pour collecter des données.&lt;/li&gt;
@@ -408,7 +444,7 @@ Quel dommage, vous mettez un terme à votre projet de recherche! La communauté 
 
 
 &lt;ol class =&quot;passage-link&quot;&gt;
-(if: $nLabo&lt;3)[&lt;li&gt;Vous pensez qu&#39;il serait judicieux de (link: &quot;collaborer avec d&#39;autres chercheurs&quot;)[(go-to:(either:&quot;Labo_3&quot;,&quot;Labo_4&quot;))] avant de passer à l&#39;analyse.&lt;/li&gt;]
+(if: $nLabo&lt;2)[&lt;li&gt;Vous pensez qu&#39;il serait judicieux de (link: &quot;collaborer avec d&#39;autres chercheurs&quot;)[(go-to:(either:&quot;Labo_3&quot;,&quot;Labo_4&quot;))] avant de passer à l&#39;analyse.&lt;/li&gt;]
 &lt;li&gt;Vous pensez avoir récolté assez de données, et vous voulez (link:&quot;les analyser&quot;)[(go-to:&quot;randomAnalyse&quot;)]&lt;/li&gt;
 (display:&quot;RandomEvent&quot;)
 &lt;/ol&gt;</tw-passagedata><tw-passagedata pid="20" name="Prototypage_2" tags="" position="1125,650" size="100,100">&lt;h2&gt;7. Émisson d&#39;hypothèses&lt;/h2&gt;
@@ -418,10 +454,10 @@ Quel dommage, vous mettez un terme à votre projet de recherche! La communauté 
 &lt;div class = &quot;consigne&quot;&gt;&lt;/div&gt;
 
 &lt;ol class=&quot;passage-link&quot;&gt;
-&lt;li&gt;(if:$nLecture &lt;3)[Vos hypothèses sont malheuresement démontées par un collaborateur qui vous propose plutot de  (link: &quot;retournez dans vos bouquins&quot;)[(go-to: &quot;randomLecture&quot;)] pour en apprendre un peu plus.](else-if:$nPrototypage &lt;2)[Cela vous fait avancer, et vous (link:&quot;donne des idées de ce qui pourrait être amélioré.&quot;)[(go-to:&quot;randomPrototypage&quot;)].](else:)[Ces hypothèses sont très prometteuses et vous pouvez directement (link:&quot;les tester en laboratoire&quot;)[(go-to:&quot;randomLabo&quot;)].]&lt;/li&gt;
+&lt;li&gt;(if:$nLecture &lt;3)[Vos hypothèses sont malheuresement démontées par un collaborateur qui vous propose plutot de  (link: &quot;retournez dans vos bouquins&quot;)[(go-to: &quot;randomLecture&quot;)] pour en apprendre un peu plus.](else-if:$nPrototypage &lt;1)[Cela vous fait avancer, et vous (link:&quot;donne des idées de ce qui pourrait être amélioré.&quot;)[(go-to:&quot;randomPrototypage&quot;)].](else:)[Ces hypothèses sont très prometteuses et vous pouvez directement (link:&quot;les tester en laboratoire&quot;)[(go-to:&quot;randomLabo&quot;)].]&lt;/li&gt;
 (display:&quot;RandomEvent&quot;)
 &lt;/ol&gt;</tw-passagedata><tw-passagedata pid="21" name="Redaction_1" tags="obligé" position="1000,1100" size="100,100">&lt;h2&gt;21. Rédaction &lt;/h2&gt;
-&lt;p&gt; Pour partager ses résultats, il faut toujours écrire. Un papier de recherche est censée refléter l’expérience de votre recherche.&lt;/p&gt;
+&lt;p&gt; Pour partager ses résultats, il faut toujours rédiger sa  |definition&gt;[[[démarche-&gt;demarcheScientifique]]] . Un papier de recherche est censé refléter l’expérience de votre recherche.&lt;/p&gt;
 
 &lt;div class=&quot;consigne&quot;&gt;Rédigez une partie de votre papier de recherche en vous basant sur la phrase précédente et la phase de la |definition&gt;[[[démarche scientifique-&gt;demarcheScientifique]]] notée sur le côté. Vous pouvez vous inspirer des textes projetés au mur.&lt;/div&gt;
 
@@ -442,20 +478,20 @@ Imprimer pleins de magnifiques figures de recherche et mettre sur un panneau de 
 (display:&quot;RandomEvent&quot;)
 &lt;/ol&gt;</tw-passagedata><tw-passagedata pid="23" name="Redaction_3" tags="obligé" position="1250,1100" size="100,100">&lt;h2&gt;23. Revue des pairs&lt;/h2&gt;
 
-&lt;p&gt;Une fois votre papier envoyé à un journal de publications, il est toujours revu par des pairs. &lt;/p&gt;
+&lt;p&gt;Une fois votre papier envoyé à un journal de publications, il est toujours revu et corrigé par des pairs. &lt;/p&gt;
 
 &lt;div class=&quot;consigne&quot;&gt;Faites un compliment et une critique constructive sur les chaussettes de chaque membre de votre équipe.&lt;/div&gt;
 
 &lt;p&gt; Votre document nécessite des corrections, il faut refaire l&#39;analyse.&lt;/p&gt;
 &lt;ol class =&quot;passage-link&quot;&gt;
-&lt;li&gt;Vous (link: &quot;reformulez simplement&quot;)[(go-to:&quot;refusDePublication&quot;))] les quelques phrases qui ont été critiquées pour plaire aux relecteurs.&lt;/li&gt;
+&lt;li&gt;Vous (link: &quot;reformulez simplement&quot;)[(go-to:&quot;refusDePublication&quot;))] les quelques phrases qui ont été critiquées pour plaire aux relecteurs et essayez de passer entre les gouttes.&lt;/li&gt;
 &lt;li&gt;Vous acceptez les remarques et vous (link: &quot;refaites l&#39;analyse.&quot;)[(go-to:&quot;Redaction_5&quot;)]&lt;/li&gt;
 (display:&quot;RandomEvent&quot;)
 &lt;/ol&gt;</tw-passagedata><tw-passagedata pid="24" name="footer" tags="footer" position="600,600" size="100,100">(unless: (passage:)&#39;s tags contains &quot;no-footer&quot; or &quot;definition&quot; or &quot;spécial&quot;)[&lt;hr&gt;&lt;div class = &quot;row&quot;&gt;&lt;div class = &quot;column&quot; style=&quot;text-align:left;font-size:70%;&quot;&gt;&lt;b&gt;(link:&quot;Scientastic - SPS EPFL&quot;)[(go-to:&quot;CREDITS&quot;)]&lt;/b&gt;&lt;/div&gt;&lt;div class = &quot;column&quot; style=&quot;text-align:center;font-size:60%;flex:90%;line-height:1;&quot;&gt;(print:$nomProjet)&lt;/div&gt;&lt;div class = &quot;column footer&quot; style=&quot;text-align:right;font-size:60%;&quot;&gt;(print:$nomGroupe)&lt;/div&gt;&lt;/div&gt;](if: (passage:)&#39;s tags contains &quot;definition&quot;)[(link-goto:&quot;Retour&quot;, (history:)&#39;s last)]</tw-passagedata><tw-passagedata pid="25" name="PropositionDeProjet" tags="definition" position="600,1000" size="100,100">&lt;div class =&quot;definition&quot;&gt;
 &lt;b&gt;Def&lt;/b&gt; (proposition de projet). Avant un quelconque projet de recherche, il est souvent nécessaire d&#39;élaborer une description consise et précise du plan et des objectifs d&#39;un projet.
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="BadChanceStrikes" tags="spécial" position="600,800" size="100,100">&lt;h2&gt;Manque de bol&lt;/h2&gt;
-&lt;ol&gt;
-(if:$chapitre is 2)[&lt;li&gt;Vos premiers essais ne donnent rien et vous ne savez pas comment avancer. Il serait raisonnable de (link: &quot;retourner dans vos bouquins&quot;) [(set:$chapitre to 1)(go-to: &quot;randomLecture&quot;)] pour en apprendre un peu plus. &lt;/li&gt;](else-if:$chapitre is 3)[&lt;li&gt;Votre ordinateur crash, vous perdez toutes vos données, il faut recommencer les prises de mesure. &lt;/li&gt; OR &lt;li&gt;Zut, vous avez oubliez vos précieux échantillons dans le train... (link: &quot;c&#39;est l&#39;occasion de re-designer votre méthode expérimentale&quot;)[(set:$chapitre to 2)(go-to: &quot;randomPrototypage&quot;)&lt;/li&gt;]](else-if:$chapitre is 4)[&lt;li&gt;Vos recherches n&#39;aboutissent pas et les données sont inutilisables, il faut  (link: &quot;retourner à la case développement. &quot;)[(set:$chapitre to 3)(go-to: &quot;randomLabo&quot;)&lt;/li&gt;)]](if:$chapitre is 5)[&lt;li&gt;Vous vous apprêtiez à publier vos résultats, mais un groupe concurent vous coupe l&#39;herbe sous le pied et publie un papier de recherche sur le même sujet...  (link: &quot;Il faut retourner au labo et essayer à nouveau.&quot;)(set:$chapitre to 3)(go-to: &quot;randomLabo&quot;) &lt;/li&gt;](else:)[Votre recherche ne vous intéresse plus, vous préferez maintenant étudier autre chose et [[vous recommencez-&gt;Start]].]
+&lt;ol class=&quot;passage-link&quot;&gt;
+(if:$chapitre is 2)[&lt;li&gt;Vos premiers essais ne donnent rien et vous ne savez pas comment avancer. Il serait raisonnable de (link: &quot;retourner dans vos bouquins&quot;) [(set:$chapitre to 1)(go-to: &quot;randomLecture&quot;)] pour en apprendre un peu plus. &lt;/li&gt;](else-if:$chapitre is 3)[ &lt;li&gt;Zut, vous avez oubliez vos précieux échantillons dans le train... (link: &quot;c&#39;est l&#39;occasion de re-designer votre méthode expérimentale&quot;)[(set:$chapitre to 2)(go-to: &quot;randomPrototypage&quot;)&lt;/li&gt;]](else-if:$chapitre is 4)[&lt;li&gt;Votre ordinateur crash, vous perdez toutes vos données, il faut (link: &quot;recommencer les prises de mesure.&quot;)[(set:$chapitre to 3)(go-to: &quot;randomLabo&quot;) &lt;/li&gt;)]](else-if:$chapitre is 5)[&lt;li&gt;Vous vous apprêtiez à publier vos résultats, mais un groupe concurent vous coupe l&#39;herbe sous le pied et publie un papier de recherche sur le même sujet...  (link: &quot;Il faut retourner au labo et essayer à nouveau.&quot;)(set:$chapitre to 3)(go-to: &quot;randomLabo&quot;) &lt;/li&gt;](else:)[Votre recherche ne vous intéresse plus, vous préferez maintenant étudier autre chose et [[vous recommencez-&gt;Start]].]
 &lt;/ol&gt;</tw-passagedata><tw-passagedata pid="27" name="Conférence" tags="spécial" position="1700,1000" size="100,100">&lt;h2&gt;Conférence&lt;/h2&gt;
 &lt;p&gt;Vous êtes à (either:&quot;New York&quot;,&quot;Sydney&quot;,&quot;Buenos Aires&quot;,&quot;Tokyo&quot;,&quot;Pretoria&quot;,&quot;Ljubljiana&quot;,&quot;Göttingen&quot;,&quot;Singapour&quot;) pour une |definition&gt;[[[conférence-&gt;conférence]]] réunissant les meilleurs scientifiques de votre domaine. C&#39;est l&#39;occasion de réseauter. Vous savez qu&#39;un expert se trouve également à cette conférence mais vous ne savez pas comment l&#39;aborder et vous n&#39;avez pas beaucoup de temps avant la fin de la congrès..&lt;/p&gt;
 
@@ -467,11 +503,13 @@ Imprimer pleins de magnifiques figures de recherche et mettre sur un panneau de 
 
 &lt;div class =&quot;definition&quot;&gt;
 &lt;b&gt;Remarques&lt;/b&gt;&lt;ul&gt;&lt;li&gt;On peut également compter le nombre de documents de recherche qui citent un travail pour évaluer l&#39;impact scientifique du travail. C&#39;est un indicateur phare pour obtenir des bourses de recherche.&lt;/li&gt;&lt;li&gt;Une revendication sans citation est considérée comme quasi nulle lorsqu&#39;elle n&#39;est pas soutenue par une citation&lt;/li&gt;
-&lt;li&gt;Le nombre d&#39;Erdős d&#39;une personne est sa « distance de collaboration » avec le mathématicien hongrois Paul Erdős (1913-1996), mesurée par publication conjointe.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="RandomEvent" tags="spécial" position="500,800" size="100,100">&lt;!--Ce passage est utilisé pour déclancher des évènement aléatoires qui viennent sans contexte--&gt;(if:$nChance &gt; 0 and $nMalchance &gt; 0 and $nLecture &gt; 2 and $nPrototypage &gt; 1 and $nLabo &gt; 1 and $nAnalyse &gt; 1 and $nRedaction &gt; 1)[&lt;li&gt;Une notification dans votre boite mail apparait. (link: &quot;Consulter votre boite mail&quot;)[(set: $chapitre to 6)(go-to:&quot;End&quot;)]&lt;/li&gt;](if: $santé is 1)[&lt;li&gt;Vous travaillez probablement un peu trop, il serait peut être bon de (link: &quot;faire une pause&quot;)[(set:$santé to it+5)(go-to: (either: &quot;Pause_1&quot;, &quot;Pause_2&quot;, &quot;Pause_3&quot;,&quot;Pause_4&quot;,&quot;Pause_5&quot;)).]&lt;/li&gt;](else-if:$santé is 0)[(set:$passageBeforePause to (passage:)&#39;s &quot;name&quot;)(go-to:&#39;Fatigué&#39;)](else:)[&lt;li&gt;Vous avez envie de (link: &quot;faire une pause&quot;)[(set:$santé to it+3)(go-to: (either: &quot;Pause_1&quot;, &quot;Pause_2&quot;, &quot;Pause_3&quot;,&quot;Pause_4&quot;,&quot;Pause_5&quot;))]&lt;/li&gt;](if:$nAnnexes &lt; 3)[(set: _outcome to (random:1,7-$dureeProjet))(if:_outcome is 1)[(set: $nAnnexes to it+1)(go-to:&quot;randomAnnex&quot;)]](if:$nChance is 0 and $chapitre &gt; 1)[(set: _outcome to (random:1,10-$dureeProjet))(if:_outcome is 1)[(set: $nChance to 1)(go-to:&quot;GoodChanceStrikes&quot;)]](if:$nMalchance is 0 and $chapitre &gt; 1)[(set: _outcome to (random:1,15-$dureeProjet))(if:_outcome is 1)[(set:$nMalchance to 1)(go-to:&quot;BadChanceStrikes&quot;)]]</tw-passagedata><tw-passagedata pid="30" name="Lecture_4" tags="" position="1375,500" size="100,100">&lt;h2&gt;4. Apprentissage d&#39;un nouveau logiciel&lt;/h2&gt;
-&lt;p&gt;Vous lisez un manuel pour un progamme |definition&gt;[[[openSource-&gt;openSource]]]. Souvenez-vous en bien, vous risquez d&#39;en avoir besoin plus tard.&lt;/p&gt;
+&lt;li&gt;Le nombre d&#39;Erdős d&#39;une personne est sa « distance de collaboration » avec le mathématicien hongrois Paul Erdős (1913-1996), mesurée par publication conjointe.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="RandomEvent" tags="spécial" position="500,800" size="100,100">&lt;!--Ce passage est utilisé pour déclancher des évènement aléatoires qui viennent sans contexte--&gt;(if:$nChance &gt; 0 and $nMalchance &gt; 0 and $nLecture &gt; 2 and $nPrototypage &gt; 1 and $nLabo &gt; 1 and $nAnalyse &gt; 1 and $nRedaction &gt; 1)[&lt;li&gt;Une notification dans votre boite mail apparait. (link: &quot;Consulter votre boite mail&quot;)[(set: $chapitre to 6)(go-to:&quot;End&quot;)]&lt;/li&gt;](if: $santé is 1)[&lt;li&gt;Vous travaillez probablement un peu trop, il serait peut être bon de (link: &quot;faire une pause&quot;)[(set:$santé to it+5)(go-to: (either: &quot;Pause_1&quot;, &quot;Pause_2&quot;, &quot;Pause_3&quot;,&quot;Pause_4&quot;,&quot;Pause_5&quot;)).]&lt;/li&gt;](else-if:$santé is 0)[(set:$passageBeforePause to (passage:)&#39;s &quot;name&quot;)(go-to:&#39;Fatigué&#39;)](else:)[&lt;li&gt;Vous avez envie de (link: &quot;faire une pause&quot;)[(set:$santé to it+3)(go-to: (either: &quot;Pause_1&quot;, &quot;Pause_2&quot;, &quot;Pause_3&quot;,&quot;Pause_4&quot;,&quot;Pause_5&quot;))]&lt;/li&gt;]</tw-passagedata><tw-passagedata pid="30" name="Lecture_4" tags="" position="1375,500" size="100,100">&lt;h2&gt;4. Apprentissage d&#39;un nouveau logiciel&lt;/h2&gt;
+&lt;p&gt;Vous lisez la documentation logicielle (guide de référence, manuel d&#39;utilisation) d&#39;un un progamme informatique |definition&gt;[[[open access-&gt;openSource]]] qui vous explique comment utiliser le programme. Ce programme peut être utilisé pour manipuler des données grâce à une multitude de fonctions. Voyez devant vous quelques fonctions documentées/expliquées.  &lt;/p&gt;
 
-&lt;ol class = &quot;passage-link&quot;&gt;(if: (visited:&quot;Analyse_4&quot;))[&lt;li&gt;(link: &quot;Retournez à vos analyses&quot;)[(set:$chapitre to 4)(go-to: &quot;Analyse_4&quot;) ]&lt;/li&gt;](else:)[&lt;li&gt;Assez d&#39;écran, il vous manque du savoir sur votre domaine, il faudrait (link: &quot;lire les documents de recherche proposé par votre groupe&quot;)[(go-to: &quot;Lecture_2&quot;)] &lt;/li&gt;
-&lt;li&gt;Vour préférez directement (link: &quot;faire des expériences&quot;)[(if:$nLecture&lt;3)[(go-to:&quot;zéroExpérience&quot;)](else:)[(go-to:&quot;randomPrototypage&quot;)]]&lt;/li&gt;]
+&lt;div class=&quot;consigne&quot;&gt;Quelques fonctions vous tapent dans l&#39;oeil... Souvenez-vous bien du nom de ces fonctions, vous risquez d&#39;en avoir besoin plus tard.&lt;/div&gt;
+
+&lt;ol class = &quot;passage-link&quot;&gt;(if: (visited:&quot;Analyse_4&quot;))[&lt;li&gt;C&#39;est bon, vous avez retrouvé le nom de la fonction qu&#39;il vous faut pour (link: &quot;retourner à vos analyses&quot;)[(set:$chapitre to 4)(go-to: &quot;Analyse_4&quot;) ].&lt;/li&gt;](else:)[&lt;li&gt;Assez d&#39;écran, il vous manque du savoir sur votre domaine, il faudrait (link: &quot;lire les documents de recherche proposés par votre groupe&quot;)[(go-to: &quot;Lecture_2&quot;)].&lt;/li&gt;
+&lt;li&gt;Vour préférez directement (link: &quot;faire des expériences&quot;)[(if:$nLecture&lt;3)[(go-to:&quot;zéroExpérience&quot;)](else:)[(go-to:&quot;randomPrototypage&quot;)]].&lt;/li&gt;]
 (display:&quot;RandomEvent&quot;)
 &lt;/ol&gt;</tw-passagedata><tw-passagedata pid="31" name="RetraiteGroupe" tags="spécial" position="1700,900" size="100,100">&lt;h2&gt;Retraite à la montagne&lt;/h2&gt;</tw-passagedata><tw-passagedata pid="32" name="ProblèmesTechniques" tags="spécial" position="1700,600" size="100,100">&lt;h2&gt; Problèmes Techniques&lt;/h2&gt;
 
@@ -479,13 +517,13 @@ Imprimer pleins de magnifiques figures de recherche et mettre sur un panneau de 
 
 Rentrez le code de l&#39;ordinateur:
 (input: bind $reponseOrdi,&quot;X==&quot;)]
-(link: &quot;Login&quot;)[(if:$reponseOrdi is $solutionOrdi)[bien joué (link-goto:&quot;Revenez à votre recherche&quot;, $passageBeforePause)]
-(link-goto:&quot;Revenez à votre recherche&quot;, $passageBeforePause)</tw-passagedata><tw-passagedata pid="33" name="PhaseNormative" tags="definition" position="500,1000" size="100,100">Normative</tw-passagedata><tw-passagedata pid="34" name="openSource" tags="definition" position="500,1200" size="100,100"></tw-passagedata><tw-passagedata pid="35" name="zéroExpérience" tags="spécial" position="1525,300" size="100,100">Vous arrivez au labo mais n&#39;avez aucune idée de ce que vous devez expérimenter. Il serait judicieux de [[lire quelques documents de recherche-&gt;Lecture_2]] avant d&#39;essayer quoi que ce soit.</tw-passagedata><tw-passagedata pid="36" name="Prototypage_4" tags="" position="1375,650" size="100,100">&lt;h2&gt;9. Aidez un collègue sur une autre expérience&lt;/h2&gt;
+(link-rerun: &quot;Login &quot;)[(if:$reponseOrdi is $solutionOrdi)[&lt;br&gt; Bien joué, vous pouvez maintenant (link-goto:&quot;poursuivre votre recherche&quot;, $passageBeforePause).](else:)[Incorrect, essayez à nouveau]]
+(if:$reponseOrdi is $solutionOrdi)[(link: &quot;Login&quot;)[bien joué (link-goto:&quot;Revenez à votre recherche&quot;, $passageBeforePause)]]</tw-passagedata><tw-passagedata pid="33" name="PhaseNormative" tags="definition" position="500,1000" size="100,100">Normative</tw-passagedata><tw-passagedata pid="34" name="openSource" tags="definition" position="500,1200" size="100,100"></tw-passagedata><tw-passagedata pid="35" name="zéroExpérience" tags="spécial" position="1525,300" size="100,100">Vous arrivez au labo mais n&#39;avez aucune idée de ce que vous devez expérimenter. Il serait judicieux de [[lire quelques documents de recherche-&gt;Lecture_2]] avant d&#39;essayer quoi que ce soit.</tw-passagedata><tw-passagedata pid="36" name="Prototypage_4" tags="" position="1375,650" size="100,100">&lt;h2&gt;9. Aidez un collègue sur une autre expérience&lt;/h2&gt;
 &lt;p&gt;Vous acceptez d&#39;aider collègue pour une expérience,&lt;/p&gt;
 &lt;div class=&quot;consigne&quot;&gt;&lt;/div&gt; 
 
 &lt;ol class =&quot;passage-link&quot;&gt;
-(if:$nLecture &lt;3)[ Votre collègue vous remercie pour votre travail mais il vous consielle de (link: &quot;retourner dans vos bouquins&quot;)[(go-to: &quot;randomLecture&quot;)] pour en apprendre un peu plus car vous avez l&#39;air un peu hésitant au niveau théorique..](else-if:$nPrototypage &lt;2)[&lt;li&gt; Votre collègue vous remercie pour votre aide. Son travail vous inspire d&#39;(link:&quot;essayer de nouvelles idées&quot;)[(go-to:&quot;randomPrototypage&quot;)]. &lt;/li&gt;](else:)[Pendant votre travail vous discutez avec votre collègue et cela vous aide à mieux comprendre vos recherches que vous pouvez directement  (link:&quot;tester en laboratoire&quot;)[(go-to:&quot;randomLabo&quot;)].]
+(if:$nLecture &lt;3)[ Votre collègue vous remercie pour votre travail mais il vous consielle de (link: &quot;retourner dans vos bouquins&quot;)[(go-to: &quot;randomLecture&quot;)] pour en apprendre un peu plus car vous avez l&#39;air un peu hésitant au niveau théorique..](else-if:$nPrototypage &lt;1)[&lt;li&gt; Votre collègue vous remercie pour votre aide. Son travail vous inspire d&#39;(link:&quot;essayer de nouvelles idées&quot;)[(go-to:&quot;randomPrototypage&quot;)]. &lt;/li&gt;](else:)[Pendant votre travail vous discutez avec votre collègue et cela vous aide à mieux comprendre vos recherches que vous pouvez directement  (link:&quot;tester en laboratoire&quot;)[(go-to:&quot;randomLabo&quot;)].]
 (display:&quot;RandomEvent&quot;)
 &lt;/ol&gt;</tw-passagedata><tw-passagedata pid="37" name="Lecture_5" tags="" position="1500,500" size="100,100">&lt;h2&gt;5. Lecture de thèmes tangeants à votre recherche.&lt;/h2&gt;
 
@@ -497,9 +535,9 @@ Rentrez le code de l&#39;ordinateur:
 &lt;p&gt;La compréhension du monde passe par la création de |definition&gt;[[modèles-&gt;modèles]] qui nous permettent de travailler dans des systèmes simplifiés afin de vérifier certaines hypothèses. Cela permet également de communiquer avec d&#39;autres personnes sur un domaine complexe. &lt;/p&gt;
 &lt;div class = &quot;consigne&quot;&gt;&lt;/div&gt;
 &lt;ol class =&quot;passage-link&quot;&gt;
-(if:$nLecture &lt;3)[ &lt;li&gt;Votre modèle est un peu bancal et il faudrait s&#39;inspirer de nouvelles théories pour le solidifier.  (link: &quot;Retournez dans vos bouquins&quot;)[(go-to: &quot;randomLecture&quot;)] pour en apprendre un peu plus.&lt;/li&gt;](else-if:$nPrototypage &lt;2)[&lt;li&gt; Ce modèle pourrait être peaufiné il faudrait continuer à   (link:&quot; le tester dans plus de scénarios&quot;)[(go-to:&quot;randomPrototypage&quot;)]. &lt;/li&gt;](else:)[&lt;li&gt;Ce modèle est particulièrement efficace, vous pouvez directement (link:&quot;le tester en laboratoire&quot;)[(go-to:&quot;randomLabo&quot;)].&lt;/li&gt;]
+(if:$nLecture &lt;3)[ &lt;li&gt;Votre modèle est un peu bancal et il faudrait s&#39;inspirer de nouvelles théories pour le solidifier.  (link: &quot;Retournez dans vos bouquins&quot;)[(go-to: &quot;randomLecture&quot;)] pour en apprendre un peu plus.&lt;/li&gt;](else-if:$nPrototypage &lt;1)[&lt;li&gt; Ce modèle pourrait être peaufiné il faudrait continuer à   (link:&quot; le tester dans plus de scénarios&quot;)[(go-to:&quot;randomPrototypage&quot;)]. &lt;/li&gt;](else:)[&lt;li&gt;Ce modèle est particulièrement efficace, vous pouvez directement (link:&quot;le tester en laboratoire&quot;)[(go-to:&quot;randomLabo&quot;)].&lt;/li&gt;]
 (display:&quot;RandomEvent&quot;)
-&lt;/ol&gt;</tw-passagedata><tw-passagedata pid="39" name="NouvelleRéunionGroupe" tags="" position="1800,900" size="100,100"></tw-passagedata><tw-passagedata pid="40" name="Labo_3" tags="" position="1250,800" size="100,100">&lt;h2&gt;13. Collaboration avec un groupe de recherche&lt;/h2&gt;
+&lt;/ol&gt;</tw-passagedata><tw-passagedata pid="39" name="NouvelleRéunionGroupe" tags="" position="2100,700" size="100,100"></tw-passagedata><tw-passagedata pid="40" name="Labo_3" tags="" position="1250,800" size="100,100">&lt;h2&gt;13. Collaboration avec un groupe de recherche&lt;/h2&gt;
 
 &lt;p&gt;Vos compétences, bien qu&#39;expertes, ne vous suffisent pas pour un projet d&#39;envergure. Vous devez collaborer avec un autre groupe de recherche pour résoudre un problème complexe.&lt;/p&gt;
 
@@ -508,8 +546,8 @@ Rentrez le code de l&#39;ordinateur:
 &lt;div class=&quot;consigne&quot;&gt;Vous devez ajouter un élément à votre circuit intégré, toutefois router le nouvel élément de manière optimale nécessite des techniques de vérification et synthèse de circuit très sophistiquées. Désignez un ingénieur électronique et un informaticien dans l&#39;équipe qui prendront chacun une renne du projet pour trouver une méthode afin de vérifier que la pièce sois bien connectée à une source d&#39;énergie sans tomber dans les trous. &lt;/div&gt;
 
 &lt;ol class =&quot;passage-link&quot;&gt;
-(if: $nLabo&lt;3)[&lt;li&gt;Vous retournez (link: &quot;récolter plus d&#39;échantillonss&quot;)[(go-to:(either:&quot;Labo_2&quot;,&quot;Labo_5&quot;))] avant de passer à l&#39;analyse.&lt;/li&gt;]
-&lt;li&gt;Vous pensez avoir récolté assez de données, et vous voulez (link:&quot;les analyser&quot;)[(go-to:&quot;randomAnalyse&quot;)]&lt;/li&gt;
+(if: $nLabo&lt;2)[&lt;li&gt;Vous retournez (link: &quot;récolter plus d&#39;échantillonss&quot;)[(go-to:(either:&quot;Labo_2&quot;,&quot;Labo_5&quot;))] avant de passer à l&#39;analyse.&lt;/li&gt;]
+&lt;li&gt;Vous pensez avoir récolté assez de données, et vous (link:&quot;les analyser&quot;)[(go-to:&quot;randomAnalyse&quot;)]&lt;/li&gt;
 (display:&quot;RandomEvent&quot;)
 &lt;/ol&gt;</tw-passagedata><tw-passagedata pid="41" name="Labo_4" tags="" position="1375,800" size="100,100">&lt;h2&gt;14. Confiance au travail des autres / Se fier aux autres / esprit d&#39;équipe&lt;/h2&gt;
 &lt;p&gt;Vous avez l&#39;impression d&#39;avancer les yeux bandés. Heureusement vos |definition&gt;[[[pairs-&gt;pairs]]] sont là pour vous guider dans votre processus de recherche.&lt;/p&gt;
@@ -519,7 +557,7 @@ Rentrez le code de l&#39;ordinateur:
 (twister, labyrinthe les yeux bandés)
 &lt;/div&gt;
 &lt;ol class =&quot;passage-link&quot;&gt;
-(if: $nLabo&lt;3)[&lt;li&gt;Vous retournez (link: &quot;récolter plus d&#39;échantillons&quot;)[(go-to:(either:&quot;Labo_2&quot;,&quot;Labo_5&quot;))] avant de passer à l&#39;analyse.&lt;/li&gt;]
+(if: $nLabo&lt;2)[&lt;li&gt;Vous retournez (link: &quot;récolter plus d&#39;échantillons&quot;)[(go-to:(either:&quot;Labo_2&quot;,&quot;Labo_5&quot;))] avant de passer à l&#39;analyse.&lt;/li&gt;]
 &lt;li&gt;Vous pensez avoir récolté assez de données, et vous voulez (link:&quot;les analyser&quot;)[(go-to:&quot;randomAnalyse&quot;)]&lt;/li&gt;
 (display:&quot;RandomEvent&quot;)
 &lt;/ol&gt;</tw-passagedata><tw-passagedata pid="42" name="Labo_5" tags="" position="1500,800" size="100,100">&lt;h2&gt;15. Recueil des résultats&lt;/h2&gt;
@@ -529,26 +567,23 @@ Rentrez le code de l&#39;ordinateur:
 &lt;div class = &quot;consigne&quot;&gt;Regardez dans le microscope et comptez le nombre de crevettes &lt;/div&gt;
 
 &lt;ol class =&quot;passage-link&quot;&gt;
-(if: $nLabo&lt;3)[&lt;li&gt;Vous pensez qu&#39;il serait judicieux de (link: &quot;collaborer avec d&#39;autres chercheurs&quot;)[(go-to:(either:&quot;Labo_3&quot;,&quot;Labo_4&quot;))] avant de passer à l&#39;analyse.&lt;/li&gt;]
+(if: $nLabo&lt;2)[&lt;li&gt;Vous pensez qu&#39;il serait judicieux de (link: &quot;collaborer avec d&#39;autres chercheurs&quot;)[(go-to:(either:&quot;Labo_3&quot;,&quot;Labo_4&quot;))] avant de passer à l&#39;analyse.&lt;/li&gt;]
 &lt;li&gt;Vous pensez avoir récolté assez de données, et vous voulez (link:&quot;les analyser&quot;)[(go-to:&quot;randomAnalyse&quot;)]&lt;/li&gt;
 (display:&quot;RandomEvent&quot;)
 &lt;/ol&gt;</tw-passagedata><tw-passagedata pid="43" name="Analyse_4" tags="" position="1375,950" size="100,100">&lt;h2&gt;19. Utilisez vos connaissances&lt;/h2&gt;
 &lt;p&gt;Il faut parfois avoir recours à des connaissances apprise il y a bien longtemps.&lt;/p&gt;
 
-&lt;div class =&quot;consigne&quot;&gt;Vous avez besoin d&#39;une commande pour une analyse statistique. Il semblerait que vous ayez déjà rencontré cette fonction il y a bien longtemps... 
+&lt;div class =&quot;consigne&quot;&gt;Vous avez besoin d&#39;une fonction pour &lt;b&gt;trouver la valeur moyenne arithmétique d&#39;une jeu de données&lt;/b&gt; pour une analyse statistique. Il semblerait que vous ayez déjà rencontré cette fonction il y a bien longtemps... 
 
-Rentrez le nom de cette commande.&lt;/div&gt;
-
-
-&lt;ol class =&quot;passage-link&quot;&gt;
-(if: (history:) does not contain &quot;Lecture_4&quot;)[&lt;li&gt;Il semblerait que vous devriez (link: &quot;réviser vos connaissances de base&quot;)[(set:$chapitre to 1,$numCase to 4)(go-to: &quot;Lecture_4&quot;)]. &lt;/li&gt;]
-(if:$nAnalyse&gt;1)[&lt;li&gt;Vos analyses sont concluantes et vous voulez maintenant (link:&quot;commencer à publier vos résultats&quot;)[(go-to:&quot;Redaction_1&quot;)]. &lt;/li&gt;](else:)[&lt;li&gt;C&#39;est un bon début, (link:&quot;continuez à analyser vos résultats&quot;)[(go-to:&quot;randomAnalyse&quot;)]&lt;/li&gt;]
+Rentrez le nom de cette commande dans la fenêtre puis appuyez sur RUN ci-dessous.
+(set:$solutionNomFonction to &quot;numpy.mean&quot;)&lt;command&gt;(input-box: bind $reponseOrdi,&quot;=XXXX=&quot;, &quot;Scientastic shell (v1.0.0)\nC:Users/admin/scientastic$ python \n Python 3.11.5 \n &gt;&gt;&gt; &quot;)(link-rerun: &#39;&lt;span id =&quot;enter&quot;&gt;RUN &amp;#x21A9;&lt;/span&gt;&#39;)[(if:$solutionNomFonction is in $reponseOrdi)[&lt;br&gt; moyenne = (char-style: via (t8n-delay:pos*60)+(t8n:&#39;instant&#39;))[6.62×10&lt;sup&gt;-34&lt;/sup&gt;] &lt;br&gt; (t8n:&#39;instant&#39;)+(t8n-delay:2s)[ Bien joué, vous trouvez une valeur moyenne très intéressante et surprenante &lt;ol class=&quot;passage-link&quot;&gt;(if:$nAnalyse&gt;0)[&lt;li&gt;Vos analyses sont concluantes et vous voulez maintenant (link:&quot;commencer à publier vos résultats&quot;)[(go-to:&quot;Redaction_1&quot;)]. &lt;/li&gt;](else:)[&lt;li&gt;C&#39;est un bon début d&#39;analyse, (link:&quot;continuez à analyser vos résultats&quot;)[(go-to:&quot;randomAnalyse&quot;)]&lt;/li&gt;]&lt;/ol&gt;]](else:)[&lt;br&gt; Incorrect, si vous ne vous souvenez plus, vous pouvez retourner (link: &quot;réviser vos connaissances de base&quot;)[(set:$chapitre to 1,$numCase to 4)(go-to: &quot;Lecture_4&quot;)]]]&lt;/command&gt;&lt;/div&gt;&lt;ol class =&quot;passage-link&quot;&gt;
+(if: (history:) does not contain &quot;Lecture_4&quot;)[&lt;li&gt;Vous ne vous en souvenez plus, il semblerait que vous devriez (link: &quot;réviser vos connaissances de base&quot;)[(set:$chapitre to 1,$numCase to 4)(go-to: &quot;Lecture_4&quot;)]. &lt;/li&gt;]
 (display:&quot;RandomEvent&quot;)
 &lt;/ol&gt;</tw-passagedata><tw-passagedata pid="44" name="Analyse_5" tags="" position="1500,950" size="100,100">&lt;h2&gt;20. Interprétation | Tirer des conclusions&lt;/h2&gt;
 &lt;p&gt;Trouvez les similitudes&lt;/p&gt;
 &lt;div class=&quot;consigne&quot;&gt;&lt;/div&gt;
 &lt;ol class =&quot;passage-link&quot;&gt;
-(if:$nAnalyse&gt;1)[&lt;li&gt;Vos analyses sont pertinentes et vous voulez maintenant (link:&quot;commencer à publier vos résultats&quot;)[(go-to:&quot;Redaction_1&quot;)]. &lt;/li&gt;](else:)[&lt;li&gt;C&#39;est un bon début, (link:&quot;continuez à analyser vos résultats&quot;)[(go-to:&quot;randomAnalyse&quot;)]&lt;/li&gt;]
+(if:$nAnalyse&gt;0)[&lt;li&gt;Vos analyses sont pertinentes et vous voulez maintenant (link:&quot;commencer à publier vos résultats&quot;)[(go-to:&quot;Redaction_1&quot;)]. &lt;/li&gt;](else:)[&lt;li&gt;C&#39;est un bon début, (link:&quot;continuez à analyser vos résultats&quot;)[(go-to:&quot;randomAnalyse&quot;)]&lt;/li&gt;]
 (display:&quot;RandomEvent&quot;)
 &lt;/ol&gt;</tw-passagedata><tw-passagedata pid="45" name="Redaction_4" tags="" position="1375,1100" size="100,100">&lt;h2&gt;24. Présentation de vos résultats&lt;/h2&gt;
 
@@ -557,7 +592,7 @@ Rentrez le nom de cette commande.&lt;/div&gt;
 &lt;div class&quot;conisgne&quot;&gt;&lt;/div&gt;
 
 &lt;ol class =&quot;passage-link&quot;&gt;
-&lt;li&gt;Votre papier est maintenant terminé! Il faut (link:&quot;l&#39;envoyer à différents éditeurs et collègues&quot;[(go-to:&quot;Rédaction_3&quot;)] et attendre une réponse..&lt;/li&gt;
+&lt;li&gt;Votre papier est maintenant terminé! Il faut (link:&quot;l&#39;envoyer à différents éditeurs et collègues&quot;)[(go-to:&quot;Redaction_3&quot;)] et attendre une réponse..&lt;/li&gt;
 (display:&quot;RandomEvent&quot;)
 &lt;/ol&gt;</tw-passagedata><tw-passagedata pid="46" name="StoryIncludes" tags="" position="500,600" size="100,100">&lt;link href=&#39;https://fonts.googleapis.com/css?family=Sofia&#39; rel=&#39;stylesheet&#39;&gt;</tw-passagedata><tw-passagedata pid="47" name="Pause_1" tags="spécial no-footer pause" position="1725,1225" size="100,100">(dialog: [(char-style: via (t8n-delay:pos*60)+(t8n:&#39;instant&#39;))[Allez à l&#39;espace pause.]],&quot;On y est &amp;#x21A9;&quot;)
 &lt;h2&gt;Cohérence cardiaque&lt;/h2&gt;
@@ -580,19 +615,21 @@ Faites 3 grandes respirations.
 (display:&quot;RandomEvent&quot;)
 &lt;/ol&gt;</tw-passagedata><tw-passagedata pid="51" name="End" tags="" position="1250,1300" size="100,100">&lt;h2&gt;Publication accepté!&lt;/h2&gt;
 
-&lt;p&gt;(print:$nomProjet) a été publié dans un journal renommé dans votre domaine de recherche. La découverte est acclamée par la communauté scientifique et vous reçevez des |definition&gt;[[[distinctions]]] à plusieurs conférences. Cela ne vous aura pris que (print:$dureeProjet) mois. Vous avez vécu des hauts et de bas, des imprévus, mais surtout pleins d&#39;émotions: c&#39;est ça la vie de scientifiques! &lt;/p&gt;
+&lt;p&gt;(print:$nomProjet) a été publié dans un journal renommé dans votre domaine de recherche. La découverte est acclamée par la communauté scientifique et vous reçevez des |definition&gt;[[[prix-&gt;distinctions]]] à une conférence. Cela ne vous aura pris que (print:$dureeProjet) mois. Vous avez vécu des hauts et de bas, des imprévus, mais surtout pleins d&#39;émotions: c&#39;est ça la vie de scientifiques! &lt;/p&gt;
 
 &lt;div class=&quot;consigne&quot;&gt;Apportez votre pierre à l&#39;édifice en déposant votre brique de connaissance sur la pyramide du savoir. &lt;/div&gt;
 
 &lt;ol class= &quot;passage-link&quot;&gt;&lt;li&gt;(link-replace:&quot;Il ne suffit plus que de recommencer&quot;)[Quel enthousiasme! Il faut toutefois laisser la place aux autres pour ce jeux mais nous vous souhaitons pleins de courage dans votre propre recherche dans votre domaine de prédilection].&lt;/li&gt;
-&lt;li&gt; Ou de (link-reveal:):&quot;laisser les génération futures s&#39;appuyer sur votre travail pour faire avancer la science&quot;)[[[FIN-&gt;CREDITS]]]. &lt;/li&gt;&lt;/ol&gt;</tw-passagedata><tw-passagedata pid="52" name="pairs" tags="definition" position="600,1100" size="100,100">&lt;div class =&quot;definition&quot;&gt;
+&lt;li&gt; Ou de (link-reveal:&quot;laisser les génération futures s&#39;appuyer sur votre travail pour faire avancer la science&quot;)[[[FIN-&gt;CREDITS]]]. &lt;/li&gt;&lt;/ol&gt;</tw-passagedata><tw-passagedata pid="52" name="pairs" tags="definition" position="600,1100" size="100,100">&lt;div class =&quot;definition&quot;&gt;
 &lt;b&gt;Def&lt;/b&gt; (pair). On définit les pairs comme les autres expert de la communauté de recherche. 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="etatdart" tags="definition" position="700,1100" size="100,100"></tw-passagedata><tw-passagedata pid="54" name="pauseCafé" tags="spécial" position="1700,500" size="100,100">&lt;h2&gt;L&#39;heure du thé&lt;/h2&gt;
 &lt;p&gt;Comme chaque jour, vous décidez de prendre une pause café/thé. Ceci est toujours une occasion de discuter de votre recherche avec des collègues dans un cadre plus décontracté.  Cette pause est même souvent institutionalisé dans de nombreux départements.&lt;/p&gt;
 
-&lt;div class = &quot;consigne&quot;&gt;Chaque membre de l&#39;équipe explique aux membre de l&#39;équipe un concept que vous avez appris aujourd&#39;hui.&lt;/div&gt;
+&lt;div class = &quot;consigne&quot;&gt;Chaque membre de l&#39;équipe explique aux autres membres de l&#39;équipe un concept que vous avez appris aujourd&#39;hui en moins de 5 mots..&lt;/div&gt;
 
-(link-goto:&quot;Revenez à votre recherche&quot;, $passageBeforePause)</tw-passagedata><tw-passagedata pid="55" name="commissions" tags="definition" position="700,1200" size="100,100"></tw-passagedata><tw-passagedata pid="56" name="randomLecture" tags="spécial" position="200,800" size="100,100">(set: $wentToLecture to (a:&quot;Lecture_1&quot;,&quot;Lecture_2&quot;,&quot;Lecture_3&quot;,&quot;Lecture_4&quot;,&quot;Lecture_5&quot;)-(history:))
+(link-goto:&quot;Revenez à votre recherche&quot;, $passageBeforePause)
+
+</tw-passagedata><tw-passagedata pid="55" name="commissions" tags="definition" position="700,1200" size="100,100"></tw-passagedata><tw-passagedata pid="56" name="randomLecture" tags="spécial" position="200,800" size="100,100">(set: $wentToLecture to (a:&quot;Lecture_1&quot;,&quot;Lecture_2&quot;,&quot;Lecture_3&quot;,&quot;Lecture_4&quot;,&quot;Lecture_5&quot;)-(history:))
 (set: $goingTo to (either: ...$wentToLecture))
 (print:$goingTo)
 (set: _nextCaseNumber to (num: ...(str-find: (p:digit,...digit), $goingTo)))
@@ -612,8 +649,9 @@ Faites 3 grandes respirations.
 &lt;ol class=&quot;passage-link&quot;&gt;
 	&lt;li&gt;(link: &quot;Il est temps de faire une pause&quot;)[(set:$santé to it+4)(go-to: (either: &quot;Pause_1&quot;, &quot;Pause_2&quot;, &quot;Pause_3&quot;,&quot;Pause_4&quot;)).]&lt;/li&gt;
     &lt;li&gt;(link:&quot;Continuer à travailler&quot;)[(go-to: &quot;Fatigué&quot;)]&lt;/li&gt;
-&lt;/ol&gt;</tw-passagedata><tw-passagedata pid="62" name="GoodChanceStrikes" tags="spécial" position="700,800" size="100,100">&lt;ol&gt;
-(if:$chapitre is 2)[&lt;li&gt;Lors d&#39;un |definition&gt;[[[séminaire -&gt;séminaire]]], vous discutez avec un chercheur en visite des états-unis. Il est la première personne que vous rencontrez qui comprend réellement votre travail! Il vous confirme que vous êtes sur la bonne voie et  (link: &quot;cela vous remotive!&quot;)[(set:$chapitre to 3)(go-to: &quot;randomLabo&quot;)] &lt;/li&gt;](else-if:$chapitre is 3)[&lt;li&gt;Vous avez oublié de cryogéniser une colonie de bactérie et elle a été laissé à l&#39;air libre pendant une semaine... Dans le doute, vous (link-reveal:&quot;analysez la colonie. &quot;)[Quelle chance! Il se trouve qu&#39;elle a muté dans une forme que vous recherchiez, cela  (link: &quot;acclélère vos recherches.&quot;)[(set:$chapitre to 4)(go-to: &quot;randomAnalyse&quot;)] &lt;/li&gt;)]](else-if:$chapitre is 4)[&lt;li&gt; (link: &quot;votre document est accepté! &quot;)[(set:$chapitre to 5)(go-to: &quot;Redaction_5&quot;)&lt;/li&gt;)]]
+&lt;/ol&gt;</tw-passagedata><tw-passagedata pid="62" name="GoodChanceStrikes" tags="spécial" position="700,800" size="100,100">&lt;h2&gt;Quelle chance!&lt;/h2&gt;
+&lt;ol class=&quot;passage-link&quot;&gt;
+(if:$chapitre is 2)[&lt;li&gt;Lors d&#39;un |definition&gt;[[[séminaire -&gt;séminaire]]], vous discutez avec un chercheur en visite des états-unis. Il est la première personne que vous rencontrez qui comprend réellement votre travail! Il vous confirme que vous êtes sur la bonne voie et  (link: &quot;cela vous remotive!&quot;)[(set:$chapitre to 3)(go-to: &quot;randomLabo&quot;)] &lt;/li&gt;](else-if:$chapitre is 3)[&lt;li&gt;Vous avez oublié de cryogéniser une colonie de bactérie et elle a été laissé à l&#39;air libre pendant une semaine... Dans le doute, vous (link-reveal:&quot;analysez la colonie. &quot;)[Quelle chance! Il se trouve qu&#39;elle a muté dans une forme que vous recherchiez, cela  (link: &quot;acclélère vos recherches.&quot;)[(set:$chapitre to 4)(go-to: &quot;randomAnalyse&quot;)] &lt;/li&gt;)]](else-if:$chapitre is 4)[&lt;li&gt; Vos résultats sont très intéressants et un élève que vous supervisez finit de faire l&#39;analyse des données. Vous pouvez (link: &quot;directement passer à la rédaction .&quot;)[(set:$chapitre to 5)(go-to: &quot;Redaction_1&quot;)&lt;/li&gt;)]]
 &lt;/ol&gt;</tw-passagedata><tw-passagedata pid="63" name="Pause_5" tags="spécial pause" position="2125,1225" size="100,100">&lt;h2&gt;Relativisez&lt;/h2&gt;
 
 &lt;p&gt;Vous allez vous plaindre de la difficulté de votre travail au près d&#39;autres chercheurs. Ils se plainent aussi. Vous ne vous comprenez pas mutuellement mais compatissez dans la plainte.... ça va mieux! &lt;/p&gt;
@@ -628,7 +666,7 @@ Faites 3 grandes respirations.
 &lt;b&gt;Def&lt;/b&gt; (poster de présentation). Avant un quelconque projet de recherche, il est souvent nécessaire d&#39;élaborer une description consise et précise du plan et des objectifs d&#39;un projet.
 &lt;/div&gt;
 
-(link-goto:&quot;Retour&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="69" name="Untitled Passage" tags="" position="1700,1100" size="100,100">&lt;h2&gt;25. Réseautage&lt;/h2&gt;
+(link-goto:&quot;Retour&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="69" name="Untitled Passage" tags="" position="2100,800" size="100,100">&lt;h2&gt;25. Réseautage&lt;/h2&gt;
 
 &lt;p&gt;Connaitre des personnes dans le domaine fait partie des qualités d&#39;un bon chercheur. Il doit connaitre les personnes avec qui collaborer&lt;/p&gt;
 
@@ -636,20 +674,25 @@ Faites 3 grandes respirations.
 &lt;li&gt;&lt;/li&gt;
 (display:&quot;RandomEvent&quot;)
 &lt;/ol&gt;</tw-passagedata><tw-passagedata pid="70" name="refusDePublication" tags="spécial" position="1625,300" size="100,100">&lt;h2&gt;Refus de publication&lt;/h2&gt;
-&lt;p&gt;Vos modifications ne sont malheuresement pas suffisantes et votre publication est rejetée. Les retours vous demandent de (link: &quot;retourner au travail&quot;)[(go-to:&quot;randomAnalyse&quot;)] afin de revenir avec de meilleures analyses.&lt;/p&gt;</tw-passagedata><tw-passagedata pid="71" name="conférence" tags="definition" position="700,1300" size="100,100">congrès scientifique</tw-passagedata><tw-passagedata pid="72" name="demarcheScientifique" tags="" position="500,1400" size="100,100"></tw-passagedata><tw-passagedata pid="73" name="[distinctions" tags="" position="600,1400" size="100,100"></tw-passagedata><tw-passagedata pid="74" name="modèles" tags="" position="700,1400" size="100,100">&lt;div class =&quot;definition&quot;&gt;
+&lt;p&gt;Vos modifications ne sont malheuresement pas suffisantes et votre publication est rejetée. Les retours vous demandent de (link: &quot;retourner au travail&quot;)[(go-to:&quot;randomAnalyse&quot;)] afin de revenir avec de meilleures analyses.&lt;/p&gt;</tw-passagedata><tw-passagedata pid="71" name="conférence" tags="definition" position="700,1300" size="100,100">congrès scientifique</tw-passagedata><tw-passagedata pid="72" name="demarcheScientifique" tags="" position="500,1400" size="100,100"></tw-passagedata><tw-passagedata pid="73" name="modèles" tags="" position="700,1400" size="100,100">&lt;div class =&quot;definition&quot;&gt;
 &lt;b&gt;Def&lt;/b&gt; (modèle scientifique). Un modèle scientifique est une représentation simplifiée de la réalité. 
 
 &lt;b&gt;Exemples&lt;/b&gt; Toutes les théories en physique: relativité, gravitation, quantique sont des modèles. En chimie on connait tous le modèle des atomes. Les interactions sociales peuvent être modèlisées par des réseaux mathématiques. Les mathématiques servent d&#39;outil de modélisation par excellence dans tous type de sciences.
 &lt;/div&gt;
 
-(link-goto:&quot;Retour&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="75" name="Pause_6" tags="pause" position="2225,1225" size="100,100">&lt;h2&gt;&lt;/h2&gt;
+(link-goto:&quot;Retour&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="74" name="Pause_6" tags="pause" position="2225,1225" size="100,100">&lt;h2&gt;&lt;/h2&gt;
 
 &lt;p&gt;Vous allez vous plaindre de la difficulté de votre travail au près d&#39;autres chercheurs. Ils se plainent aussi. Vous ne vous comprenez pas mutuellement mais compatissez dans la plainte.... ça va mieux! &lt;/p&gt;
 
 &lt;div class = &quot;consigne&quot;&gt;&lt;/div&gt;
-(link-goto:&quot;C&#39;est reparti!&quot;, $passageBeforePause)</tw-passagedata><tw-passagedata pid="76" name="definition" tags="" position="500,1500" size="100,100">&lt;div class =&quot;definition&quot;&gt;
+(link-goto:&quot;C&#39;est reparti!&quot;, $passageBeforePause)</tw-passagedata><tw-passagedata pid="75" name="definition" tags="" position="500,1500" size="100,100">&lt;div class =&quot;definition&quot;&gt;
 &lt;b&gt;Def&lt;/b&gt; (définition). Ceci est une définition.
-&lt;/div&gt;</tw-passagedata></tw-storydata>
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="76" name="distinctions" tags="" position="600,1400" size="100,100"></tw-passagedata><tw-passagedata pid="77" name="Viaziovska" tags="definition" position="600,1500" size="100,100">&lt;h2&gt;Maryna Viazovska&lt;/h2&gt;
+
+Maryna Viazovska est lauréate de la prestigieuse médaille Fields, considérée comme le Prix Nobel des mathématiques. Il récompense son travail sur les empilements de sphères dans les dimensions 8 et 24, alors qu’avant ses recherches, aucune démonstration ne permettait de dépasser les 3 dimensions.
+TODO
+&lt;!--https://rapport-annuel.epfl.ch/fr/2022/recherche/une-mathematicienne-de-lepfl-recoit-la-medaille-fields/--&gt;
+(link-goto:&quot;Retour&quot;, (history:)&#39;s last)</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
