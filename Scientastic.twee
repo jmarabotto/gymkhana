@@ -16,7 +16,8 @@ Scientastic
     "info": "red",
     "definition": "red",
     "obligé": "blue",
-    "pause": "green"
+    "pause": "green",
+    "externe": "orange"
   },
   "zoom": 0.6
 }
@@ -28,6 +29,7 @@ Scientastic
 <div class="consigne"></div>
 <ol class ="passage-link">
 (if:$nAnalyse>0)[<li>(if: $nRedaction>1)[Cette nouvelle analyse vous parait bien mieux ficelée. Après avoir modifié votre article en conséquence, vous (link:"l'envoyez à nouveau pour qu'il soit révisé.")[(go-to:"Redaction_5")]](else:)[Vos analyses sont concluantes et vous voulez maintenant (link:"commencer à publier vos résultats")[(go-to:"Redaction_1")]]. </li>](else:)[<li>C'est un bon début, (link:"continuez à analyser vos résultats")[(go-to:"randomAnalyse")]</li>]
+(display:"RandomAnnexe")
 (display:"RandomEvent")
 </ol>
 
@@ -38,6 +40,7 @@ Scientastic
 <div class="consigne">A DEVELOPPER: Filtrez les billes dans le bac (e.g. chaque bille représente une mesure différente et les filtres des conditions différentes). </div>
 <ol class ="passage-link">
 (if:$nAnalyse>0)[<li>(if: $nRedaction>1)[Cette nouvelle analyse vous parait bien mieux ficelée. Après avoir modifié votre article en conséquence, vous (link:"l'envoyez à nouveau pour qu'il soit révisé.")[(go-to:"Redaction_5")]](else:)[Vos analyses sont concluantes et vous voulez maintenant (link:"commencer à publier vos résultats")[(go-to:"Redaction_1")]]. </li>](else:)[<li>C'est un bon début, (link:"continuez à analyser vos résultats")[(go-to:"randomAnalyse")]</li>]
+(display:"RandomAnnexe")
 (display:"RandomEvent")
 </ol>
 
@@ -48,6 +51,7 @@ Scientastic
 <div class="consigne"></div>
 <ol class ="passage-link">
 (if:$nAnalyse>0)[<li>(if: $nRedaction>1)[Cette nouvelle analyse vous parait bien mieux ficelée. Après avoir modifié votre article en conséquence, vous (link:"l'envoyez à nouveau pour qu'il soit révisé.")[(go-to:"Redaction_5")]](else:)[Vos analyses sont concluantes et vous voulez maintenant (link:"commencer à publier vos résultats")[(go-to:"Redaction_1")]]. </li>](else:)[<li>C'est un bon début, (link:"continuez à analyser vos résultats")[(go-to:"randomAnalyse")]</li>]
+(display:"RandomAnnexe")
 (display:"RandomEvent")
 </ol>
 
@@ -59,8 +63,9 @@ Scientastic
 <div class ="consigne">Vous avez besoin d'une fonction pour <b>trouver la valeur moyenne arithmétique d'une jeu de données</b> pour une analyse statistique. Il semblerait que vous ayez déjà rencontré cette fonction il y a bien longtemps... 
 
 Rentrez le nom de cette commande dans la fenêtre puis appuyez sur RUN ci-dessous.
-(set:$solutionNomFonction to "numpy.mean")<command>(input-box: bind $reponseOrdi,"=XXXX=", "Scientastic shell (v1.0.0)\nC:Users/admin/scientastic$ python \n Python 3.11.5 \n >>> ")(link-rerun: '<span id ="enter">RUN &#x21A9;</span>')[(if:$solutionNomFonction is in $reponseOrdi)[<br> moyenne = (char-style: via (t8n-delay:pos*60)+(t8n:'instant'))[6.62×10<sup>-34</sup>] <br> (t8n:'instant')+(t8n-delay:2s)[ Bien joué, vous trouvez une valeur moyenne très intéressante et surprenante <ol class="passage-link">(if:$nAnalyse>0)[<li>(if: $nRedaction>1)[Cette nouvelle analyse vous parait bien mieux ficelée. Après avoir modifié votre article en conséquence, vous (link:"l'envoyez à nouveau pour qu'il soit révisé.")[(go-to:"Redaction_5")]](else:)[Vos analyses sont concluantes et vous voulez maintenant (link:"commencer à publier vos résultats")[(go-to:"Redaction_1")]]. </li>](else:)[<li>C'est un bon début d'analyse, (link:"continuez à analyser vos résultats")[(go-to:"randomAnalyse")]</li>]</ol>]](else:)[<br> Incorrect, si vous ne vous souvenez plus, vous pouvez retourner (link: "réviser vos connaissances de base")[(set:$chapitre to 1,$numCase to 4)(go-to: "Lecture_4")]]]</command></div><ol class ="passage-link">
+(set:$solutionNomFonction to "mean")<command>(input-box: bind $reponseOrdi,"=XXXX=", "Scientastic shell (v1.0.0)\nC:Users/admin/scientastic$ python \n Python 3.11.5 \n >>> ")(link-rerun: '<span id ="enter">RUN &#x21A9;</span>')[(if:$solutionNomFonction is in $reponseOrdi)[<br> moyenne = (char-style: via (t8n-delay:pos*60)+(t8n:'instant'))[6.62×10<sup>-34</sup>] <br> (t8n:'instant')+(t8n-delay:2s)[ Bien joué, vous trouvez une valeur moyenne très intéressante et surprenante <ol class="passage-link">(if:$nAnalyse>0)[<li>(if: $nRedaction>1)[Cette nouvelle analyse vous parait bien mieux ficelée. Après avoir modifié votre article en conséquence, vous (link:"l'envoyez à nouveau pour qu'il soit révisé.")[(go-to:"Redaction_5")]](else:)[Vos analyses sont concluantes et vous voulez maintenant (link:"commencer à publier vos résultats")[(go-to:"Redaction_1")]]. </li>](else:)[<li>C'est un bon début d'analyse, (link:"continuez à analyser vos résultats")[(go-to:"randomAnalyse")]</li>]</ol>]](else:)[<br> Incorrect, si vous ne vous souvenez plus, vous pouvez retourner (link: "réviser vos connaissances de base")[(set:$chapitre to 1,$numCase to 4)(go-to: "Lecture_4")]]]</command></div><ol class ="passage-link">
 (if: (history:) does not contain "Lecture_4")[<li>Vous ne vous en souvenez plus, il semblerait que vous devriez (link: "réviser vos connaissances de base")[(set:$chapitre to 1,$numCase to 4)(go-to: "Lecture_4")]. </li>]
+(display:"RandomAnnexe")
 (display:"RandomEvent")
 </ol>
 
@@ -71,6 +76,7 @@ Rentrez le nom de cette commande dans la fenêtre puis appuyez sur RUN ci-dessou
 <div class="consigne"></div>
 <ol class ="passage-link">
 (if:$nAnalyse>0)[<li>(if: $nRedaction>1)[Cette nouvelle analyse vous parait bien mieux ficelée. Après avoir modifié votre article en conséquence, vous (link:"l'envoyez à nouveau pour qu'il soit révisé.")[(go-to:"Redaction_5")]](else:)[Vos analyses sont concluantes et vous voulez maintenant (link:"commencer à publier vos résultats")[(go-to:"Redaction_1")]]. </li>](else:)[<li>C'est un bon début, (link:"continuez à analyser vos résultats")[(go-to:"randomAnalyse")]</li>]
+(display:"RandomAnnexe")
 (display:"RandomEvent")
 </ol>
 
@@ -92,11 +98,11 @@ Rentrez le nom de cette commande dans la fenêtre puis appuyez sur RUN ci-dessou
 
 <sup>2</sup> Concept inspiré par <a href="https://research.wmz.ninja/projects/phd/index.html">PhD Simulator</a>, 2023.
 
-<sup>3</sup> Réalisation technique inspirée par <a href="https://zephyo.itch.io/stink-bug-plague">Stink bug plague</a>, 2016.
+<sup>3</sup> Réalisation technique; <a href="https://twinery.org/">Twine</a> Harlowe. Format inspirée par <a href="https://zephyo.itch.io/stink-bug-plague">Stink bug plague</a>, 2016.
 
-<sup>4</sup> Merci au membres du SPS pour leurs annecdotes de recherche.
+<sup>4</sup> Merci au membres du SPS pour leurs annecdotes de recherche et leur critiques.
 
-ℹ️ Les passages en [[jaune sont des décisions->CREDITS]], les passages en |definition>[[[bleu->definition]]] sont des lien vers une définition ou explication détaillée de certains concepts. La dynamique du jeu est en partie aléatoire et il se peut que l'histoire ne paraisse pas entièrement cohérente par moment. Certaines cases ont des jeux, des éléments interactifs, d'autres n'en ont pas. Les jeux ont un thème scientifique mais aucune rigueur scientifique. Le nom du projet ou du groupe n'a rien à voir avec le reste du jeux.
+ℹ️ Cette aventure interactive est destinée pour des équipes de 2 à 4 joueurs. Les passages en [[jaune sont des décisions->CREDITS]], les passages en |definition>[[[bleu->definition]]] sont des lien vers une définition ou explication détaillée de certains concepts. La dynamique du jeu est en partie aléatoire et il se peut que l'histoire ne paraisse pas totalement cohérente par moment. Certaines cases ont des jeux, des éléments interactifs, d'autres n'en ont pas, suivez les instructions sur la tablette. Les jeux ont un thème scientifique faisant référence à certains concepts mais aucune rigueur scientifique. Le nom du projet ou du groupe n'a rien à voir avec le reste du jeux.
 
 ↪️(link-goto:"Retour au jeu", (history:)'s last)
 
@@ -117,6 +123,7 @@ Rentrez le nom de cette commande dans la fenêtre puis appuyez sur RUN ci-dessou
         (go-to: _passage)
     ]
 ]
+(print:(history:))
 
 
 :: Citations [definition] {"position":"700,1000","size":"100,100"}
@@ -129,7 +136,7 @@ Rentrez le nom de cette commande dans la fenêtre puis appuyez sur RUN ci-dessou
 <li>Le nombre d'Erdős d'une personne est sa « distance de collaboration » avec le mathématicien hongrois Paul Erdős (1913-1996), mesurée par publication conjointe.</li></ul></div>
 
 
-:: Conférence [spécial] {"position":"1700,1000","size":"100,100"}
+:: Conférence [externe] {"position":"1700,1000","size":"100,100"}
 <h2>Conférence</h2>
 <p>Vous êtes à (either:"New York","Sydney","Buenos Aires","Tokyo","Pretoria","Ljubljiana","Göttingen","Singapour") pour une |definition>[[[conférence->conférence]]] réunissant les meilleurs scientifiques de votre domaine. C'est l'occasion de réseauter. Connaitre des personnes dans le domaine fait partie des qualités d'un bon chercheur ou d'une bonne chercheuse. Il ou elle doit connaitre les personnes avec qui collaborer.
 
@@ -151,8 +158,8 @@ Vous savez qu'une experte se trouve également à cette conférence mais vous ne
 <li> Ou de (link-reveal:"laisser les génération futures s'appuyer sur votre travail pour faire avancer la science")[[[FIN->CREDITS]]]. </li></ol>
 
 
-:: Enseignement [spécial] {"position":"1700,800","size":"100,100"}
-<h2>Supervision d'une heure d'exercice</h2>
+:: Enseignement [externe] {"position":"1700,800","size":"100,100"}
+<h2>Enseignement</h2>
 
 <p>En plus de votre recherche, vous êtes |definition>[[[assistant d'enseignement->TA]]]. L'enseignement fait partie intégrante de la vie des chercheurs et chercheuses universitaire. Cela permet de transmettre le savoir et accessoirement de revoir certaines notions de bases de son propre domaine de recherche.</p>
 <div class="consigne">Désignez un enseignant dans l'équipe, celui ou celle ci doit faire deviner le mot suivant  </div>
@@ -211,6 +218,7 @@ data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAACFYAAAPLCAYAAAB/hZ+yAAAACXBIWXMAAC
 <ol class ="passage-link">
 (if: $nLabo<2)[<li>Vous pensez qu'il serait judicieux de (link: "collaborer avec d'autres chercheurs")[(go-to:(either:"Labo_3","Labo_4"))] avant de passer à l'analyse.</li>](else:)[[<li>Vous souhaitez (link: "récolter plus d'échantillons")[(go-to:"randomLabo")] avant de passer à l'analyse.</li>]
 <li>Vous pensez avoir récolté assez de données, et vous voulez (link:"les analyser")[(go-to:"randomAnalyse")]</li>]
+(display:"RandomAnnexe")
 (display:"RandomEvent")
 </ol>
 
@@ -241,6 +249,7 @@ data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAACFYAAAPLCAYAAAB/hZ+yAAAACXBIWXMAAC
 (if:$aide is "True")[L'expérience terminée, vous (link:"revenez à votre propre recherche")[(go-to:"Prototypage_4")].](else:)[<ol class ="passage-link">
 (if: $nLabo<2)[<li>Vous retournez (link: "récolter plus d'échantillons")[(go-to:(either:"Labo_2","Labo_5"))] avant de passer à l'analyse.</li>]
 <li>Vous pensez avoir récolté assez de données, et vous voulez (link:"les analyser")[(go-to:"randomAnalyse")]</li>
+(display:"RandomAnnexe")
 (display:"RandomEvent")
 </ol>]
 
@@ -263,7 +272,7 @@ data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAACFYAAAPLCAYAAAB/hZ+yAAAACXBIWXMAAC
 :: Lecture_1 {"position":"1000,500","size":"100,100"}
 <h2>1. Première réunion de groupe</h2>
 
-<p>Félicitation, votre projet (print:$nomProjet) a été accepté par les différentes |definition>[[[commissions départementales et universitaires->commissions]]] ! Après vous être réunis avec votre groupe de recherche pour définir les étapes clés de votre recherche pour atteindre vos objectifs, vous ... </p>
+<p>Félicitation, votre projet (print:$nomProjet) a été accepté par les différentes |definition>[[[commissions départementales et universitaires->commissions]]] ! Après vous être réunis avec votre groupe de recherche pour définir les étapes clés de votre recherche afin d'atteindre vos objectifs, vous ... </p>
 <ol class="passage-link"><li> vous décidez de (link: "lire les articles")[(go-to: "Lecture_2")] proposés par les membres du groupe.</li>
 <li> préférez vous (link: "former sur un logiciel")[(go-to: "Lecture_4")] dont vous aurez besoin par la suite.</li>
 <li> préférez directement (link: "faire des expériences")[(if:$nLecture<3)[(go-to:"zéroExpérience")](else:)[(go-to:"randomPrototypage")]].</li>
@@ -275,7 +284,7 @@ data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAACFYAAAPLCAYAAAB/hZ+yAAAACXBIWXMAAC
 
 <p> La lecture d'article de recherche est essentielle pour rester informé de |definition>[[[l'état de l'art->etatdart]]] et progresser dans son domaine. Le système de |definition>[[[références et citations->Citations]]] facilite la connexion entre un article et les travaux sur lesquels il se base.</p>
 
-<div class = "consigne">  Vous avez lu beaucoup de documents et n'arrivez plus à retrouver le nom de l'auteur d'une publication à la source de votre domaine d'études. Aidez vous des articles annotés sur votre bureau pour retrouver ce nom. Commencez avec l'article "The sphere packing problem in dimension 8." Annals of mathematics (2017): 991-1015. de |definition>[[[Maryna S. Viazovska->Viaziovska]]] et suivez les citations que vous aviez ''surlignés en jaune''. Vers quel célèbre matématicien ces citations vous mènent-elle?
+<div class = "consigne"> Commencez avec l'article "The sphere packing problem in dimension 8." Annals of mathematics (2017): 991-1015. de |definition>[[[Maryna S. Viazovska->Viazovska]]] et suivez les citations ''surlignés en jaune'' jusqu'à un article de 1876. Vers quel nom de célèbre matématicien ces citations vous mènent-elles?
 
 (set:$solutionAuteur to "gauss")(input: bind $reponseAuteur,"XX=",$reponseAuteur)</div> 
 (link-rerun: '<span id ="enter">Vérifier &#x21A9;</span>')[(if: $reponseAuteur contains 'gauss' or  $reponseAuteur contains 'Gauss'  or $reponseAuteur contains 'GAUSS')[<br>(t8n:'slide-down')[''//Johann Carl Friedrich Gauss//''] <br> Une légende des mathématiques! Son travail est encore bien présent 170 ans après sa mort. <ol class="passage-link"><li>Grâce au système de |definition>[[[références et citations->Citations]]], les publication générales sur votre sujet vous ont mené vers des publication plus spécifiques. Continuer à (link: " lire des documents de recherche")[(set:$connaissances to it+1)(go-to: "Lecture_3")].</li>
@@ -288,7 +297,7 @@ data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAACFYAAAPLCAYAAAB/hZ+yAAAACXBIWXMAAC
 <p>A force de creuser plus loin, vous commencez à devenir des experts théorique dans votre domaine et vous étalez toute votre connaissance lors du meeting hebdomadaire du groupe. </p>
 
 <ol class = "passage-link">
-<li>(either:"Vous êtes avides de connaissances","Vous voulez toujours plus apprendre", "Votre soif d'apprendre s'intensifie"), (link:(either:"continuez à lire.","lire toujours plus .","lire encore.","vous finissez encore un livre.", "vous suivez un cours sur une nouvelle théorie à la mode."))[(go-to:"Lecture_3")(set:$santé to it-1)]</li>
+<li>(either:"Vous êtes avides de connaissances","Vous voulez toujours plus apprendre", "Votre soif d'apprendre s'intensifie"), (link:(either:"continuez à lire.","lire toujours plus .","lire encore.","vous finissez encore un livre.", "vous suivez un cours sur une nouvelle théorie à la mode."))[(set:$santé to it-1)(go-to:"Lecture_3")]</li>
 <li>Vous préférez commencer à utiliser vos connaissances pour (link:"expérimenter sur certaines connaissances.")[(go-to:"randomPrototypage")]</li>
 (display:"RandomEvent")
 </ol>
@@ -313,7 +322,7 @@ data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAACFYAAAPLCAYAAAB/hZ+yAAAACXBIWXMAAC
 (link:" Vous lisez un peu plus sur cet outil et il s'avère que vous apprenez beaucoup!")[
 <ol class="passage-link">
 <li>Vous voulez (link: " tester ces nouvelles perspectives")[(set:$chapitre to 2,$numCase to 4)(go-to: "Prototypage_5")] pour votre recherche. </li>
-<li>Un collaborateur vous demande de l'aider sur une manipulation: (link:"il s'agirait de gagner en expérience pratique")[(go-to:"Prototypage_4")]</li>
+<li>Un collaborateur vous demande de l'aider sur une manipulation: (link:"il s'agirait de gagner en expérience pratique")[(go-to:"Prototypage_4")].</li>
 (display:"RandomEvent")
 </ol>]
 
@@ -340,7 +349,7 @@ Faites 3 grandes respirations.
 (link-goto:"C'est reparti!", $passageBeforePause)
 
 
-:: Pause_4 [spécial pause] {"position":"2025,1225","size":"100,100"}
+:: Pause_4 [spécial pause] {"position":"1725,1325","size":"100,100"}
 <h2>C'est les vacances</h2>
 <div class = "consigne">Levez la tête de votre écran pendant 10 secondes et observez les autres équipes galérer.</div>
 
@@ -348,7 +357,7 @@ Faites 3 grandes respirations.
 (transition:"dissolve")+(transition-time:5s)+(transition-delay:5s)[(link-goto:"C'est reparti!", $passageBeforePause)]
 
 
-:: Pause_5 [spécial pause] {"position":"2125,1225","size":"100,100"}
+:: Pause_5 [spécial pause] {"position":"1825,1325","size":"100,100"}
 <h2>Relativisez</h2>
 
 <p>Vous allez vous plaindre de la difficulté de votre travail au près d'autres chercheurs. Ils se plainent aussi. Vous ne comprenez pas les problèmes des autres mais compatissez dans la plainte.... ça va mieux! </p>
@@ -357,7 +366,7 @@ Faites 3 grandes respirations.
 (link-goto:"C'est reparti!", $passageBeforePause)
 
 
-:: Pause_6 [pause] {"position":"2225,1225","size":"100,100"}
+:: Pause_6 [pause] {"position":"1925,1325","size":"100,100"}
 <h2></h2>
 
 <p></p>
@@ -370,10 +379,11 @@ Faites 3 grandes respirations.
 Normative
 
 
-:: ProblèmesTechniques [spécial] {"position":"1700,600","size":"100,100"}
+:: ProblèmesTechniques [externe] {"position":"1700,600","size":"100,100"}
 <h2> Problèmes Techniques</h2>
 
-(if:$computerUnlocked is false)[<p> Votre belle dynamique des dernières semaines est bloquée, vous n'arrivez pas à vous connecter à votre ordinateur. <div class="consigne"> Insérer un casse tête pour retrouver le code de l'ordinateur</div></p>
+(if:$computerUnlocked is false)[<p> Votre belle dynamique des dernières semaines est bloquée, vous n'arrivez pas à vous connecter à un logiciel sur votre ordinateur. </p>
+<div class="consigne">Heureusement vous avez enregistré votre clé d'activation sur un vieux disque dur qui a entre temp été formaté. Voici ce qu'il reste de votre clé d'activation:  Utilisez vos connaissances en cryptographie pour trouver le code. </div>
 
 Rentrez le code de l'ordinateur:
 (input: bind $reponseOrdi,"X==")]
@@ -390,9 +400,7 @@ Rentrez le code de l'ordinateur:
 :: Prototypage_1 {"position":"1000,650","size":"100,100"}
 <h2>6. Reproduction de résultats</h2>
 <p>Vous essayez de reproduire les résultats d'une publication précédente. Cela vous fait mieux comprendre votre sujet et les méthodes utilisées. </p> 
-(link:"Reproduction réussie!")[
-<ol class="passage-link">
-(if:$nLecture <3)[<li>Toutefois, les résultats ne semblent ne pas faire de sens, vous (link: "retournez dans vos bouquins") [(go-to: "randomLecture")</li>] pour en apprendre un peu plus.](else-if:$nPrototypage <1)[<li> Cela vous fait avancer, et vous donne des idées de ce qui pourrait être amélioré. (link:"Lancez vous dans plus de tests préliminaires.")[(go-to:"randomPrototypage")]. </li>](else:)[<li>Ces méthodes étaient ce qui vous manquait pour optimiser votre processus de prise de mesure. (link:"Vous pouvez dès à présent passer au laboratoire pour commencer à prendre des mesures.")[(go-to:"randomLabo")]</li>]
+(link:"Reproduction réussie!")[<ol class="passage-link">(if:$nLecture <3)[<li>Toutefois, les résultats ne semblent ne pas faire de sens, vous (link: "retournez dans vos bouquins") [(go-to: "randomLecture")</li>] pour en apprendre un peu plus.](else-if:$nPrototypage <1)[<li> Cela vous fait avancer, et vous donne des idées de ce qui pourrait être amélioré. (link:"Lancez vous dans plus de tests préliminaires.")[(go-to:"randomPrototypage")]</li>](else:)[<li>Ces méthodes étaient ce qui vous manquait pour optimiser votre processus de prise de mesure. (link:"Vous pouvez dès à présent passer au laboratoire pour commencer à prendre des mesures.")[(go-to:"randomLabo")]</li><li> Vous préférez quand même faire plus de tests et vous (link:"lancer vous dans plus de tests préliminaires.")[(go-to:"randomPrototypage")]. </li>]
 (display:"RandomEvent")
 </ol>]
 
@@ -402,12 +410,12 @@ Rentrez le code de l'ordinateur:
 
 <p>Vos quelques tests préliminaires vous permettent d'avoir assez de connaissances pour énoncer des hypothèses, que vous aimeriez vérifier par la suite.</p>
 
-<div class = "consigne">Écrivez 1 hypothèse qui expliquerait (either:"pourquoi nos dessous de pieds sont chatouilleux","pourquoi un écran d'ordinateur est rectangulaire","pourquoi as-t-on 5 doigts sur un main, (et pas 4 ou 6 ou 17)")?
-Collez ensuite votre réponse au dos du panneau.</div>
+<div class = "consigne">(either:"Pourquoi nos dessous de pieds sont chatouilleux","Pourquoi un écran d'ordinateur est rectangulaire","Pourquoi as-t-on 5 doigts sur un main, (et pas 4 ou 6 ou 17)")?</div>
 
 <ol class="passage-link">
-(link:"C'est fait")[<li>(if:$nLecture <3)[Vos hypothèses sont malheuresement démontées par un collaborateur qui vous propose gentillement de  (link: "retourner dans vos bouquins")[(go-to: "randomLecture")] pour en apprendre un peu plus et revenir avec de meilleures idées.](else-if:$nPrototypage <1)[Cela vous fait avancer, et vous (link:"donne des idées de ce qui pourrait être amélioré.")[(go-to:"randomPrototypage")].](else:)[Ces hypothèses sont très prometteuses et vous pouvez directement (link:"les tester en laboratoire")[(go-to:"randomLabo")].]</li>]
-(display:"RandomEvent")
+(link:"C'est fait")[<li>(if:$nLecture <3)[Vos hypothèses sont malheuresement démontées par un collaborateur qui vous propose gentillement de  (link: "retourner dans vos bouquins")[(go-to: "randomLecture")] pour en apprendre un peu plus et revenir avec de meilleures idées.](else-if:$nPrototypage <1)[Cela vous fait avancer, et vous (link:"donne des idées de ce qui pourrait être amélioré.")[(go-to:"randomPrototypage")].](else:)[Ces hypothèses sont très prometteuses et vous pouvez directement (link:"les tester en laboratoire")[(go-to:"randomLabo")].]</li>
+(display:"RandomAnnexe")
+(display:"RandomEvent")]
 </ol>
 
 
@@ -419,8 +427,9 @@ Collez ensuite votre réponse au dos du panneau.</div>
 <div class="consigne">Un outil en particulier vous parait nécessaire pour développer vos idées. Toutefois il requiert beaucoup de dextérité. A DEVELOPPER: DOCTEUR MABOULE.</div>
 
 <ol class ="passage-link">
-(link:"C'est bon, nous sommes prêts!")[(if:$nLecture <3)[ <li>Vous vous sentez prêt à un niveau pratique mais vous sentez que vous avez encore besoin de quelques connaissances théoriques et vous (link: "retournez dans vos bouquins")[(go-to: "randomLecture")] pour en apprendre un peu plus.</li>](else-if:$nPrototypage <1)[<li> Ce nouvel outil vous inspire pour (link:"essayer de nouvelles idées")[(go-to:"randomPrototypage")]. </li>](else:)[<li>Cet outil était la clé pour développer votre méthode d'expérience, vous pouvez directement passer aux choses sérieuxe et (link:"la tester en laboratoire")[(go-to:"randomLabo")].</li>]]
-(display:"RandomEvent")
+(link:"C'est bon, nous sommes prêts!")[(if:$nLecture <3)[ <li>Vous vous sentez prêt à un niveau pratique mais vous sentez que vous avez encore besoin de quelques connaissances théoriques et vous (link: "retournez dans vos bouquins")[(go-to: "randomLecture")] pour en apprendre un peu plus.</li>](else-if:$nPrototypage <1)[<li> Ce nouvel outil vous inspire pour (link:"essayer de nouvelles idées")[(go-to:"randomPrototypage")]. </li>](else:)[<li>Cet outil était la clé pour développer votre méthode d'expérience, vous pouvez directement passer aux choses sérieuxe et (link:"la tester en laboratoire")[(go-to:"randomLabo")].</li>]
+(display:"RandomAnnexe")
+(display:"RandomEvent")]
 </ol>
 
 
@@ -448,15 +457,20 @@ Collez ensuite votre réponse au dos du panneau.</div>
 <div class = "consigne"></div>
 <ol class ="passage-link">
 (if:$nLecture <3)[ <li>Votre modèle est un peu bancal et il faudrait s'inspirer de nouvelles théories pour le solidifier.  (link: "Retournez dans vos bouquins")[(go-to: "randomLecture")] pour en apprendre un peu plus.</li>](else-if:$nPrototypage <1)[<li> Ce modèle pourrait être peaufiné il faudrait continuer à   (link:" le tester dans plus de scénarios")[(go-to:"randomPrototypage")]. </li>](else:)[<li>Ce modèle est particulièrement efficace, vous pouvez directement (link:"le tester en laboratoire")[(go-to:"randomLabo")].</li>]
+(display:"RandomAnnexe")
 (display:"RandomEvent")
 </ol>
 
 
+:: RandomAnnexe [spécial] {"position":"500,700","size":"100,100"}
+(set: _wentToAnnexes to $casesAnnexes-(history:))(set: _goingTo to (either: ..._wentToAnnexes))(if:$nAnnexes<2)[<li>(if:_goingTo is 'Enseignement')[Vous voulez (link:"préparer un cours")[(go-to:_goingTo)] que vous devrez donner à des élèves dans quelques semaines.](else-if: _goingTo is 'RechercheFonds')[Vous remarquez que vous n'aurez peut être pas assez d'argent pour mener votre recherche à son terme et décidez (link:"de partir à la recherche de fonds")[(go-to:_goingTo)] pour assurer votre futur.](else-if: _goingTo is 'Conférence')[Malgré la montagne de travail que vous avez à faire, vous décidez (link:"d'aller à une conférence sur votre domaine de recherche")[(go-to:_goingTo)].](else-if: _goingTo is 'ProblèmesTechniques')[Vous avez quelques soucis techniques que vous aimeriez les (link:"réparer")[(go-to:_goingTo)] avant qu'ils ne causent trop de soucis.]</li>]
+
+
 :: RandomEvent [spécial] {"position":"500,800","size":"100,100"}
-<!--Ce passage est utilisé pour déclancher des évènement aléatoires qui viennent sans contexte-->(if:$nChance > 0 and $nMalchance > 0 and $nLecture > 2 and $nPrototypage > 1 and $nLabo > 1 and $nAnalyse > 1 and $nRedaction > 1)[<li>Une notification dans votre boite mail apparait. (link: "Consulter votre boite mail")[(set: $chapitre to 6)(go-to:"End")]</li>](if: $santé is 1)[<li>Vous travaillez probablement un peu trop, il serait peut être bon de (link: "faire une pause")[(set:$santé to it+5)(go-to: (either: "Pause_1", "Pause_2", "Pause_3","Pause_4","Pause_5")).]</li>](else-if:$santé <4)[<li>Vous (either:"voulez","avez envie de","pensez qu'il serait mieux de") (link: "faire une pause")[(set:$santé to 6)(go-to: (either: "Pause_1", "Pause_2", "Pause_3","Pause_4","Pause_5"))]</li>]
+<!--Ce passage est utilisé pour déclancher des évènement aléatoires qui viennent sans contexte-->(if:$nChance > 0 and $nMalchance > 0 and $nLecture > 2 and $nPrototypage > 1 and $nLabo > 1 and $nAnalyse > 1 and $nRedaction > 1)[<li>Une notification dans votre boite mail apparait. (link: "Consulter votre boite mail")[(set: $chapitre to 6)(go-to:"End")]</li>](if: $santé is 1)[<li>⚠️🪫Vous travaillez probablement un peu trop, il serait peut être bon de (link: "faire une pause")[(set:$santé to it+5)(go-to: (either: "Pause_1", "Pause_2", "Pause_3","Pause_4","Pause_5")).]</li>](else-if:$santé <4)[<li>Vous (either:"voulez","avez plutôt envie de","pensez qu'il serait mieux de") (link: "faire une pause")[(set:$santé to 6)(go-to: (either: "Pause_1", "Pause_2", "Pause_3","Pause_4","Pause_5"))]</li>]
 
 
-:: RechercheFonds [spécial] {"position":"1700,700","size":"100,100"}
+:: RechercheFonds [externe] {"position":"1700,700","size":"100,100"}
 <h2>Rédaction de propositions de subventions de recherche</h2>
 <p>Pour financer vos recherche, il faut souvent rédiger des proposition de subvention afin que l'universtié, des fondations ou des entreprises vous donne les fonds nécessaires pour poursuivre vos recherches.</p>
 (link-goto:"Revenez à votre recherche", $passageBeforePause)
@@ -474,8 +488,6 @@ Collez ensuite votre réponse au dos du panneau.</div>
 0. Interprétation
 0. Conclusion / Travaux futurs</p>
 
-<div class="consigne">Rédigez en une phrase (soyez créatifs!) une partie de votre article de recherche en vous basant sur la phrase précédente et l'étape de la rédaction à laquelle vous vous trouvez (notée sur le côté). Vous pouvez vous inspirer des textes projetés à l'écran.</div>
-
 <ol class ="passage-link">
 (if:$nRedaction>1)[<li>Vous avez bien amélioré votre article et vous voulez (link:"l'envoyer à nouveau pour le faire réviser")[(go-to:"Redaction_5")].</li>](else:)[
 <li>Vous êtes satisfaits de votre prose mais vous aimeriez (link:"ajouter des figures")[(go-to:"Redaction_2")] pour illustrer votre document.</li>
@@ -487,16 +499,16 @@ Collez ensuite votre réponse au dos du panneau.</div>
 :: Redaction_2 {"position":"1125,1100","size":"100,100"}
 <h2>22. Illustration des résultats</h2>
 
-<p> Les  |definition>[[figure->Figures]] dans les documents de recherche ont une importance capitale mais mettent souvent longtemps à réaliser car il faut qu'ils transmettent l'information en un coup d'oeil. Ils sont particulièrement important pour les |definition>[[[posters de présentation->poster]]]</p>
+<p> Les  |definition>[[[figure->Figures]]] dans les documents de recherche ont une importance capitale mais mettent souvent longtemps à réaliser car il faut qu'ils transmettent l'information en un coup d'oeil. Ils sont particulièrement important pour les |definition>[[[posters de présentation->poster]]]</p>
 
-<div class="consigne">A DEVELOPPER: Pictionnary scientifique avec tableau blanc.</div>
+<div class="consigne">Entrez le total des mots que l'équipe a fait deviné. </div>
 
-
+(set:_reponse to "0")(dropdown: bind _reponse,"0","1","2","3","4","5","6","7","8","9","10","11","12","13+")(link-rerun:"Valider")[
+(if:(a:"0","1","2") contains _reponse)[ Pas facile de faire passer ses idées. Vous pourriez aussi faire un petit effort sur vos figures. Malgré tout ...](else-if:(a:"3","4","5") contains _reponse)[Difficile d'être clair et concis n'est-ce pas? Mais vous avez su faire passer les idées principales a travers vos figures... ](else-if:(a:"6","7","8") contains _reponse)[Beau travail! Vos figures sont de bonne qualité et aideront les lecteurs à mieux comprendre votre travail.](else-if:(a:"9","10","11") contains _reponse)[Excellent! Vos figures sont d'une qualité exceptionelle et, au dela d'une esthétique irréprochable, elles aideront les lecteurs à mieux comprendre votre travail.](else:)[Incroyable! Vos figures sont d'une qualité inédite et, au dela d'une esthétique irréprochable, elles aideront les lecteurs à mieux comprendre votre travail. Vous seriez de très bon médiateur.ice scientifique.]
 <ol class ="passage-link">
-(link:"Vous êtes satisfaits de vos magnifiques figures.")[
-<li>Votre papier est maintenant terminé! Il faut (link:"l'envoyer à différents éditeurs et collègues")[(go-to:"Redaction_3")] et attendre une réponse...</li>]
+<li>Votre papier est maintenant terminé! Il faut (link:"l'envoyer à différents éditeurs et collègues")[(go-to:"Redaction_3")] et attendre une réponse...</li>
 (display:"RandomEvent")
-</ol>
+</ol>]
 
 
 :: Redaction_3 [obligé] {"position":"1250,1100","size":"100,100"}
@@ -507,7 +519,8 @@ Collez ensuite votre réponse au dos du panneau.</div>
 <div class="consigne">D'ailleurs vous avez également reçu des documents à examiner. Faites un compliment et une critique constructive sur les chaussettes de chaque membre de votre équipe.</div>
 
 (link:"C'est fait")[<p> Votre document nécessite des corrections pour être publié dans une revue scientifique, il faut refaire l'analyse.</p>
-<ol class ="passage-link"><li>Vous (link: "reformulez simplement")[(go-to:"refusDePublication")] les quelques phrases qui ont été critiquées pour plaire aux relecteurs et essayez de passer entre les gouttes.</li><li>Vous acceptez les remarques et vous (link: "refaites l'analyse.")[(go-to:"randomAnalyse")]</li>(display:"RandomEvent")
+<ol class ="passage-link"><li>Vous (link: "reformulez simplement")[(go-to:"refusDePublication")] les quelques phrases qui ont été critiquées pour plaire aux relecteurs et essayez de passer entre les gouttes.</li>
+<li>Vous acceptez les remarques et vous (link: "refaites l'analyse.")[(go-to:"randomAnalyse")]</li>(display:"RandomEvent")
 </ol>]
 
 
@@ -549,20 +562,20 @@ Quel dommage, vous mettez un terme à votre projet de recherche! La communauté 
 [[Crédits->CREDITS]]
 
 
-:: RetraiteGroupe [spécial] {"position":"2000,1050","size":"100,100"}
-<h2>Retraite à la montagne</h2>
-
-
 :: Setup [no-header no-footer spécial] {"position":"1200,300","size":"100,100"}
-(set: $nomGroupe to "",$nomProjet to "")
+(set: $nomGroupe to "",$nomProjet to "",$luRègles to false)
 <h2>&sect; 0 - Administration</h2>
 <p>Pour commencer, il faut toujours passer par la case administrative! Veuillez spécifier le nom de votre groupe de recherche:</p>
 <span class = "text_proposition">Ex: (either:"Les scientifiques de l'espace","Les cervaux quantiques","Les cellules ").</span>(input: bind $nomGroupe,"X=", $nomGroupe)
 <p>Et le nom de votre projet de recherche:</p>
-<span class = "text_proposition">Ex: Les effets de la relativité générale sur la sécretion de protéines isomorphes</span>(input: bind $nomProjet,"X", $nomProjet)
+<span class = "text_proposition">Ex: Les effets de la relativité générale sur la sécretion de protéines isomorphes.</span>(input: bind $nomProjet,"X", $nomProjet)
 <p>Cela vous aidera à définir une |definition>[[[proposition de recherche->PropositionDeProjet]]] </p> 
 
-<ol class="passage-link"> <li>(link: "Soumettre votre proposition de recherche")[(set:$numCase to 1))(go-to: "Lecture_1")]</li></ol>
+<p> Encore quelques précisions: <ul><li> Pour que le jeu se passe au mieux, veuillez remettre les jeux en place après être passés sur une case.</li><li> Si vous avez des questions ou un problème n'hésitez surtout pas à demander à un membre de l'organisation. </li><li>Les passages en [[jaune sont des décisions->CREDITS]], les passages en |definition>[[[bleu->definition]]] sont des lien vers une définition ou explication détaillée de certains concepts.</li><li> La dynamique du jeu est en partie aléatoire et il se peut que l'histoire ne paraisse pas totalement cohérente par moment.</li><li> Certaines cases ont des jeux, des éléments interactifs, d'autres n'en ont pas, suivez les instructions sur la tablette et le cas échéant, les règles du jeu sur la case.</li><li> Les jeux ont un thème scientifique faisant référence à certains concepts mais aucune rigueur scientifique.</li></ul></p>
+(checkbox: bind $luRègles, " C'est compris!")
+
+<ol class="passage-link"> <li>(link-rerun: "Soumettre votre proposition de recherche")[(if:$luRègles is true)[(go-to: "Lecture_1")](else:)[
+Assurez vous d'avoir bien lu les règles...]]</li></ol>
 
 
 
@@ -574,7 +587,7 @@ Quel dommage, vous mettez un terme à votre projet de recherche! La communauté 
 
 <ol class="passage-link"><li>C'est bon, on [[se lance.->Setup]]</li>
 <li>Non merci, on [[passe notre tour.->Renoncer]]</li></ol>
-(set: $solved to 0, $connaissances to 0,$maxConnaissances to 5, num-type $santé to 6, $maxSanté to 6, $réseau to 0, $maxRéseau to 3, $chapitre to 1, $chapterHeader to "", $passageBeforePause to "Lecture_1" ,$nChance to 0, $nMalchance to 0 , num-type $dureeProjet to 0, $coursDonné to 0, $coursDemande to 0, $solutionOrdi to "1234",$reponseOrdi to 0, $computerUnlocked to false, num-type $nLecture to 0, num-type  $nPrototypage to 0, num-type $nLabo to 0, num-type $nAnalyse to 0, num-type $nRédaction to 0, $healthBar to "",$aide to "False",$immunité to 0, $immediateCase to (a:'Setup','CREDITS','Start','PropositionDeProjet','Citations','openSource','randomLecture','randomPrototypage'), $caseToInt to (dm:"Lecture_1",1,"Lecture_2",2,"Lecture_3",3,"Lecture_4",4,"Lecture_5",5,"Prototypage_1",6,"Prototypage_2",7,"Prototypage_3",8,"Prototypage_4",9,"Prototypage_5",10,"Labo_1",11,"Labo_2",12,"Labo_3",13,"Labo_4",14,"Labo_5",15,"Analyse_1",16,"Analyse_2",17,"Analyse_3",18,"Analyse_4",19,"Analyse_5",20,"Redaction_1",21,"Redaction_2",22,"Redaction_3",23,"Redaction_4",24,"Redaction_5",25,"End",26,"pauseCafé", 27,"ProblèmesTechniques",28,"RechercheFonds",29,"Enseignement",30,"Conférence",31),$caseToChapInt to (dm:"Lecture_1",1,"Lecture_2",1,"Lecture_3",1,"Lecture_4",1,"Lecture_5",1,"Prototypage_1",2,"Prototypage_2",2,"Prototypage_3",2,"Prototypage_4",2,"Prototypage_5",2,"Labo_1",3,"Labo_2",3,"Labo_3",3,"Labo_4",3,"Labo_5",3,"Analyse_1",4,"Analyse_2",4,"Analyse_3",4,"Analyse_4",4,"Analyse_5",4,"Redaction_1",5,"Redaction_2",5,"Redaction_3",5,"Redaction_4",5,"Redaction_5",5,"End",6),$casesAnnexes to (a:'Enseignement','pauseCafé','RechercheFonds','Conférence','ProblèmesTechniques'))(set:$reponseAuteur to "", $reponseMicroscope to "")(display:"Images")
+(set: $solved to 0, $connaissances to 0,$maxConnaissances to 5, num-type $santé to 6, $maxSanté to 6, $réseau to 0, $maxRéseau to 3, $chapitre to 1, $chapterHeader to "", $passageBeforePause to "Lecture_1" ,$nChance to 0, $nMalchance to 0 , num-type $dureeProjet to 0, $coursDonné to 0, $coursDemande to 0, $solutionOrdi to "1234",$reponseOrdi to 0, $computerUnlocked to false, num-type $nLecture to 0, num-type  $nPrototypage to 0, num-type $nLabo to 0, num-type $nAnalyse to 0, num-type $nRédaction to 0, num-type $nAnnexes to 0, $healthBar to "",$aide to "False",$immunité to 0, $immediateCase to (a:'Setup','CREDITS','Start','PropositionDeProjet','Citations','openSource','randomLecture','randomPrototypage'), $caseToInt to (dm:"Lecture_1",1,"Lecture_2",2,"Lecture_3",3,"Lecture_4",4,"Lecture_5",5,"Prototypage_1",6,"Prototypage_2",7,"Prototypage_3",8,"Prototypage_4",9,"Prototypage_5",10,"Labo_1",11,"Labo_2",12,"Labo_3",13,"Labo_4",14,"Labo_5",15,"Analyse_1",16,"Analyse_2",17,"Analyse_3",18,"Analyse_4",19,"Analyse_5",20,"Redaction_1",21,"Redaction_2",22,"Redaction_3",23,"Redaction_4",24,"Redaction_5",25,"End",26,"pauseCafé","Pause café","ProblèmesTechniques","Problèmes Techniques","RechercheFonds","Recherche de fonds","Enseignement","Enseignement","Conférence","Conférence"),$caseToChapInt to (dm:"Lecture_1",1,"Lecture_2",1,"Lecture_3",1,"Lecture_4",1,"Lecture_5",1,"Prototypage_1",2,"Prototypage_2",2,"Prototypage_3",2,"Prototypage_4",2,"Prototypage_5",2,"Labo_1",3,"Labo_2",3,"Labo_3",3,"Labo_4",3,"Labo_5",3,"Analyse_1",4,"Analyse_2",4,"Analyse_3",4,"Analyse_4",4,"Analyse_5",4,"Redaction_1",5,"Redaction_2",5,"Redaction_3",5,"Redaction_4",5,"Redaction_5",5,"End",6,"pauseCafé",7,"ProblèmesTechniques",7,"RechercheFonds",7,"Enseignement",7,"Conférence",7),$casesAnnexes to (a:'Enseignement','pauseCafé','RechercheFonds','Conférence','ProblèmesTechniques'))(set:$reponseAuteur to "", $reponseMicroscope to "")(display:"Images")
 
 
 :: StoryIncludes {"position":"500,600","size":"100,100"}
@@ -587,13 +600,10 @@ Quel dommage, vous mettez un terme à votre projet de recherche! La communauté 
 </div>
 
 
-:: Viaziovska [definition] {"position":"600,1500","size":"100,100"}
+:: Viazovska [definition] {"position":"600,1500","size":"100,100"}
 <h2>Maryna Viazovska</h2>
 
-Maryna Viazovska est lauréate de la prestigieuse médaille Fields, considérée comme le Prix Nobel des mathématiques. Il récompense son travail sur les empilements de sphères dans les dimensions 8 et 24, alors qu’avant ses recherches, aucune démonstration ne permettait de dépasser les 3 dimensions.
-TODO
-<!--https://rapport-annuel.epfl.ch/fr/2022/recherche/une-mathematicienne-de-lepfl-recoit-la-medaille-fields/-->
-(link-goto:"Retour", (history:)'s last)
+Prof. Maryna Viazovska est professeure titulaire de la Chaire d'arithmétique de l'EPFL. En 2022 elle est devenue lauréate de la prestigieuse médaille Fields, considérée comme le Prix Nobel des mathématiques. Ce prix récompense son travail sur les empilements de sphères dans les dimensions 8 et 24, alors qu’avant ses recherches, aucune démonstration ne permettait de dépasser les 3 dimensions.
 
 
 :: collaboration [definition] {"position":"500,1600","size":"100,100"}
@@ -603,7 +613,7 @@ TODO
 
 :: commissions [definition] {"position":"700,1200","size":"100,100"}
 <div class ="definition">
-<b>Def</b> (commissions). Que ce soit pour le choix des cours le choix des financements de recherche, l'emploi de nouveaux professeurs, l'évaluation éthique d'une recherche etc,,, Il existe un floriège de commissions à l'intérieur du corps universitaire pour prendre des décisions stratégique pour l'allocation des ressources.
+<b>Def</b> (commissions). Que ce soit pour le choix des cours le choix des financements de recherche, l'emploi de nouveaux professeurs, l'évaluation éthique d'une recherche etc... Il existe un floriège de commissions à l'intérieur du corps universitaire pour prendre des décisions stratégique pour l'allocation des ressources.
 </div>
 
 
@@ -631,7 +641,7 @@ congrès scientifique
 <b>Def</b> (Prix de recherche). Les conférences récompensent souvent les meilleurs papiers de recherche.
 
 
-:: documentation {"position":"700,1500","size":"100,100"}
+:: documentation [definition] {"position":"700,1500","size":"100,100"}
  <div class ="definition">
 <b>Def</b> (documentation). La documentation logicielle, est une forme de guide de référence ou manuel d'utilisation pour un logiciel informatique. Chaque programme devrait être documenté rigoureusement puisque chaque détail est important pour être sur que les outils que l'on utilise font ce qu'on s'attendent qu'ils fassent. 
 </div>
@@ -648,7 +658,8 @@ congrès scientifique
 
 
 :: header [header] {"position":"700,600","size":"100,100"}
-(if:(passage:)'s tags contains "definition")[(set:$previousDef to 1)](if:(passage:)'s tags contains "pause")[(dialog: [(char-style: via (t8n-delay:pos*60)+(t8n:'instant'))[Allez à la case pause.]],"On y est &#x21A9;")](unless: (passage:)'s tags contains "no-header" or "definition" or "spécial")[(if: not ((history:) contains (passage:)'s "name"))[(set: $dureeProjet to it+1,$santé to it-1)](set:$solved to 0, $passageBeforePause to (passage:)'s "name")(set: $chapitre to $caseToChapInt's $passageBeforePause, $healthBar to "",  _wentToLecture to (a:"Lecture_1","Lecture_2","Lecture_3","Lecture_4","Lecture_5")-(history:),_wentToPrototypage to (a:"Prototypage_1","Prototypage_2","Prototypage_3","Prototypage_4","Prototypage_5")-(history:), _wentToAnalyse to (a:"Analyse_1","Analyse_2","Analyse_3","Analyse_4","Analyse_5")-(history:), _wentToLabo to (a:"Labo_1","Labo_2","Labo_3","Labo_4","Labo_5")-(history:), _wentToRedaction to (a:"Redaction_1","Redaction_2","Redaction_3","Redaction_4","Redaction_5")-(history:))(set: $nPrototypage to 5-_wentToPrototypage's length,$nLecture to 5-_wentToLecture's length,$nLabo to 5-_wentToLabo's length, $nAnalyse to 5-_wentToAnalyse's length, $nRedaction to 5-_wentToRedaction's length)(for: each _block, ...(range: 1 , $maxSanté))[(if: _block is <= $santé)[(set: $healthBar to it + "❤️")](else:)[(set: $healthBar to it + "🤍")]](if:$santé is 0)[(set:$passageBeforePause to (passage:)'s "name")(go-to:'Fatigué')](if:$nAnnexes < 2 and $dureeProjet > 3)[(set: _outcomeAnnexe to (random:1,10))(if:_outcomeAnnexe is 1)[(set: $nAnnexes to it+1)(go-to:"randomAnnex")]](if:$nChance is 0 and $chapitre > 1 and $immunité is 0)[(set: _outcome1 to (random:1,18-$dureeProjet))(if:_outcome1 is 1)[(set: $nChance to 1)(go-to:"GoodChanceStrikes")]](if:$nMalchance is 0 and $chapitre > 1 and $immunité is 0)[(set: _outcome2 to (random:1,15-$dureeProjet))(if:_outcome2 is 1)[(set:$nMalchance to 1)(go-to:"BadChanceStrikes")]](if:$previousDef is 0)[(dialog: [(char-style: via (t8n-delay:pos*60)+(t8n:'instant'))[Allez à la case (print:$caseToInt's $passageBeforePause)]],"On y est &#x21A9;")](else:)[(set:$previousDef to 0)]{(if: $chapitre is 1)[
+(set:_passageName to (passage:)'s "name")(if:(passage:)'s tags contains "definition")[(set:$previousDef to 1)](if:(passage:)'s tags contains "pause")[(dialog: [(char-style: via (t8n-delay:pos*60)+(t8n:'instant'))[Allez à la case pause.]],"On y est &#x21A9;")](unless: (passage:)'s tags contains "no-header" or "definition" or "spécial")[(if: not ((history:) contains _passageName))[(set: $dureeProjet to it+1,$santé to it-1)](if:$santé is 0)[(set:$passageBeforePause to _passageName)(go-to:'Fatigué')](unless: (passage:)'s tags contains "externe")[(set: $passageBeforePause to _passageName)(set:$chapitre to $caseToChapInt's _passageName){
+(if: $chapitre is 1)[
 	(set: $chapterHeader to "&sect; 1 - Revue de littérature")
 ](else-if:$chapitre is 2)[
 	(set: $chapterHeader to "&sect; 2 - Développement des Méthodes")
@@ -660,9 +671,7 @@ congrès scientifique
 	(set: $chapterHeader to "&sect; 5 - Publication")
 ](else-if:$chapitre is 6)[
 	(set: $chapterHeader to "&sect; 6 - Conclusion")
-](else:)[
-	(set: $chapterHeader to "&sect; 0 - ???")
-]}<div class = "row"><div class = "column" id='statusBar'>(print:$chapterHeader)</div><div class = "column numCase">(print: $healthBar)</div></div>]
+]}](else:)[(set:$chapterHeader to "&sect; A - Annexe")](set:$solved to 0, $healthBar to "",  _wentToLecture to (a:"Lecture_1","Lecture_2","Lecture_3","Lecture_4","Lecture_5")-(history:),_wentToPrototypage to (a:"Prototypage_1","Prototypage_2","Prototypage_3","Prototypage_4","Prototypage_5")-(history:), _wentToAnalyse to (a:"Analyse_1","Analyse_2","Analyse_3","Analyse_4","Analyse_5")-(history:), _wentToLabo to (a:"Labo_1","Labo_2","Labo_3","Labo_4","Labo_5")-(history:), _wentToRedaction to (a:"Redaction_1","Redaction_2","Redaction_3","Redaction_4","Redaction_5")-(history:),_wentToAnnexe to (a:"ProblèmesTechniques","RechercheFonds","Enseignement","pauseCafé","Conférence")-(history:))(set: $nPrototypage to 5-_wentToPrototypage's length,$nLecture to 5-_wentToLecture's length,$nLabo to 5-_wentToLabo's length, $nAnalyse to 5-_wentToAnalyse's length, $nRedaction to 5-_wentToRedaction's length, $nAnnexes to 5-_wentToAnnexe's length)(for: each _block, ...(range: 1 , $maxSanté))[(if: _block is <= $santé)[(set: $healthBar to it + "❤️")](else:)[(set: $healthBar to it + "🤍")]](if:$nAnnexes < 2 and $dureeProjet > 3 and not ((passage:)'s tags contains "externe"))[(set: _outcomeAnnexe to (random:1,20))(if:_outcomeAnnexe is 1)[(set: $nAnnexes to it+1)(go-to:"randomAnnex")]](if:$nChance is 0 and $chapitre > 1 and $immunité is 0)[(set: _outcome1 to (random:1,18-$dureeProjet))(if:_outcome1 is 1)[(set: $nChance to 1)(go-to:"GoodChanceStrikes")]](if:$nMalchance is 0 and $chapitre > 1 and $immunité is 0)[(set: _outcome2 to (random:1,15-$dureeProjet))(if:_outcome2 is 1)[(set:$nMalchance to 1)(go-to:"BadChanceStrikes")]](if:$previousDef is 0)[(dialog: [(char-style: via (t8n-delay:pos*60)+(t8n:'instant'))[Allez à la case (print:$caseToInt's _passageName)]],"On y est &#x21A9;")](else:)[(set:$previousDef to 0)]<div class = "row"><div class = "column" id='statusBar'>(print:$chapterHeader)</div><div class = "column numCase">(print: $healthBar)</div></div>]
 
 
 :: modèles [definition] {"position":"700,1400","size":"100,100"}
@@ -685,7 +694,7 @@ congrès scientifique
 </div>
 
 
-:: pauseCafé [spécial] {"position":"1700,900","size":"100,100"}
+:: pauseCafé [externe] {"position":"1700,900","size":"100,100"}
 <h2>L'heure du thé</h2>
 <p>Comme chaque jour, vous décidez de prendre une pause café/thé. Ceci est toujours une occasion de discuter de votre recherche avec des collègues dans un cadre plus décontracté.  Cette pause est même souvent institutionalisé dans de nombreux départements.</p>
 
