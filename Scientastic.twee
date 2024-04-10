@@ -128,7 +128,7 @@ Rentrez le nom de cette commande dans la fenêtre puis appuyez sur RUN ci-dessou
 
 :: Citations [definition] {"position":"700,1000","size":"100,100"}
 <div class ="definition">
-<b>Def</b> (citation). Les citations ont une place centrale dans le travail des scientifiques. Elles permettent de se reposer sur des travaux antérieurs pour avancer des hypothèses. Elles permettent ensuite au lecteur de retracer la source des revendications pour arriver à la source originale.
+<b>Définition</b> (citation). Les citations ont une place centrale dans le travail des scientifiques. Elles permettent de se référer à des travaux antérieurs pour soutenir ses hypothèses. Elles permettent ensuite au lecteur de retracer l'origine des résultats qui ont débouché sur une conclusion.
 </div>
 
 <div class ="definition">
@@ -168,7 +168,7 @@ Vous savez qu'une experte se trouve également à cette conférence mais vous ne
 
 :: Fatigué [spécial] {"position":"1625,1225","size":"100,100"}
 <h2>(either:"Démotivés", "Épuisés","Exténués")</h2>
-<p>(print:(either:"Vous avez un peu trop travaillé ces derniers mois, votre travail n'avance plus...","Vous vous endormez devant votre ordinateur...", "Les mots de vos collègues rentrent par une oreille et ressortent par l'autre", "Vous répetez la même manipulation pour la 483^^ème^^ fois... cela vous met hors de vous", "Vous perdez votre motivation et en plus personne ne répond à vos emails...", "Après 1 heure de lecture, vous réalisez que vous avez lu le même paragraphe 4 fois et vous n'avez pas avancé...","Vous êtes à cran et n'arrivez plus à supporter vos collaborateurs et rentrez en permanence en conflit avec eux..."))</p>
+<p>(print:(either:"Vous avez trop travaillé ces derniers mois, votre travail n'avance plus...","Vous vous endormez devant votre ordinateur...", "Les mots de vos collègues rentrent par une oreille et ressortent par l'autre", "Vous répetez la même manipulation pour la 483^^ème^^ fois... cela vous met hors de vous", "Vous perdez votre motivation et en plus personne ne répond à vos emails...", "Après une heure de lecture, vous réalisez que vous avez lu le même paragraphe 4 fois et vous n'avez pas avancé...","Vous êtes à cran et n'arrivez plus à supporter vos collaborateurs et rentrez en permanence en conflit avec eux..."))</p>
 <ol class="passage-link">
 	<li>(link: "Il est temps de faire une pause")[(set:$santé to 7)(go-to: (either: "Pause_1", "Pause_2", "Pause_3","Pause_4")).]</li>
     <li>(link:"Continuez quand même à travailler")[(go-to: "Fatigué")]</li>
@@ -272,8 +272,8 @@ data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAACFYAAAPLCAYAAAB/hZ+yAAAACXBIWXMAAC
 :: Lecture_1 {"position":"1000,500","size":"100,100"}
 <h2>1. Première réunion de groupe</h2>
 
-<p>Félicitation, votre projet (print:$nomProjet) a été accepté par les différentes |definition>[[[commissions départementales et universitaires->commissions]]] ! Après vous être réunis avec votre groupe de recherche pour définir les étapes clés de votre recherche afin d'atteindre vos objectifs, vous ... </p>
-<ol class="passage-link"><li> vous décidez de (link: "lire les articles")[(go-to: "Lecture_2")] proposés par les membres du groupe.</li>
+<p>Félicitations, votre projet de recherche (print:$nomProjet) a été accepté par les différentes |definition>[[[commissions universitaires->commissions]]] ! Après vous être réunis avec votre groupe de recherche pour définir les étapes clés de votre recherche afin d'atteindre vos objectifs, vous ... </p>
+<ol class="passage-link"><li> vous décidez à (link: "lire les articles")[(go-to: "Lecture_2")] proposés par les membres du groupe.</li>
 <li> préférez vous (link: "former sur un logiciel")[(go-to: "Lecture_4")] dont vous aurez besoin par la suite.</li>
 <li> préférez directement (link: "faire des expériences")[(if:$nLecture<3)[(go-to:"zéroExpérience")](else:)[(go-to:"randomPrototypage")]].</li>
 (display:"RandomEvent")</ol>
@@ -282,22 +282,22 @@ data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAACFYAAAPLCAYAAAB/hZ+yAAAACXBIWXMAAC
 :: Lecture_2 {"position":"1125,500","size":"100,100"}
 <h2>2. Lecture de publications générales</h2>
 
-<p> La lecture d'article de recherche est essentielle pour rester informé de |definition>[[[l'état de l'art->etatdart]]] et progresser dans son domaine. Le système de |definition>[[[références et citations->Citations]]] facilite la connexion entre un article et les travaux sur lesquels il se base.</p>
+<p> La lecture d'article de recherche est essentielle pour rester informé de |definition>[[[l'état de l'art->etatdart]]] et progresser dans son domaine. Le système de |definition>[[[citations->Citations]]] facilite la connexion entre un article et les travaux sur lesquels il se base.</p>
 
-<div class = "consigne"> Commencez avec l'article "The sphere packing problem in dimension 8." Annals of mathematics (2017): 991-1015. de |definition>[[[Maryna S. Viazovska->Viazovska]]] et suivez les citations ''surlignés en jaune'' jusqu'à un article de 1876. Vers quel nom de célèbre matématicien ces citations vous mènent-elles?
+<div class = "consigne"> Commencez avec l'article "The sphere packing problem in dimension 8." Annals of mathematics (2017): 991-1015. de |definition>[[[Maryna S. Viazovska->Viazovska]]] et suivez les citations ''surlignés en jaune'' jusqu'à un article de 1876. Vers quel nom de célèbre mathématicien ces citations vous mènent-elles?
 
 (set:$solutionAuteur to "gauss")(input: bind $reponseAuteur,"XX=",$reponseAuteur)</div> 
-(link-rerun: '<span id ="enter">Vérifier &#x21A9;</span>')[(if: $reponseAuteur contains 'gauss' or  $reponseAuteur contains 'Gauss'  or $reponseAuteur contains 'GAUSS')[<br>(t8n:'slide-down')[''//Johann Carl Friedrich Gauss//''] <br> Une légende des mathématiques! Son travail est encore bien présent 170 ans après sa mort. <ol class="passage-link"><li>Grâce au système de |definition>[[[références et citations->Citations]]], les publication générales sur votre sujet vous ont mené vers des publication plus spécifiques. Continuer à (link: " lire des documents de recherche")[(set:$connaissances to it+1)(go-to: "Lecture_3")].</li>
-<li>Vous voulez (link: " tester")[(set:$chapitre to 2,$numCase to 4)(go-to: "Prototypage_1")] les méthode de cet article de recherche. </li>](else:)[<br> Incorrect, vérifiez bien le nom des auteurs, le titre des publications et surtout le nom de l'auteur de la dernière référence.]]<ol class = "passage-link">(display:"RandomEvent")</ol>
+(link-rerun: '<span id ="enter">Vérifier &#x21A9;</span>')[(if: $reponseAuteur contains 'gauss' or  $reponseAuteur contains 'Gauss'  or $reponseAuteur contains 'GAUSS')[<br>(t8n:'slide-down')[''//Johann Carl Friedrich Gauss//''] <br> Une légende des mathématiques! Son travail est encore bien présent 170 ans après sa mort. <ol class="passage-link"><li>Grâce au système de |definition>[[[références et citations->Citations]]], les publication générales sur votre sujet vous ont mené vers d'autres publication intéressantes. Vous n’êtes pas rassasié de vos lectures, vous voulez en savoir plus ! Continuez à (link: " lire des documents de recherche")[(set:$connaissances to it+1)(go-to: "Lecture_3")].</li>
+<li>Vous voulez (link: " tester")[(set:$chapitre to 2,$numCase to 4)(go-to: "Prototypage_1")] les méthodes de cet article de recherche. </li>](else:)[<br> Incorrect, vérifiez bien le nom des auteurs, le titre des publications et surtout le nom de l'auteur de la dernière référence.]<li>(display:"RandomEvent")</li></ol>]
 
 
 :: Lecture_3 {"position":"1250,500","size":"100,100"}
 <h2>3. Lecture de publications hyper spécialisées.</h2>
 
-<p>A force de creuser plus loin, vous commencez à devenir des experts théorique dans votre domaine et vous étalez toute votre connaissance lors du meeting hebdomadaire du groupe. </p>
+<p>A force de creuser plus loin, vous commencez à devenir des experts théoriques dans votre domaine et vous étalez toute votre connaissance lors de la réunion hebdomadaire du groupe. </p>
 
 <ol class = "passage-link">
-<li>(either:"Vous êtes avides de connaissances","Vous voulez toujours plus apprendre", "Votre soif d'apprendre s'intensifie"), (link:(either:"continuez à lire.","lire toujours plus .","lire encore.","vous finissez encore un livre.", "vous suivez un cours sur une nouvelle théorie à la mode."))[(set:$santé to it-1)(go-to:"Lecture_3")]</li>
+<li>(either:"Vous êtes avides de connaissances","Vous voulez toujours en apprendre plus", "Votre soif d'apprendre s'intensifie"), (link:(either:"continuez à lire.","lire toujours plus .","lire encore.","vous finissez encore un livre.", "vous suivez un cours sur une nouvelle théorie à la mode."))[(set:$santé to it-1)(go-to:"Lecture_3")]</li>
 <li>Vous préférez commencer à utiliser vos connaissances pour (link:"expérimenter sur certaines connaissances.")[(go-to:"randomPrototypage")]</li>
 (display:"RandomEvent")
 </ol>
@@ -305,7 +305,7 @@ data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAACFYAAAPLCAYAAAB/hZ+yAAAACXBIWXMAAC
 
 :: Lecture_4 {"position":"1375,500","size":"100,100"}
 <h2>4. Apprentissage d'un nouveau logiciel</h2>
-<p>Vous lisez la |definition>[[[documentation->documentation]]] d'un programme informatique |definition>[[[open access->openSource]]]. De tels programmes sont utilisés pour manipuler des données grâce à une multitude de fonctions.</p>
+<p>Vous lisez la |definition>[[[documentation->documentation]]] d'un programme informatique |definition>[[[open access->openSource]]] qui sert à manipuler et analyser des données grâce à une multitude de fonctions.</p>
 
 <div class="consigne">Vous trouverez devant vous 3 fonctions documentées/expliquées qui vous semblent intéressantes. Souvenez-vous bien du nom de ces fonctions, vous risquez d'en avoir besoin plus tard...</div>
 
@@ -393,14 +393,14 @@ Rentrez le code de l'ordinateur:
 
 :: PropositionDeProjet [definition] {"position":"600,1000","size":"100,100"}
 <div class ="definition">
-<b>Def</b> (proposition de projet). Avant un quelconque projet de recherche, il est souvent nécessaire d'élaborer une description consise et précise du plan et des objectifs d'un projet. Cela permet également de bien définir les objectifs, mettre en perspective  l'importance du projet dans un contexte plus global et par rapport aux autres recherches déroulées jusqu'à présent. 
+<b>Def</b> (proposition de projet). Avant un quelconque projet de recherche, il est souvent nécessaire d'écrire les objectifs d'un projet et une description concise et précise du plan. Cela permet également de mettre en perspective  l'importance du projet dans un contexte plus global, notamment par rapport aux autres recherches faites à ce jour dans le même domaine. 
 </div>
 
 
 :: Prototypage_1 {"position":"1000,650","size":"100,100"}
 <h2>6. Reproduction de résultats</h2>
 <p>Vous essayez de reproduire les résultats d'une publication précédente. Cela vous fait mieux comprendre votre sujet et les méthodes utilisées. </p> 
-(link:"Reproduction réussie!")[<ol class="passage-link">(if:$nLecture <3)[<li>Toutefois, les résultats ne semblent ne pas faire de sens, vous (link: "retournez dans vos bouquins") [(go-to: "randomLecture")</li>] pour en apprendre un peu plus.](else-if:$nPrototypage <1)[<li> Cela vous fait avancer, et vous donne des idées de ce qui pourrait être amélioré. (link:"Lancez vous dans plus de tests préliminaires.")[(go-to:"randomPrototypage")]</li>](else:)[<li>Ces méthodes étaient ce qui vous manquait pour optimiser votre processus de prise de mesure. (link:"Vous pouvez dès à présent passer au laboratoire pour commencer à prendre des mesures.")[(go-to:"randomLabo")]</li><li> Vous préférez quand même faire plus de tests et vous (link:"lancer vous dans plus de tests préliminaires.")[(go-to:"randomPrototypage")]. </li>]
+(link:"Répliqer l'expérience.")[<ol class="passage-link">(if:$nLecture <3)[<li>Toutefois, les résultats ne répondent pas à vos attentes, vous (link: "retournez dans vos bouquins") [(go-to: "randomLecture")</li>] pour en apprendre un peu plus.](else-if:$nPrototypage <1)[<li> Cela vous fait avancer, et vous donne des idées de ce qui pourrait être amélioré. (link:"Lancez vous dans plus de tests préliminaires.")[(go-to:"randomPrototypage")]</li>](else:)[<li>Ces méthodes étaient ce qui vous manquait pour optimiser votre processus de prise de mesure. (link:"Vous pouvez dès à présent passer au laboratoire pour commencer à prendre des mesures.")[(go-to:"randomLabo")]</li><li> Vous préférez quand même faire plus de tests et vous (link:"lancer vous dans plus de tests préliminaires.")[(go-to:"randomPrototypage")]. </li>]
 (display:"RandomEvent")
 </ol>]
 
@@ -434,7 +434,7 @@ Rentrez le code de l'ordinateur:
 
 
 :: Prototypage_4 {"position":"1375,650","size":"100,100"}
-<h2>9. Aidez un collègue</h2> 
+<h2>9. Aidez un.e collègue</h2> 
 (if:$aide is "True")[
 (set:$immunité to 0)<p>Votre collègue vous remercie pour votre aide précieuse.</p>
 <ol class ="passage-link">
@@ -453,7 +453,7 @@ Rentrez le code de l'ordinateur:
 
 :: Prototypage_5 {"position":"1500,650","size":"100,100"}
 <h2>10. Modélisation</h2>
-<p>La compréhension du monde passe par la création de |definition>[[[modèles->modèles]]] qui nous permettent de travailler dans des environnement simplifiés. </p>
+<p>La compréhension du monde passe par la création de |definition>[[[modèles->modèles]]] qui nous permettent de travailler dans des environnements simplifiés. </p>
 <div class = "consigne"></div>
 <ol class ="passage-link">
 (if:$nLecture <3)[ <li>Votre modèle est un peu bancal et il faudrait s'inspirer de nouvelles théories pour le solidifier.  (link: "Retournez dans vos bouquins")[(go-to: "randomLecture")] pour en apprendre un peu plus.</li>](else-if:$nPrototypage <1)[<li> Ce modèle pourrait être peaufiné il faudrait continuer à   (link:" le tester dans plus de scénarios")[(go-to:"randomPrototypage")]. </li>](else:)[<li>Ce modèle est particulièrement efficace, vous pouvez directement (link:"le tester en laboratoire")[(go-to:"randomLabo")].</li>]
@@ -488,12 +488,12 @@ Rentrez le code de l'ordinateur:
 0. Interprétation
 0. Conclusion / Travaux futurs</p>
 
-<ol class ="passage-link">
+(link:"On a terminé")[<ol class ="passage-link">
 (if:$nRedaction>1)[<li>Vous avez bien amélioré votre article et vous voulez (link:"l'envoyer à nouveau pour le faire réviser")[(go-to:"Redaction_5")].</li>](else:)[
 <li>Vous êtes satisfaits de votre prose mais vous aimeriez (link:"ajouter des figures")[(go-to:"Redaction_2")] pour illustrer votre document.</li>
 <li>Vous préférez  (link:"présenter vos idées")[(go-to:"Redaction_4")] pour voir si vos collègues sont réceptifs à votre histoire.</li>]
 (display:"RandomEvent")
-</ol>
+</ol>]
 
 
 :: Redaction_2 {"position":"1125,1100","size":"100,100"}
@@ -556,25 +556,24 @@ Rentrez le code de l'ordinateur:
 
 Quel dommage, vous mettez un terme à votre projet de recherche! La communauté scientifique est bien triste de vous voir abandonner le navire.
 
-
 (link:"Essayez à nouveau")[(restart:)]
 
-[[Crédits->CREDITS]]
+[[FIN->CREDITS]]
 
 
 :: Setup [no-header no-footer spécial] {"position":"1200,300","size":"100,100"}
 (set: $nomGroupe to "",$nomProjet to "",$luRègles to false)
 <h2>&sect; 0 - Administration</h2>
 <p>Pour commencer, il faut toujours passer par la case administrative! Veuillez spécifier le nom de votre groupe de recherche:</p>
-<span class = "text_proposition">Ex: (either:"Les scientifiques de l'espace","Les cervaux quantiques","Les cellules ").</span>(input: bind $nomGroupe,"X=", $nomGroupe)
+<span class = "text_proposition">Ex: (either:"Les scientifiques de l'espace","Les cervaux quantiques","Les mathématichiens").</span>(input: bind $nomGroupe,"X=", $nomGroupe)
 <p>Et le nom de votre projet de recherche:</p>
 <span class = "text_proposition">Ex: Les effets de la relativité générale sur la sécretion de protéines isomorphes.</span>(input: bind $nomProjet,"X", $nomProjet)
-<p>Cela vous aidera à définir une |definition>[[[proposition de recherche->PropositionDeProjet]]] </p> 
+<p>Cela vous aidera à définir une |definition>[[[proposition de projet->PropositionDeProjet]]] </p> 
 
 <p> Encore quelques précisions: <ul><li> Pour que le jeu se passe au mieux, veuillez remettre les jeux en place après être passés sur une case.</li><li> Si vous avez des questions ou un problème n'hésitez surtout pas à demander à un membre de l'organisation. </li><li>Les passages en [[jaune sont des décisions->CREDITS]], les passages en |definition>[[[bleu->definition]]] sont des lien vers une définition ou explication détaillée de certains concepts.</li><li> La dynamique du jeu est en partie aléatoire et il se peut que l'histoire ne paraisse pas totalement cohérente par moment.</li><li> Certaines cases ont des jeux, des éléments interactifs, d'autres n'en ont pas, suivez les instructions sur la tablette et le cas échéant, les règles du jeu sur la case.</li><li> Les jeux ont un thème scientifique faisant référence à certains concepts mais aucune rigueur scientifique.</li></ul></p>
 (checkbox: bind $luRègles, " C'est compris!")
 
-<ol class="passage-link"> <li>(link-rerun: "Soumettre votre proposition de recherche")[(if:$luRègles is true)[(go-to: "Lecture_1")](else:)[
+<ol class="passage-link"> <li>(link-rerun: "Soumettre votre proposition de recherche.")[(if:$luRègles is true)[(go-to: "Lecture_1")](else:)[
 Assurez vous d'avoir bien lu les règles...]]</li></ol>
 
 
@@ -613,7 +612,7 @@ Prof. Maryna Viazovska est professeure titulaire de la Chaire d'arithmétique de
 
 :: commissions [definition] {"position":"700,1200","size":"100,100"}
 <div class ="definition">
-<b>Def</b> (commissions). Que ce soit pour le choix des cours le choix des financements de recherche, l'emploi de nouveaux professeurs, l'évaluation éthique d'une recherche etc... Il existe un floriège de commissions à l'intérieur du corps universitaire pour prendre des décisions stratégique pour l'allocation des ressources.
+<b>Def</b> (commissions). Que ce soit pour, le choix des financements de recherche, l'emploi de nouveaux professeur.es, l'évaluation éthique d'une recherche, le choix des cours enseignés, etc... Il existe un florilège de commissions à l'intérieur du corps universitaire pour prendre des décisions stratégiques pour l'allocation des ressources.
 </div>
 
 
@@ -643,7 +642,7 @@ congrès scientifique
 
 :: documentation [definition] {"position":"700,1500","size":"100,100"}
  <div class ="definition">
-<b>Def</b> (documentation). La documentation logicielle, est une forme de guide de référence ou manuel d'utilisation pour un logiciel informatique. Chaque programme devrait être documenté rigoureusement puisque chaque détail est important pour être sur que les outils que l'on utilise font ce qu'on s'attendent qu'ils fassent. 
+<b>Def</b> (documentation). La documentation logicielle, est une forme de guide de référence ou manuel d'utilisation pour un logiciel informatique. Chaque programme devrait être documenté rigoureusement puisque chaque détail est important pour être sûr que les outils que l'on utilise fassent bien ce qu'on attend d'eux. 
 </div>
 
 
@@ -658,7 +657,12 @@ congrès scientifique
 
 
 :: header [header] {"position":"700,600","size":"100,100"}
-(set:_passageName to (passage:)'s "name")(if:(passage:)'s tags contains "definition")[(set:$previousDef to 1)](if:(passage:)'s tags contains "pause")[(dialog: [(char-style: via (t8n-delay:pos*60)+(t8n:'instant'))[Allez à la case pause.]],"On y est &#x21A9;")](unless: (passage:)'s tags contains "no-header" or "definition" or "spécial")[(if: not ((history:) contains _passageName))[(set: $dureeProjet to it+1,$santé to it-1)](if:$santé is 0)[(set:$passageBeforePause to _passageName)(go-to:'Fatigué')](unless: (passage:)'s tags contains "externe")[(set: $passageBeforePause to _passageName)(set:$chapitre to $caseToChapInt's _passageName){
+{
+(print: "<script>$('html').removeClass(\)</script>")
+(for: each _tag, ...(passage:)'s tags)[
+(print: "<script>$('tw-story').addClass('" + _tag+ "'\)</script>")
+]
+}(set:_passageName to (passage:)'s "name")(if:(passage:)'s tags contains "definition")[(set:$previousDef to 1)](if:(passage:)'s tags contains "pause")[(dialog: [(char-style: via (t8n-delay:pos*60)+(t8n:'instant'))[Allez à la case pause.]],"On y est &#x21A9;")](unless: (passage:)'s tags contains "no-header" or "definition" or "spécial")[(if: not ((history:) contains _passageName))[(set: $dureeProjet to it+1,$santé to it-1)](if:$santé is 0)[(set:$passageBeforePause to _passageName)(go-to:'Fatigué')](unless: (passage:)'s tags contains "externe")[(set: $passageBeforePause to _passageName)(set:$chapitre to $caseToChapInt's _passageName){
 (if: $chapitre is 1)[
 	(set: $chapterHeader to "&sect; 1 - Revue de littérature")
 ](else-if:$chapitre is 2)[
@@ -1062,4 +1066,8 @@ tw-dialog-link{
   border: solid #efcfad;
   border-color: rgba(239, 207, 173, 0.9);
   border-width: 0 1px;
+}
+
+tw-story.externe{
+	background-color: #FF0000;
 }
