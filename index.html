@@ -460,19 +460,19 @@ Assurez vous d&#39;avoir bien lu les règles...]]&lt;/li&gt;&lt;/ol&gt;
 &lt;/ol&gt;</tw-passagedata><tw-passagedata pid="19" name="Labo_2" tags="" position="1125,800" size="100,100">&lt;h2&gt;12. Manipulation experte&lt;/h2&gt;
 &lt;p&gt;Beaucoup d&#39;expériences requièrent une dexterité sans faille. Vous devez réaliser une manipulation critique car vous n&#39;avez qu&#39;un nombre limité d&#39;échantillons.&lt;/p&gt;
 
-&lt;div class=&quot;consigne&quot;&gt; Passez la boucle de l&#39;autre coté sans déclancher l&#39;alarme. &lt;/div&gt;
+&lt;div class=&quot;consigne&quot;&gt; &lt;/div&gt;
 
 
-&lt;ol class =&quot;passage-link&quot;&gt;
+(link:&quot;C&#39;est fait&quot;)[&lt;ol class =&quot;passage-link&quot;&gt;
 (if: $nLabo&lt;2)[&lt;li&gt;Vous pensez qu&#39;il serait judicieux de (link: &quot;collaborer avec d&#39;autres chercheurs&quot;)[(go-to:(either:&quot;Labo_3&quot;,&quot;Labo_4&quot;))] avant de passer à l&#39;analyse.&lt;/li&gt;](else:)[[&lt;li&gt;Vous souhaitez (link: &quot;récolter plus d&#39;échantillons&quot;)[(go-to:&quot;randomLabo&quot;)] avant de passer à l&#39;analyse.&lt;/li&gt;]
 &lt;li&gt;Vous pensez avoir récolté assez de données, et vous voulez (link:&quot;les analyser&quot;)[(go-to:&quot;randomAnalyse&quot;)]&lt;/li&gt;]
 (display:&quot;RandomAnnexe&quot;)
 (display:&quot;RandomEvent&quot;)
-&lt;/ol&gt;</tw-passagedata><tw-passagedata pid="20" name="Prototypage_2" tags="" position="1125,650" size="100,100">&lt;h2&gt;7. Émisson d&#39;hypothèses&lt;/h2&gt;
+&lt;/ol&gt;]</tw-passagedata><tw-passagedata pid="20" name="Prototypage_2" tags="" position="1125,650" size="100,100">&lt;h2&gt;7. Émisson d&#39;hypothèses&lt;/h2&gt;
 
 &lt;p&gt;Vos quelques tests préliminaires vous permettent d&#39;avoir assez de connaissances pour énoncer des hypothèses, que vous aimeriez vérifier par la suite.&lt;/p&gt;
 
-&lt;div class = &quot;consigne&quot;&gt;(either:&quot;Pourquoi nos dessous de pieds sont chatouilleux&quot;,&quot;Pourquoi un écran d&#39;ordinateur est rectangulaire&quot;,&quot;Pourquoi as-t-on 5 doigts sur un main, (et pas 4 ou 6 ou 17)&quot;)?&lt;/div&gt;
+&lt;div class = &quot;consigne&quot;&gt;Quelle(s) hypothèse(s) pourriez vous émettre pour la question suivante: &lt;em&gt;(either:&quot;Pourquoi nos dessous de pieds sont chatouilleux&quot;,&quot;Pourquoi un écran d&#39;ordinateur est rectangulaire&quot;,&quot;Pourquoi as-t-on 5 doigts sur un main, (et pas 4 ou 6 ou 17)&quot;)?&lt;/em&gt;&lt;/div&gt;
 
 &lt;ol class=&quot;passage-link&quot;&gt;
 (link:&quot;C&#39;est fait&quot;)[&lt;li&gt;(if:$nLecture &lt;3)[Vos hypothèses sont malheuresement démontées par un collaborateur qui vous propose gentillement de  (link: &quot;retourner dans vos bouquins&quot;)[(go-to: &quot;randomLecture&quot;)] pour en apprendre un peu plus et revenir avec de meilleures idées.](else-if:$nPrototypage &lt;1)[Cela vous fait avancer, et vous (link:&quot;donne des idées de ce qui pourrait être amélioré.&quot;)[(go-to:&quot;randomPrototypage&quot;)].](else:)[Ces hypothèses sont très prometteuses et vous pouvez directement (link:&quot;les tester en laboratoire&quot;)[(go-to:&quot;randomLabo&quot;)].]&lt;/li&gt;
@@ -516,9 +516,9 @@ Assurez vous d&#39;avoir bien lu les règles...]]&lt;/li&gt;&lt;/ol&gt;
 &lt;li&gt;Vous acceptez les remarques et vous (link: &quot;refaites l&#39;analyse.&quot;)[(go-to:&quot;randomAnalyse&quot;)]&lt;/li&gt;(display:&quot;RandomEvent&quot;)
 &lt;/ol&gt;]</tw-passagedata><tw-passagedata pid="24" name="footer" tags="footer" position="600,600" size="100,100">(unless: (passage:)&#39;s tags contains &quot;no-footer&quot; or &quot;definition&quot; or &quot;spécial&quot;)[&lt;hr&gt;&lt;div class = &quot;row&quot;&gt;&lt;div class = &quot;column&quot; id=&quot;bottomLogo&quot; style=&quot;text-align:left;font-size:70%;&quot;&gt;&lt;b&gt;(link:&quot;&lt;img style=\&#39;max-width:60%;text-align:center;\&#39; src=&quot;+$logo_scientastic+&quot;&gt;&quot;)[(go-to:&quot;CREDITS&quot;)]&lt;/b&gt;&lt;/div&gt;&lt;div class = &quot;column&quot; style=&quot;text-align:center;font-size:60%;flex:90%;line-height:1;&quot;&gt;(print:$nomProjet)&lt;/div&gt;&lt;div class = &quot;column footer&quot; style=&quot;text-align:right;font-size:60%;&quot;&gt;(print:$nomGroupe)&lt;/div&gt;&lt;/div&gt;](if: (passage:)&#39;s tags contains &quot;definition&quot;)[(link-goto:&quot;Retour&quot;, (history:)&#39;s last)]</tw-passagedata><tw-passagedata pid="25" name="PropositionDeProjet" tags="definition" position="600,1000" size="100,100">&lt;div class =&quot;definition&quot;&gt;
 &lt;b&gt;Def&lt;/b&gt; (proposition de projet). Avant un quelconque projet de recherche, il est souvent nécessaire d&#39;écrire les objectifs d&#39;un projet et une description concise et précise du plan. Cela permet également de mettre en perspective  l&#39;importance du projet dans un contexte plus global, notamment par rapport aux autres recherches faites à ce jour dans le même domaine. 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="BadChanceStrikes" tags="spécial" position="600,800" size="100,100">&lt;h2&gt;Manque de bol&lt;/h2&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="BadChanceStrikes" tags="spécial" position="600,800" size="100,100">&lt;h2&gt;Malheur!&lt;/h2&gt;
 &lt;ol class=&quot;passage-link&quot;&gt;
-(if:$chapitre is 2)[(either:&#39;&lt;li&gt;Vos premiers essais ne donnent rien et vous ne savez pas comment avancer. Il serait raisonnable de (link: &quot;retourner dans vos bouquins&quot;)[(set:$chapitre to 1)(go-to: &quot;randomLecture&quot;)] pour en apprendre un peu plus. &lt;/li&gt;&#39;,&#39;&lt;li&gt;Un conflit avec un de vos collaborateur vous pousse à faire machine arrière sur une expérience. Il faut re-penser sa méthode et reprendre de  (link: &quot;l\&#39;inspiration de la littérature scientifique&quot;)[(set:$chapitre to 1)(go-to: &quot;randomLecture&quot;)]&lt;/li&gt;&#39;)](else-if:$chapitre is 3)[ &lt;li&gt;Zut, vous avez oubliez vos précieux échantillons dans le train... (link: &quot;c&#39;est l&#39;occasion de re-designer votre méthode expérimentale&quot;)[(set:$chapitre to 2)(go-to: &quot;randomPrototypage&quot;)&lt;/li&gt;]](else-if:$chapitre is 4)[(either:&#39;&lt;li&gt;Votre ordinateur crash, vous perdez toutes vos données, il faut (link: &quot;recommencer les prises de mesure.&quot;)[(set:$chapitre to 3)(go-to: &quot;randomLabo&quot;) &lt;/li&gt;&#39;,&#39;&lt;li&gt; Quelle désillusion: alors que vous vous analisiez vos résultats, il ne correpondent pas à vos attentes... Il faut (link: &quot;recommencer de nouvelles expériences.&quot;)[(set:$chapitre to 3)(go-to: &quot;randomLabo&quot;) &lt;/li&gt;&#39;)](else-if:$chapitre is 5)[&lt;li&gt;Vous vous apprêtiez à publier vos résultats, mais un groupe concurent vous coupe l&#39;herbe sous le pied et publie un papier de recherche sur le même sujet...  Vous ne vous démontez pas, il reste beaucoup d&#39;autres (link: &quot;résultats intéressants à analyser.&quot;)(set:$chapitre to 4)(go-to: &quot;randomAnalyse&quot;) &lt;/li&gt;](else:)[Votre recherche ne vous intéresse plus, vous préferez maintenant étudier autre chose et [[vous recommencez-&gt;Start]].]
+(if:$chapitre is 2)[(either:&#39;&lt;li&gt;Vos premiers essais ne donnent rien et vous ne savez pas comment avancer. Il serait raisonnable de (link: &quot;retourner dans vos bouquins&quot;)[(set:$chapitre to 1)(go-to: &quot;randomLecture&quot;)] pour en apprendre un peu plus. &lt;/li&gt;&#39;,&#39;&lt;li&gt;Un conflit avec un de vos collaborateur vous pousse à faire machine arrière sur votre recherche. Il faut re-penser votre méthode et reprendre de  (link: &quot;l\&#39;inspiration de la littérature scientifique&quot;)[(set:$chapitre to 1)(go-to: &quot;randomLecture&quot;)].&lt;/li&gt;&#39;)](else-if:$chapitre is 3)[ &lt;li&gt;Zut, vous avez oubliez vos précieux échantillons dans le train... (link: &quot;c&#39;est l&#39;occasion de re-designer votre méthode expérimentale&quot;)[(set:$chapitre to 2)(go-to: &quot;randomPrototypage&quot;).&lt;/li&gt;]](else-if:$chapitre is 4)[(either:&#39;&lt;li&gt;Votre ordinateur crash, vous perdez toutes vos données, il faut (link: &quot;recommencer les prises de mesure.&quot;)[(set:$chapitre to 3)(go-to: &quot;randomLabo&quot;) &lt;/li&gt;&#39;,&#39;&lt;li&gt; Quelle désillusion: alors que vous vous analisiez vos résultats, il ne correpondent pas à vos attentes... Il faut (link: &quot;recommencer de nouvelles expériences.&quot;)[(set:$chapitre to 3)(go-to: &quot;randomLabo&quot;) &lt;/li&gt;&#39;)](else-if:$chapitre is 5)[&lt;li&gt;Vous vous apprêtiez à publier vos résultats, mais un groupe concurent vous coupe l&#39;herbe sous le pied et publie un papier de recherche sur le même sujet...  Vous ne vous démontez pas, il reste beaucoup d&#39;autres (link: &quot;résultats intéressants à analyser.&quot;)(set:$chapitre to 4)(go-to: &quot;randomAnalyse&quot;) &lt;/li&gt;](else:)[Votre recherche ne vous intéresse plus, vous préferez maintenant étudier autre chose et [[vous recommencez-&gt;Start]].]
 &lt;/ol&gt;</tw-passagedata><tw-passagedata pid="27" name="Conférence" tags="externe" position="1700,1000" size="100,100">&lt;h2&gt;Conférence&lt;/h2&gt;
 &lt;p&gt;Vous êtes à (either:&quot;New York&quot;,&quot;Sydney&quot;,&quot;Buenos Aires&quot;,&quot;Tokyo&quot;,&quot;Pretoria&quot;,&quot;Ljubljiana&quot;,&quot;Göttingen&quot;,&quot;Singapour&quot;) pour une |definition&gt;[[[conférence-&gt;conférence]]] réunissant les meilleurs scientifiques de votre domaine. C&#39;est l&#39;occasion de réseauter. Connaitre des personnes dans le domaine fait partie des qualités d&#39;un bon chercheur ou d&#39;une bonne chercheuse. Il ou elle doit connaitre les personnes avec qui collaborer.
 
@@ -543,7 +543,8 @@ Vous savez qu&#39;une experte se trouve également à cette conférence mais vou
 &lt;/ol&gt;]</tw-passagedata><tw-passagedata pid="31" name="ProblèmesTechniques" tags="externe" position="1700,600" size="100,100">&lt;h2&gt; Problèmes Techniques&lt;/h2&gt;
 
 (if:$computerUnlocked is false)[&lt;p&gt; Votre belle dynamique des dernières semaines est bloquée, vous n&#39;arrivez pas à vous connecter à un logiciel sur votre ordinateur. &lt;/p&gt;
-&lt;div class=&quot;consigne&quot;&gt;Heureusement vous avez enregistré votre clé d&#39;activation sur un vieux disque dur qui a entre temp été formaté. Voici ce qu&#39;il reste de votre clé d&#39;activation:  Utilisez vos connaissances en cryptographie pour trouver le code. &lt;/div&gt;
+
+&lt;div class=&quot;consigne&quot;&gt;Heureusement vous avez enregistré votre mot de passe sur un disque dur qui a entre temps été chiffré. Utilisez vos connaissances en cryptographie pour trouver le code original. &lt;/div&gt;
 
 Rentrez le code de l&#39;ordinateur:
 (input: bind $reponseOrdi,&quot;X==&quot;)]
@@ -583,30 +584,28 @@ Rentrez le code de l&#39;ordinateur:
 
 &lt;p&gt;Vos compétences, bien qu&#39;expertes, ne vous suffisent pas pour un projet d&#39;envergure. Vous devez |definition&gt;[[[collaborer-&gt;collaboration]]] avec un autre groupe de recherche pour résoudre un problème complexe.&lt;/p&gt;
 
-&lt;p&gt;Vous devez ajouter un élément à votre circuit électronique. Toutefois, router (acheminer) le nouvel élément de manière optimale nécessite des techniques de vérification de circuit très sophistiquées.  Vérifiez que votre élément (START) puisse être connecté à un capteur (FINISH) sans passer par d&#39;autres éléments. .&lt;/p&gt;
+&lt;p&gt;Vous devez ajouter un élément au circuit électronique d&#39;un nouvel outil que vous utiliserez pour votre recherche . Toutefois, router (acheminer) le nouvel élément de manière optimale nécessite des techniques de vérification de circuit très sophistiquées.  Vérifiez que votre élément (START) puisse être connecté à un capteur (FINISH) sans passer au dessus d&#39;autres éléments.&lt;/p&gt;
 
-&lt;div class=&quot;consigne&quot;&gt; Faites monter la bille depuis le START jusqu&#39;au FINISH sans la faire tomber dans les trous. Désignez un ingénieur en électronique et un autre en informatique dans l&#39;équipe qui prendront chacun une poignée attachée à une corde. &lt;/div&gt;
+&lt;div class=&quot;consigne&quot;&gt; &lt;/div&gt;
 
-&lt;ol class =&quot;passage-link&quot;&gt;
+(link:&quot;Opération réussie&quot;)[&lt;ol class =&quot;passage-link&quot;&gt;
 (if: $nLabo&lt;2)[&lt;li&gt;Vous retournez (link: &quot;récolter plus d&#39;échantillons&quot;)[(go-to:(either:&quot;Labo_2&quot;,&quot;Labo_5&quot;))] avant de passer à l&#39;analyse.&lt;/li&gt;]
 &lt;li&gt;Vous pensez avoir récolté assez de données, et vous (link:&quot;les analyser&quot;)[(go-to:&quot;randomAnalyse&quot;)]&lt;/li&gt;
 (display:&quot;RandomEvent&quot;)
-&lt;/ol&gt;</tw-passagedata><tw-passagedata pid="39" name="Labo_4" tags="" position="1375,800" size="100,100">&lt;h2&gt;14. Confiance dans le travail des autres.&lt;/h2&gt;
+&lt;/ol&gt;]</tw-passagedata><tw-passagedata pid="39" name="Labo_4" tags="" position="1375,800" size="100,100">&lt;h2&gt;14. Confiance dans le travail des autres.&lt;/h2&gt;
 &lt;p&gt;Parfois il est impossible d&#39;avancer tous seuls. Dans ces cas la il est important de savoir faire confiance aux autres. &lt;/p&gt;
 
-&lt;div class=&quot;consigne&quot;&gt;A DEFINIR: Une personne se laisse guider par les autres pour réaliser une tache.
-(twister, labyrinthe les yeux bandés, connecter les cables dans le bons sens)
-&lt;/div&gt;
-(if:$aide is &quot;True&quot;)[L&#39;expérience terminée, vous (link:&quot;revenez à votre propre recherche&quot;)[(go-to:&quot;Prototypage_4&quot;)].](else:)[&lt;ol class =&quot;passage-link&quot;&gt;
+&lt;div class=&quot;consigne&quot;&gt;&lt;/div&gt;
+(link:&quot;La collaboration est un réel succès!&quot;)[(if:$aide is &quot;True&quot;)[L&#39;expérience terminée, vous (link:&quot;revenez à votre propre recherche&quot;)[(go-to:&quot;Prototypage_4&quot;)].](else:)[&lt;ol class =&quot;passage-link&quot;&gt;
 (if: $nLabo&lt;2)[&lt;li&gt;Vous retournez (link: &quot;récolter plus d&#39;échantillons&quot;)[(go-to:(either:&quot;Labo_2&quot;,&quot;Labo_5&quot;))] avant de passer à l&#39;analyse.&lt;/li&gt;]
 &lt;li&gt;Vous pensez avoir récolté assez de données, et vous voulez (link:&quot;les analyser&quot;)[(go-to:&quot;randomAnalyse&quot;)]&lt;/li&gt;
 (display:&quot;RandomAnnexe&quot;)
 (display:&quot;RandomEvent&quot;)
-&lt;/ol&gt;]</tw-passagedata><tw-passagedata pid="40" name="Labo_5" tags="" position="1500,800" size="100,100">&lt;h2&gt;15. Recueil des résultats&lt;/h2&gt;
+&lt;/ol&gt;]]</tw-passagedata><tw-passagedata pid="40" name="Labo_5" tags="" position="1500,800" size="100,100">&lt;h2&gt;15. Recueil des résultats&lt;/h2&gt;
 
 &lt;p&gt;Il est important de correctement recenser les résultats des expériences, pour pouvoir les analyser plus tard et avoir confiance en ses résultats.&lt;/p&gt;
 
-&lt;div class = &quot;consigne&quot;&gt;Regardez dans le microscope et comptez le nombre de cellules. Combien de cellules compte-t-on? 
+&lt;div class = &quot;consigne&quot;&gt;Combien de cellules compte-t-on? 
 (set:$solutionMicroscope to &quot;0&quot;)(dropdown: bind $reponseMicroscope, &quot;0&quot;, &quot;1&quot;, &quot;2&quot;,&quot;3&quot;)&lt;/div&gt; 
 (link-rerun: &#39;&lt;span id =&quot;enter&quot;&gt;Vérifier &amp;#x21A9;&lt;/span&gt;&#39;)[(if: $reponseMicroscope is $solutionMicroscope)[Exactement! Votre travail précis vous promet de superbes résultats et rendra vos analyses plus simples. &lt;ol class =&quot;passage-link&quot;&gt;
 (if: $nLabo&lt;2)[&lt;li&gt;Vous pensez qu&#39;il serait judicieux de (link: &quot;collaborer avec d&#39;autres chercheurs&quot;)[(go-to:(either:&quot;Labo_3&quot;,&quot;Labo_4&quot;))] avant de passer à l&#39;analyse.&lt;/li&gt;]&lt;li&gt;Vous pensez avoir récolté assez de données, et vous voulez (link:&quot;les analyser&quot;)[(go-to:&quot;randomAnalyse&quot;)]&lt;/li&gt;
@@ -711,7 +710,7 @@ Faites 3 grandes respirations.
 
 &lt;div class = &quot;consigne&quot;&gt;&lt;/div&gt;
 (link-goto:&quot;C&#39;est reparti!&quot;, $passageBeforePause)</tw-passagedata><tw-passagedata pid="62" name="séminaire" tags="definition" position="600,1200" size="100,100">&lt;div class =&quot;definition&quot;&gt;
-&lt;b&gt;Def&lt;/b&gt; (séminaire). La plupart des groupes de recherche se regroupent souvent afin que chaque membre puisse présenter sa recherche, souvent dans une série de présentations parfois ouvertes au publique.
+&lt;b&gt;Définition&lt;/b&gt; (séminaire). La plupart des groupes de recherche se regroupent régulèrement afin que les membre puisse présenter sa recherche et en discuter, souvent dans le cadre d&#39;une série de présentations parfois ouvertes au public.
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="randomLabo" tags="spécial" position="200,1000" size="100,100">(set: _wentToLecture to (a:&quot;Labo_1&quot;,&quot;Labo_2&quot;,&quot;Labo_3&quot;,&quot;Labo_4&quot;,&quot;Labo_5&quot;)-(history:))
 (set: _goingTo to (either: ..._wentToLecture))
 (set:$numCase to $caseToInt&#39;s _goingTo,$chapitre to 3)
