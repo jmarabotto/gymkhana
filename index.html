@@ -672,40 +672,41 @@ Bien joué! Les étapes de la démarche scientifiques sont très importantes à 
 	]
 ]</tw-passagedata><tw-passagedata pid="20" name="Labo_5" tags="" position="1500,800" size="100,100">&lt;h2&gt;15. Recueil des résultats&lt;/h2&gt;
 &lt;p&gt;Il est important de correctement recenser les résultats des expériences pour pouvoir les analyser plus tard sans s&#39;y perdre. Cela vous permettra d&#39;avoir confiance en la fiabilité de vos résultats.&lt;/p&gt;
+&lt;p&gt;Les gammares sont des crustacés d&#39;eau douce, dont la présence en haute quantité indique la bonne santé d&#39;un cours d&#39;eau. 
 
-&lt;div class = &quot;consigne&quot;&gt;A METTRE A JOUR SELON ECHANTILLONS MICROSCOPE&lt;/div&gt;
+&lt;div class = &quot;consigne&quot;&gt;Combien d&#39;antennes possède le gammare?&lt;/div&gt;
 &lt;!-- Combien de cellules compte-t-on? --&gt;
-(set:$solutionMicroscope to &quot;0&quot;)(dropdown: bind $reponseMicroscope, &quot;0&quot;, &quot;1&quot;, &quot;2&quot;,&quot;3&quot;)
+(set:$solutionMicroscope to &quot;4&quot;)(dropdown: bind $reponseMicroscope, &quot;0&quot;,&quot;2&quot;,&quot;4&quot;,&quot;6&quot;)
 (link-rerun: &#39;&lt;span id =&quot;enter&quot;&gt;Vérifier &amp;#x21A9;&lt;/span&gt;&#39;)[
 (if: $reponseMicroscope is $solutionMicroscope)[
-	&lt;p&gt;Exactement! Votre travail précis vous promet de superbes résultats et rendra vos analyses plus simples.&lt;/p&gt;
+	&lt;p&gt;Exactement! Votre travail précis vous promet de superbes résultats et simplifiera vos analyses.&lt;/p&gt;
     &lt;ol class =&quot;passage-link&quot;&gt;
     
     (if: $nLabo&lt;1)[
 		&lt;li&gt;Vous pensez qu&#39;il serait judicieux de (link: &quot;collaborer avec d&#39;autres scientifiques&quot;)[(go-to:(either:&quot;Labo_3&quot;,&quot;Labo_4&quot;))] avant de passer à l&#39;analyse.&lt;/li&gt;
-    	&lt;li&gt;Vous pensez avoir récolté assez de données et vous souhaitez déjà (link: &quot;les analyser&quot;)[(go-to:&quot;randomLabo&quot;)] avant de passer à l&#39;analyse.&lt;/li&gt;
+    	&lt;li&gt;Vous pensez avoir récolté assez de données et vous souhaitez déjà (link: &quot;les analyser&quot;)[(go-to:&quot;randomLabo&quot;)].&lt;/li&gt;
     	]
     
 	(else:)[
-		&lt;li&gt;Vous avez maintenant récolté assez de données, il est temps de (link:&quot;les analyser&quot;)[(go-to:&quot;randomAnalyse&quot;)]&lt;/li&gt;
+		&lt;li&gt;Vous avez maintenant récolté assez de données, il est temps de (link:&quot;les analyser&quot;)[(go-to:&quot;randomAnalyse&quot;)].&lt;/li&gt;
     	]
 	
 	&lt;/ol&gt;
 	]
     
 (else:)[
-	Incorrect, scrutez chaque recoins!
+	Incorrect, scrutez bien votre spécimen!
     ]
 ]</tw-passagedata><tw-passagedata pid="21" name="Lecture_1" tags="" position="1000,500" size="100,100">&lt;h2&gt;1. Première réunion de groupe&lt;/h2&gt;
 
-&lt;p&gt;Félicitations, votre projet de recherche  (print:$nomProjet) a été accepté par les différentes commissions universitaires&lt;!--|definition&gt;[[[commissions universitaires-&gt;commissions]]]--&gt; ! Il vous faut à présent motiver les troupes. &lt;/p&gt;
+&lt;p&gt;Félicitations, votre projet de recherche &quot;(print:$nomProjet)&quot; a été accepté par les différentes commissions universitaires&lt;!--|definition&gt;[[[commissions universitaires-&gt;commissions]]]--&gt; ! Il vous faut à présent motiver les troupes. &lt;/p&gt;
 
 (print: $pictodés) 
 
 &lt;p&gt;&lt;em&gt;Lorsque vous verrez ce pictogramme, suivez les instructions sur la case de jeu et faites le jeu avant de procéder à la suite.&lt;/em&gt;&lt;/p&gt;
 
 (link:&quot;C&#39;est fait!&quot;)[
-&lt;p&gt;Après vous être réunis avec votre groupe pour définir les étapes clés de votre recherche afin d&#39;atteindre vos objectifs, vous ... &lt;/p&gt;
+&lt;p&gt;Après vous être réuni.e.s avec votre groupe pour définir les étapes clés de votre recherche afin d&#39;atteindre vos objectifs, vous ... &lt;/p&gt;
 
 &lt;ol class=&quot;passage-link&quot;&gt;
 &lt;li&gt; vous décidez à (link: &quot;lire les articles&quot;)[(go-to: &quot;Lecture_2&quot;)] proposés par les membres du groupe.&lt;/li&gt;
@@ -723,9 +724,9 @@ Bien joué! Les étapes de la démarche scientifiques sont très importantes à 
 (print: $pictodés) 
 
 &lt;p&gt;Le nom du célèbre mathématicien est:&lt;/p&gt;
-(set:$solutionAuteur to &quot;gauss&quot;)(input: bind $reponseAuteur,&quot;XX=&quot;,$reponseAuteur)&lt;/div&gt; 
+(set:$solutionAuteur to &quot;Gauss&quot;)(input: bind $reponseAuteur,&quot;XX=&quot;,$reponseAuteur)&lt;/div&gt; 
 (link-rerun: &#39;&lt;span id =&quot;enter&quot;&gt;Vérifier &amp;#x21A9;&lt;/span&gt;&#39;)[
-(if: $reponseAuteur contains &#39;gauss&#39; or  $reponseAuteur contains &#39;Gauss&#39;  or $reponseAuteur contains &#39;GAUSS&#39;)[
+(if: $reponseAuteur contains $solutionAuteur or $reponseAuteur contains &#39;gauss&#39; or  $reponseAuteur contains &#39;C. F. Gauss&#39;  or $reponseAuteur contains &#39;GAUSS&#39;)[
 	&lt;br&gt;(t8n:&#39;slide-down&#39;)[&#39;&#39;//Johann Carl Friedrich Gauss//&#39;&#39;] 
     &lt;br&gt; Une légende des mathématiques! Son travail est encore bien présent 170 ans après sa mort, notamment poursuivi par Maryna S. Viazovska.
     
@@ -738,16 +739,18 @@ Bien joué! Les étapes de la démarche scientifiques sont très importantes à 
         ]
         
 	(else:)[
-    	&lt;li&gt;Vous voulez maintenant (link: &quot;passer à la pratique&quot;)[(set:$chapitre to 2,$numCase to 4)[(go-to: (either:&quot;Prototypage_3&quot;,&quot;Prototypage_5&quot;))]. &lt;/li&gt;
-        &lt;li&gt;Fini les bouquins, vous commencez à réfléchir à (link:&quot;par où commencer&quot;)[[(go-to: (either:&quot;Prototypage_2&quot;,&quot;Prototypage_4&quot;))].&lt;/li&gt;
+    	&lt;li&gt;Vous voulez maintenant (link: &quot;passer à la pratique&quot;)[(go-to: (either:&quot;Prototypage_3&quot;,&quot;Prototypage_5&quot;))]. &lt;/li&gt;
+        &lt;li&gt;Fini les bouquins, vous commencez à réfléchir à (link:&quot;par où commencer&quot;)[(go-to: (either:&quot;Prototypage_2&quot;,&quot;Prototypage_4&quot;))].&lt;/li&gt;
     	]
     &lt;!-- (display:&quot;RandomEvent&quot;) --&gt;
     &lt;/ol&gt;
     ] 
+]
 
 (else:)[
-	&lt;br&gt; Incorrect, vérifiez bien le nom des auteurs, le titre des publications et surtout le nom de l&#39;auteur de la dernière référence.]
-]</tw-passagedata><tw-passagedata pid="23" name="Lecture_3" tags="" position="1250,500" size="100,100">&lt;h2&gt;3. Lecture de publications approfondie.&lt;/h2&gt;
+	&lt;br&gt; Incorrect, vérifiez bien le nom des auteurs, le titre des publications et surtout le nom de l&#39;auteur de la dernière référence.
+    ]
+</tw-passagedata><tw-passagedata pid="23" name="Lecture_3" tags="" position="1250,500" size="100,100">&lt;h2&gt;3. Lecture de publications approfondie.&lt;/h2&gt;
 &lt;p&gt;À force d&#39;approfondir vos lectures, vous commencez à devenir des expert.e.s théoriques de votre domaine et vous étalez toute votre connaissance lors de la réunion hebdomadaire du groupe. &lt;/p&gt;
 
 &lt;ol class = &quot;passage-link&quot;&gt;
@@ -778,19 +781,20 @@ Bien joué! Les étapes de la démarche scientifiques sont très importantes à 
 
 (else:)[
 	(if:$nLecture&lt;2)[
-    	&lt;li&gt;Assez d&#39;écran, il vous manque du savoir sur votre domaine, il faudrait (link: &quot;lire les documents de recherche&quot;)[(go-to: &quot;Lecture_2&quot;)] proposés par votre groupe.&lt;/li&gt;
+    	&lt;li&gt;Assez d&#39;écran, il vous manque du savoir sur votre domaine. Il faudrait (link: &quot;lire les documents de recherche&quot;)[(go-to: &quot;Lecture_2&quot;)] proposés par votre groupe.&lt;/li&gt;
     	&lt;li&gt;Vous ne savez pas trop quoi faire et (link:&quot;manquez d&#39;inspiration&quot;)[(go-to:&quot;Lecture_5&quot;)].&lt;/li&gt;
         ]
         
     (else:)[
-    	&lt;li&gt;Vour préférez directement (link: &quot;faire des expériences.&quot;)[(go-to:&quot;RandomPrototypage&quot;)].&lt;/li&gt;
+    	&lt;li&gt;Vous êtes prêt.e.s à (link:&quot;passer à la pratique&quot;)[(go-to: &quot;randomProtoypage&quot;)]!&lt;/li&gt;
+    	&lt;li&gt;Vour partez maintenant (link: &quot;préparer des expériences.&quot;)[(go-to:&quot;RandomPrototypage&quot;)].&lt;/li&gt;
         ]
     ]
 
 &lt;!-- (display:&quot;RandomEvent&quot;) --&gt;
 &lt;/ol&gt;
 ]</tw-passagedata><tw-passagedata pid="25" name="Lecture_5" tags="" position="1500,500" size="100,100">&lt;h2&gt;5. Découverte de sujets alternatifs.&lt;/h2&gt;
-&lt;p&gt;En pleine lecture et en manque d&#39;inspiration, vous discutiez avec un chercheur du département d&#39;à côté. C&#39;est alors qu&#39;il vous parle d&#39;une méthode de modellisation qui pourrait vous servir.&lt;/p&gt;
+&lt;p&gt;En pleine lecture et en manque d&#39;inspiration, vous discutez avec plusieurs scientifiques du département d&#39;à côté. C&#39;est alors qu&#39;on vous parle d&#39;une méthode de modellisation qui pourrait vous servir.&lt;/p&gt;
 
 (link:&quot; Vous vous informez d&#39;avantage sur cette méthode et il s&#39;avère que vous apprenez beaucoup!&quot;)[
 &lt;ol class=&quot;passage-link&quot;&gt;
@@ -937,7 +941,7 @@ Rentrez le code de l&#39;ordinateur:
     	&lt;li&gt;Au lieu d&#39;aider vous préférez (link: &quot;retourner dans vos bouquins&quot;)[(go-to: &quot;randomLecture&quot;)] pour en apprendre un peu plus car vous êtes un peu hésitants au niveau théorique...&lt;/li&gt;
         ]
         --&gt;
-     (if:$nPrototypage &lt;1)[
+     (if:$nPrototypage &lt;2)[
      	&lt;li&gt; Son travail vous inspire peu et vous préférez (link:&quot;essayer de développer vos propres nouvelles idées&quot;)[(go-to:&quot;randomPrototypage&quot;)].&lt;/li&gt;
         ]
         
