@@ -313,11 +313,11 @@ function updateHealthBar (maxHealth, health) {
 (print:$pictodés)
 
 L&#39;outil le plus adapté est: 
-(set:$solutionOutil to &quot;Un Spectroscope&quot;)(dropdown: 2bind $reponseOutil, &quot;(Cliquez ici pour choisir)&quot;, &quot;Un Kaléiodscope&quot;, &quot;Un Spectroscope&quot;, &quot;Un Prisme&quot;, &quot;Un mirroir&quot;)
+(set:$solutionOutil to &quot;Un Spectroscope&quot;)(dropdown: 2bind $reponseOutil, &quot;(Cliquez ici pour choisir)&quot;,&quot;Un Kaléiodscope&quot;, &quot;Un Spectroscope&quot;, &quot;Un Prisme&quot;, &quot;Un mirroir&quot;)
 (link-rerun: &#39;&lt;span id =&quot;enter&quot;&gt;Vérifier &amp;#x21A9;&lt;/span&gt;&#39;)[
 (if: $reponseOutil is $solutionOutil)[
-	&lt;p&gt;Effectivement, un spectroscope permet de séparer toutes les longeurs d&#39;ondes émises par une source lumineuse.&lt;/p&gt;
-    &lt;p&gt;Même si a l&#39;œil nu nous ne voyons qu&#39;un spectre allant du violet au rouge, c&#39;est grâce a la spectroscopie que nous pouvons déduire le mouvement des étoiles dans la Voie Lactée ainsi que leur composition. Par contre, pour accomplir ça, il faudra un spectroscope un peu plus développé...&lt;/p&gt;
+	&lt;p&gt;Effectivement, un spectroscope permet de séparer toutes les longeurs d&#39;ondes émises par une source lumineuse, reproduisant le spectre devant vous.&lt;/p&gt;
+    &lt;p&gt;C&#39;est grâce a la spectroscopie que nous pouvons par exemple déduire le mouvement des étoiles dans la Voie Lactée ainsi que leur composition. Par contre, pour accomplir ça, il faudra un spectroscope un peu plus développé...&lt;/p&gt;
 	
     &lt;ol class =&quot;passage-link&quot;&gt;
     (if:$nAnalyse&lt;1)[
@@ -384,11 +384,12 @@ L&#39;outil le plus adapté est:
 
 (print:$pictodés)
 
-La structure sous jacente répétée (le &lt;i&gt;monomère&lt;/i&gt;) est représentée sur l&#39;image : 
+Le motif répété dans le ploystyrène est le motif : 
 (set:$solutionMonomer to &quot;D&quot;)(dropdown: 2bind $reponseMonomer, &quot;(Cliquez ici pour choisir)&quot;,&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;)
 (link-rerun: &#39;&lt;span id =&quot;enter&quot;&gt;Vérifier &amp;#x21A9;&lt;/span&gt;&#39;)[
 (if: $reponseMonomer is $solutionMonomer)[
-	&lt;p&gt; C&#39;est juste! C&#39;est en identifant des patterns comme ici que les plus grandes découvertes ont eu lieu.&lt;/p&gt;
+	&lt;p&gt; C&#39;est juste! Un enchaînement successif de 4x ce motif reproduirait à l&#39;identique la molécule de polystyrène sous vos yeux.&lt;/p&gt;
+    &lt;p&gt;Les polymères peuvent en réalité être formés de motifs répétés plusieurs millions de fois!&lt;/p&gt;
     &lt;ol class =&quot;passage-link&quot;&gt;
 	(if: $nAnalyse&lt;1)[
     	&lt;li&gt;C&#39;est un bon début, mais vous (link:&quot;continuez à analyser vos résultats&quot;)[(go-to:&quot;randomAnalyse&quot;)].&lt;/li&gt;
@@ -513,11 +514,13 @@ est aberrante.
 
 &lt;sup&gt;4&lt;/sup&gt; Merci au membres du SPS pour leurs annecdotes de recherche et leur critiques.
 
-ℹ️ Cette aventure interactive est destinée pour des équipes de 2 à 4 joueurs. Les passages en [[jaune sont des décisions-&gt;CREDITS]], les passages en |definition&gt;[[[bleu-&gt;definition]]] sont des lien vers une définition ou explication détaillée de certains concepts. La dynamique du jeu est en partie aléatoire et il se peut que l&#39;histoire ne paraisse pas totalement cohérente par moment. Certaines cases ont des jeux, des éléments interactifs, d&#39;autres n&#39;en ont pas, suivez les instructions sur la tablette. Les jeux ont un thème scientifique faisant référence à certains concepts mais aucune rigueur scientifique. Le nom du projet ou du groupe n&#39;a rien à voir avec le reste du jeux.
+ℹ️ Cette aventure interactive est destinée pour des équipes de 2 à 4 joueurs. Les passages en [[jaune sont des décisions-&gt;CREDITS]]. La dynamique du jeu est en partie aléatoire et il se peut que l&#39;histoire ne paraisse pas totalement cohérente par moment. Certaines cases ont des jeux, des éléments interactifs, d&#39;autres n&#39;en ont pas, suivez les instructions sur la tablette. Les jeux ont un thème scientifique faisant référence à certains concepts mais aucune rigueur scientifique. Le nom du projet ou du groupe n&#39;a rien à voir avec le reste du jeux.
 
 ↪️(link-goto:&quot;Retour au jeu&quot;, (history:)&#39;s last)
 
 ⚠️(link:&quot;Recommencer à zéro&quot;)[(restart:)]
+
+&lt;!--
 
 🔧Paramètres du jeu:
 (link-fullscreen: &quot;Plein Ecran&quot;, &quot;Réduire&quot;, &quot;Plein écran indisponible&quot;)
@@ -535,7 +538,9 @@ est aberrante.
         (go-to: _passage)
     ]
 ]
-(print:(history:))</tw-passagedata><tw-passagedata pid="8" name="Citations" tags="definition" position="700,1000" size="100,100">&lt;div class =&quot;definition&quot;&gt;
+(print:(history:))
+
+--&gt;</tw-passagedata><tw-passagedata pid="8" name="Citations" tags="definition" position="700,1000" size="100,100">&lt;div class =&quot;definition&quot;&gt;
 &lt;b&gt;Définition&lt;/b&gt; (citation). Les citations ont une place centrale dans le travail des scientifiques. Elles permettent de se référer à des travaux antérieurs pour soutenir ses hypothèses. Elles permettent ensuite au lecteur de retracer l&#39;origine des résultats qui ont débouché sur une conclusion.
 &lt;/div&gt;
 
@@ -554,7 +559,7 @@ EN DEVELOPPEMENT
 (if: $reponseInterprétation is $solutionInterprétation)[En effet, cela semble être la bonne interprétation selon les données que vous avez à disposition.
 ](else:)[]]</tw-passagedata><tw-passagedata pid="10" name="End" tags="" position="1250,1300" size="100,100">&lt;h2&gt;Publication acceptée!&lt;/h2&gt;
 
-&lt;p&gt;(print:$nomProjet) a été publié dans un journal renommé dans votre domaine de recherche. La découverte est acclamée par la communauté scientifique et vous reçevez des distinctions&lt;!--|definition&gt;[[[prix-&gt;distinctions]]]--&gt; à une conférence. (Un petit cri de groupe pour célébrer?) Cela ne vous aura pris que (print:$dureeProjet) mois. Vous avez vécu des hauts et de bas, des imprévus, mais surtout pleins d&#39;émotions: c&#39;est ça la vie de scientifique&lt;!--|definition&gt;[[[vie de scientifiques-&gt;vieDeScientifique]]]-&gt; !&lt;/p&gt;
+&lt;p&gt;(print:$nomProjet) a été publié dans un journal renommé dans votre domaine de recherche. La découverte est acclamée par la communauté scientifique et vous reçevez des distinctions&lt;!--|definition&gt;[[[prix-&gt;distinctions]]]--&gt; à une conférence. (Un petit cri de groupe pour célébrer?) Cela ne vous aura pris que (print:$dureeProjet) mois. Vous avez vécu des hauts et de bas, des imprévus, mais surtout pleins d&#39;émotions: c&#39;est ça la vie de scientifique&lt;!--|definition&gt;[[[vie de scientifiques-&gt;vieDeScientifique]]]--&gt; !&lt;/p&gt;
 
 &lt;div class=&quot;consigne&quot;&gt;Apportez votre pierre à l&#39;édifice en déposant votre brique de connaissance sur la pyramide du savoir. &lt;/div&gt;
 
@@ -591,7 +596,7 @@ data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAACFYAAAPLCAYAAAB/hZ+yAAAACXBIWXMAAC
 --&gt;
 
 (link:&quot;C&#39;est réussi !&quot;)[
-Bien joué! Les étapes de la démarche scientifiques sont très importantes à suivre pour mener à bout votre projet.
+Bien joué! Les étapes de votre protocole sont très importantes à suivre pour mener à bien votre projet.
 &lt;ol class =&quot;passage-link&quot;&gt;
 &lt;li&gt;Il faut maintenant (link: &quot;répéter les expériences maintes fois&quot;)[(go-to:(either:&quot;Labo_2&quot;,&quot;Labo_5&quot;))] pour collecter des données.&lt;/li&gt;
 &lt;li&gt;Vous préférez voir comment une (link:&quot;collaboration avec d&#39;autres scientifiques&quot;)[
@@ -624,18 +629,35 @@ Bien joué! Les étapes de la démarche scientifiques sont très importantes à 
 
 (print:$pictodés)
 
-(link:&quot;On y est arrivé !&quot;)[
-&lt;ol class =&quot;passage-link&quot;&gt;
+&lt;p&gt;Comment vous en êtes vous sorti.e.s?&lt;/p&gt;
 
+(link: &#39;&lt;span id =&quot;enter&quot;&gt;On a réussi!&lt;/span&gt;&#39;)[
+&lt;p&gt;Bravo! Ce n&#39;était pourtant pas facile. Maintenant:
+&lt;ol class =&quot;passage-link&quot;&gt;
 (if: $nLabo&lt;1)[
-	&lt;li&gt;Vous pensez qu&#39;il serait judicieux de (link: &quot;collaborer avec d&#39;autres scientifiques&quot;)[(go-to:(either:&quot;Labo_3&quot;,&quot;Labo_4&quot;))] avant de passer à l&#39;analyse.&lt;/li&gt;
+	&lt;li&gt;Vous pensez qu&#39;il serait tout de même judicieux de (link: &quot;collaborer avec d&#39;autres scientifiques&quot;)[(go-to:(either:&quot;Labo_3&quot;,&quot;Labo_4&quot;))] avant de passer à l&#39;analyse.&lt;/li&gt;
     &lt;li&gt;Vous pensez avoir récolté assez de données et vous souhaitez déjà (link: &quot;les analyser&quot;)[(go-to:&quot;randomLabo&quot;)] avant de passer à l&#39;analyse.&lt;/li&gt;
     ]
-    
+
 (else:)[
-	&lt;li&gt;Vous avez maintenant récolté assez de données, il est temps de (link:&quot;les analyser&quot;)[(go-to:&quot;randomAnalyse&quot;)]&lt;/li&gt;
+	&lt;li&gt;Vous avez maintenant récolté assez de données, il est temps de (link: &quot;les analyser&quot;)[(go-to:&quot;randomLabo&quot;)]!&lt;/li&gt;
+    ]  
+&lt;!-- (display:&quot;RandomAnnexe&quot;) --&gt;
+&lt;!-- (display:&quot;RandomEvent&quot;) --&gt;
+&lt;/ol&gt;
+]
+
+(link: &#39;&lt;span id =&quot;enter&quot;&gt;C\&#39;était trop difficile...&lt;/span&gt;&#39;)[
+&lt;ol class =&quot;passage-link&quot;&gt;
+(if: $nLabo&lt;1)[
+	&lt;p&gt; Pas de soucis, il est encore temps de renforcer votre savoir-faire.&lt;/p&gt;
+	&lt;li&gt;Allez (link: &quot;collaborer avec d&#39;autres scientifiques&quot;)[(go-to:(either:&quot;Labo_3&quot;,&quot;Labo_4&quot;))] avant de passer à l&#39;analyse.&lt;/li&gt;
+    &lt;li&gt;(link:&quot;Refaites des expériences&quot;)[(go-to:&quot;randomLabo&quot;)] pour améliorer vos résultats.&lt;/li&gt;
     ]
-    
+
+(else:)[
+	&lt;li&gt;Vous avez déjà récolté plein de données et n&#39;avez malheureusement pas le temps de réessayer, il est donc temps d&#39;aller (link:&quot;les analyser&quot;)[(go-to:&quot;randomAnalyse&quot;)].&lt;/li&gt;
+    ]
 &lt;!-- (display:&quot;RandomAnnexe&quot;) --&gt;
 &lt;!-- (display:&quot;RandomEvent&quot;) --&gt;
 &lt;/ol&gt;
@@ -644,14 +666,15 @@ Bien joué! Les étapes de la démarche scientifiques sont très importantes à 
 
 (print:$pictodés)
 
-(link:&quot;On a réussi!&quot;)[
+(link:&quot;Yes! Notre nouvel élément est connecté!&quot;)[
+&lt;p&gt;Bravo! A présent, vous ... &lt;/p&gt;
 &lt;ol class =&quot;passage-link&quot;&gt;
 (if: $nLabo&lt;1)[
-	&lt;li&gt;Vous voulez faire (link: &quot;plus d&#39;expériences&quot;)[(go-to:(either:&quot;Labo_2&quot;,&quot;Labo_5&quot;))] avant de passer à l&#39;analyse de données.&lt;/li&gt;]
-	&lt;li&gt;Vous pensez avoir récolté assez de données et vous voulez (link:&quot;les analyser&quot;)[(go-to:&quot;randomAnalyse&quot;)].&lt;/li&gt;
+	&lt;li&gt;voulez faire (link: &quot;plus d&#39;expériences&quot;)[(go-to:(either:&quot;Labo_2&quot;,&quot;Labo_5&quot;))] avant de passer à l&#39;analyse de données.&lt;/li&gt;]
+	&lt;li&gt;pensez avoir récolté assez de données et vous voulez (link:&quot;les analyser&quot;)[(go-to:&quot;randomAnalyse&quot;)].&lt;/li&gt;
         
 (else:)[
-    &lt;li&gt;Maintenant que vous avez acquis de nombreuses données, c&#39;est l&#39;heure de (link:&quot;passer aux analyses&quot;)[(go-to:&quot;randomAnalyse&quot;)].&lt;/li&gt;
+    &lt;li&gt;avez acquis de nombreuses données, c&#39;est donc l&#39;heure de (link:&quot;passer aux analyses&quot;)[(go-to:&quot;randomAnalyse&quot;)].&lt;/li&gt;
     ]
     
 &lt;!-- (display:&quot;RandomEvent&quot;) --&gt;
@@ -746,7 +769,7 @@ Bien joué! Les étapes de la démarche scientifiques sont très importantes à 
 	&lt;ol class=&quot;passage-link&quot;&gt;
     
     (if:$nLecture&lt;2)[
-		&lt;li&gt;Grâce au système de citations&lt;!--|definition&gt;[[[références et citations-&gt;Citations]]]--&gt;, les publications générales sur votre sujet vous ont mené vers d&#39;autres publications intéressantes. Vous n’êtes pas rassasié de vos lectures et vous voulez en savoir plus ! Vous décidez donc de (link: &quot;lire plus d&#39;articles scientifiques&quot;)[(set:$connaissances to it+1)(go-to: (either:&quot;Lecture_3&quot;, &quot;Lecture_5&quot;))].&lt;/li&gt;
+		&lt;li&gt;Grâce au système de citations&lt;!--|definition&gt;[[[références et citations-&gt;Citations]]]--&gt;, les publications générales sur votre sujet vous ont mené vers d&#39;autres publications intéressantes. Vous n’êtes pas rassasié.e.s de vos lectures et vous voulez en savoir plus ! Vous décidez donc de (link: &quot;lire plus d&#39;articles scientifiques&quot;)[(set:$connaissances to it+1)(go-to: (either:&quot;Lecture_3&quot;, &quot;Lecture_5&quot;))].&lt;/li&gt;
         &lt;li&gt;Maintenant que vous connaissez la littérature, (link:&quot;renseignez vous sur les outils numériques&quot;)[(go-to:&quot;Lecture_4&quot;)] à votre disposition.&lt;/li&gt;
 		&lt;li&gt;Vous voulez plutôt (link: &quot;tester&quot;)[(set:$chapitre to 2,$numCase to 4)(go-to: &quot;Prototypage_1&quot;)] les méthodes de cet article de recherche. &lt;/li&gt;
         ]
@@ -761,7 +784,7 @@ Bien joué! Les étapes de la démarche scientifiques sont très importantes à 
 ]
 
 (else:)[
-	&lt;br&gt; Incorrect, vérifiez bien le nom des auteurs, le titre des publications et surtout le nom de l&#39;auteur de la dernière référence.
+	&lt;br&gt; Incorrect, vérifiez bien le nom des auteur.e.s, le titre des publications et surtout le nom de l&#39;auteur de la dernière référence.
     ]
 </tw-passagedata><tw-passagedata pid="23" name="Lecture_3" tags="" position="1250,500" size="100,100">&lt;h2&gt;3. Lecture de publications approfondie.&lt;/h2&gt;
 &lt;p&gt;À force d&#39;approfondir vos lectures, vous commencez à devenir des expert.e.s théoriques de votre domaine et vous étalez toute votre connaissance lors de la réunion hebdomadaire du groupe. &lt;/p&gt;
@@ -773,12 +796,12 @@ Bien joué! Les étapes de la démarche scientifiques sont très importantes à 
     ]
 (else:)[
 	&lt;li&gt;(either:&quot;Vous êtes avides de connaissances&quot;,&quot;Vous voulez toujours en apprendre plus&quot;, &quot;Votre soif d&#39;apprendre s&#39;intensifie&quot;), (link:(either:&quot;continuez à lire.&quot;,&quot;lire toujours plus .&quot;,&quot;lire encore.&quot;,&quot;vous finissez encore un livre.&quot;, &quot;vous suivez un cours sur une nouvelle théorie à la mode.&quot;))[(set:$count to $count+1)(go-to:&quot;Lecture_3&quot;)]&lt;/li&gt;
-	&lt;li&gt;Vous préférez commencer à (link:&quot;expérimenter certaines de vos nouvelles connaissances.&quot;)[(go-to:&quot;randomPrototypage&quot;)]&lt;/li&gt;
+	&lt;li&gt;Il est temps de commencer à (link:&quot;expérimenter certaines de vos nouvelles connaissances.&quot;)[(go-to:&quot;randomPrototypage&quot;)]&lt;/li&gt;
 	]
     
 &lt;!--(display:&quot;RandomEvent&quot;) --&gt;
 &lt;/ol&gt;</tw-passagedata><tw-passagedata pid="24" name="Lecture_4" tags="" position="1375,500" size="100,100">&lt;h2&gt;4. Formation informatique&lt;/h2&gt;
-&lt;p&gt;Vous réfléchissez aux outils informatiques qui vous permettront de traiter vos données et trouvez trois bibliothèques qui pourraient vous être utiles. Grâce à elles, vous pourrez manipuler, analyser et visualiser vos données scientifiques.&lt;/p&gt;
+&lt;p&gt;Vous réfléchissez aux outils informatiques qui vous permettront de traiter vos données et trouvez trois bibliothèques Python qui pourraient vous être utiles. Grâce à elles, vous pourrez manipuler, analyser et visualiser vos données scientifiques.&lt;/p&gt;
 
 &lt;!-- 
 &lt;p&gt;Vous lisez la documentation |definition&gt;[[[documentation-&gt;documentation]]] d&#39;un programme informatique |definition&gt;[[[open access-&gt;openSource]]] (en libre accès) qui sert à manipuler et analyser des données grâce à une multitude de fonctions.&lt;/p&gt;
@@ -786,7 +809,7 @@ Bien joué! Les étapes de la démarche scientifiques sont très importantes à 
 
 (print: $pictodés) 
 
-(link:&quot;C&#39;est bon, les pièces du puzzle sont complétées!&quot;)[
+(link:&quot;C&#39;est bon, les pièces du puzzle sont assemblées!&quot;)[
 &lt;ol class = &quot;passage-link&quot;&gt;
 (if: (visited:&quot;Analyse_4&quot;))[
 	&lt;li&gt;Vous avez retrouvé le nom de la bibliothèque qu&#39;il vous faut pour (link: &quot;retourner à vos analyses&quot;)[(set:$chapitre to 4)(go-to:&quot;Analyse_4&quot;)].&lt;/li&gt;
@@ -800,7 +823,7 @@ Bien joué! Les étapes de la démarche scientifiques sont très importantes à 
 
     (else:)[
     	&lt;li&gt;Vous êtes prêt.e.s à (link:&quot;passer à la pratique&quot;)[(go-to: (either:&quot;Prototypage_3&quot;,&quot;Prototypage_4&quot;))]!&lt;/li&gt;
-    	&lt;li&gt;Vous partez maintenant (link: &quot;préparer des expériences.&quot;)[(go-to: (either:&quot;Prototypage_2&quot;,&quot;Prototypage_5&quot;))].&lt;/li&gt;
+    	&lt;li&gt;Vous partez maintenant (link: &quot;préparer des expériences&quot;)[(go-to: (either:&quot;Prototypage_2&quot;,&quot;Prototypage_5&quot;))].&lt;/li&gt;
         ]
     ]
 
@@ -813,6 +836,7 @@ Bien joué! Les étapes de la démarche scientifiques sont très importantes à 
 &lt;ol class=&quot;passage-link&quot;&gt;
 &lt;li&gt;Vous voulez essayer ces méthodes et (link: &quot;créer des modèles&quot;)[(set:$chapitre to 2,$numCase to 4)(go-to: &quot;Prototypage_5&quot;)] pour votre recherche. &lt;/li&gt;
 &lt;li&gt;Une collaboratrice vous propose une participation à son projet de recherche. Allons lui (link:&quot;prêter main forte&quot;)[(go-to:&quot;Prototypage_4&quot;)].&lt;/li&gt;
+&lt;li&gt;Vous préférez d&#39;abord (link:&quot;lire des articles&quot;)[(go-to:&quot;Lecture_2&quot;)] ou apprendre à (link:&quot;utiliser des outils numériques&quot;)[(go-to:&quot;Lecture_4&quot;)].&lt;/li&gt;
 
 &lt;!-- (display:&quot;RandomEvent&quot;) --&gt;
 &lt;/ol&gt;
@@ -864,7 +888,7 @@ Rentrez le code de l&#39;ordinateur:
     ]
 
 (else:)[
-	&lt;li&gt;Ces méthodes étaient ce qui vous manquait pour optimiser votre processus de prise de mesure. Vois pouvez maintenant (link:&quot;passer au laboratoire&quot;)[(go-to:&quot;randomLabo&quot;)] pour commencer à prendre des mesures.&lt;/li&gt;
+	&lt;li&gt;Ces méthodes étaient ce qu&#39;il vous manquait pour optimiser votre processus de prise de mesure. Vous pouvez maintenant (link:&quot;passer au laboratoire&quot;)[(go-to:&quot;randomLabo&quot;)] pour commencer à acquérir des données.&lt;/li&gt;
     &lt;!--
     &lt;li&gt; Vous préférez quand même faire plus de tests et vous (link:&quot;lancer vous dans plus de tests préliminaires.&quot;)[(go-to:&quot;randomPrototypage&quot;)]. &lt;/li&gt;
     --&gt;
@@ -877,16 +901,16 @@ Rentrez le code de l&#39;ordinateur:
 
 (print:$pictodés)
 
-&lt;div class = &quot;consigne&quot;&gt;Quelle(s) hypothèse(s) pourriez vous émettre pour la question suivante: &lt;br&gt;&lt;em&gt;(either:&quot;Pourquoi nos dessous de pieds sont chatouilleux&quot;,&quot;Pourquoi un écran d&#39;ordinateur est rectangulaire&quot;,&quot;Pourquoi as-t-on 5 doigts sur une main, (et pas 4 ou 6 ou 17)&quot;)?&lt;/em&gt;&lt;/div&gt;
+&lt;div class = &quot;consigne&quot;&gt;Quelle(s) hypothèse(s) pourriez vous émettre pour la question suivante: &lt;br&gt;&lt;em&gt;(either:&quot;Pourquoi nos dessous de pieds sont-ils chatouilleux&quot;,&quot;Pourquoi un écran d&#39;ordinateur est-il rectangulaire&quot;,&quot;Pourquoi a-t-on 5 doigts sur une main (et pas 4, 6 ou 17)&quot;)?&lt;/em&gt;&lt;/div&gt;
 
 &lt;ol class=&quot;passage-link&quot;&gt;
-(link:&quot;Nos hypothèses sont prêtes!&quot;)[
+(link:&quot;Nos hypothèses sont formulées!&quot;)[
 &lt;!--(if:$nLecture &lt;3)[
-    &lt;li&gt;Vos hypothèses sont malheuresement démontées par un collaborateur qui vous propose gentillement de (link: &quot;retourner dans vos bouquins&quot;)[(go-to: &quot;randomLecture&quot;)] pour en apprendre un peu plus et revenir avec de meilleures idées.
+    &lt;li&gt;Vos hypothèses sont malheuresement démontées par un collaborateur qui vous propose gentiment de (link: &quot;retourner dans vos bouquins&quot;)[(go-to: &quot;randomLecture&quot;)] pour en apprendre un peu plus et revenir avec de meilleures idées.
     ]
     --&gt;
 (if:$nPrototypage &lt;1)[
-	&lt;li&gt;Cela vous donne des idées de ce qui pourrait être amélioré et (link:&quot;vous permet d&#39;avancer&quot;)[(go-to:&quot;randomPrototypage&quot;)].&lt;/li&gt;
+	&lt;li&gt;Cela vous donne des idées de ce qui pourrait être amélioré et vous permet de (link:&quot;mieux développer votre protocole expérimental&quot;)[(go-to:&quot;randomPrototypage&quot;)].&lt;/li&gt;
     &lt;li&gt;Ces hypothèses sont très prometteuses et vous voulez directement les (link:&quot;tester en laboratoire&quot;)[(go-to:&quot;randomLabo&quot;)].&lt;/li&gt;
     ]
 
@@ -898,8 +922,9 @@ Rentrez le code de l&#39;ordinateur:
 &lt;!-- (display:&quot;RandomEvent&quot;) --&gt;
 &lt;/ol&gt;
 ]</tw-passagedata><tw-passagedata pid="37" name="Prototypage_3" tags="" position="1250,650" size="100,100">&lt;h2&gt;8. Formation sur un nouvel appareil&lt;/h2&gt;
-&lt;p&gt;Votre recherche nécessite beaucoup de connaissances théoriques mais également techniques et pratiques. Les outils de mesures ne sont pas toujours intuitifs à utiliser.&lt;/p&gt;
+&lt;p&gt;Votre recherche nécessite beaucoup de connaissances théoriques, techniques et pratiques. Les outils de mesures ne sont pas toujours intuitifs à utiliser.&lt;/p&gt;
 &lt;p&gt;Une table d&#39;optique vous paraît nécessaire pour mener à bien votre expérience. Utiliser celle-ci requiert dextérité et concentration !&lt;/p&gt;
+
 (print:$pictodés)
 
 &lt;ol class =&quot;passage-link&quot;&gt;
@@ -933,7 +958,7 @@ Rentrez le code de l&#39;ordinateur:
 --&gt;
 &lt;!--(else-if:$nPrototypage &lt;1)--&gt;
 (if:$nPrototypage &lt;1)[
-	&lt;li&gt; Son travail vous inspire d&#39;(link:&quot;essayer de nouvelles idées&quot;)[(go-to:&quot;randomPrototypage&quot;)]. &lt;/li&gt;
+	&lt;li&gt;Son travail vous inspire d&#39;(link:&quot;essayer de nouvelles idées&quot;)[(go-to:&quot;randomPrototypage&quot;)]. &lt;/li&gt;
     &lt;li&gt;Pendant votre travail, vous avez discuté avec votre collègue et cela vous a aidé à mieux comprendre vos recherches que vous préférez directement (link:&quot;tester en laboratoire&quot;)[(go-to:&quot;randomLabo&quot;)].&lt;/li&gt;
     ]
     
@@ -966,7 +991,7 @@ Rentrez le code de l&#39;ordinateur:
 	&lt;/ol&gt;
     ]
 ]</tw-passagedata><tw-passagedata pid="39" name="Prototypage_5" tags="" position="1500,650" size="100,100">&lt;h2&gt;10. Modélisation&lt;/h2&gt;
-&lt;p&gt;Pour pleinement répondre à nos questions de recherche, il faut parfois créer des modèles. Ceux-ci simplifient souvent la réalité mais, malgré certaines limites, peuvent par exemple prédire l&#39;évolution du climat, contribuer au développement de nouveau médicaments ou encore décrire l&#39;évolution de l&#39;Univers...&lt;/p&gt;
+&lt;p&gt;Pour pleinement répondre à vos questions de recherche, il faut parfois créer des modèles. Ceux-ci simplifient souvent la réalité mais, malgré certaines limites, peuvent par exemple prédire l&#39;évolution du climat, contribuer au développement de nouveau médicaments ou encore décrire l&#39;évolution de l&#39;Univers...&lt;/p&gt;
 &lt;!--
 &lt;p&gt;La compréhension du monde passe par la création de modèles&lt;!-- |definition&gt;[[[modèles-&gt;modèles]]] --&gt; qui nous permettent de travailler dans des environnements simplifiés. À vous de trouver un moyen de modéliser la réalité !&lt;/p&gt;
 --&gt;
@@ -983,7 +1008,7 @@ Rentrez le code de l&#39;ordinateur:
 &lt;!-- (else-if:$nPrototypage &lt;1) --&gt;
 (if:$nPrototypage &lt;1)[
 	&lt;li&gt;Ce modèle pourrait être peaufiné il faudrait continuer de (link:&quot; développer de nouvelles méthodes&quot;)[(go-to:&quot;randomPrototypage&quot;)]. &lt;/li&gt;
-    &lt;li&gt;Ce modèle vous paraît asez efficace comme ça, vous voulez donc déjà (link:&quot;le tester en laboratoire&quot;)[(go-to:&quot;randomLabo&quot;)].&lt;/li&gt;
+    &lt;li&gt;Ce modèle vous paraît assez efficace comme ça, vous voulez donc déjà (link:&quot;le tester en laboratoire&quot;)[(go-to:&quot;randomLabo&quot;)].&lt;/li&gt;
     ]
 
 (else:)[
@@ -1013,26 +1038,26 @@ Rentrez le code de l&#39;ordinateur:
 (display:&quot;RandomEvent&quot;)
 &lt;/ol&gt;]</tw-passagedata><tw-passagedata pid="44" name="Redaction_2" tags="" position="1125,1100" size="100,100">&lt;h2&gt;22. Illustration des résultats&lt;/h2&gt;
 
-&lt;p&gt; Les figures&lt;!--|definition&gt;[[[figures-&gt;Figures]]]--&gt; dans les documents de recherche ont une importance capitale, il faut qu&#39;elles transmettent l&#39;information en un coup d&#39;oeil. Elles sont particulièrement importantes pour les posters&lt;!--|definition&gt;[[[posters de présentation-&gt;poster]]]--&gt;&lt;/p&gt;
+&lt;p&gt; Les figures&lt;!--|definition&gt;[[[figures-&gt;Figures]]]--&gt; dans les documents de recherche ont une importance capitale, car elles doivent pouvoir transmettre des information en un coup d&#39;oeil. Elles sont particulièrement importantes pour les posters&lt;!--|definition&gt;[[[posters de présentation-&gt;poster]]]--&gt;.&lt;/p&gt;
 
 (print:$pictodés)
 
 Entrez le total des mots que l&#39;équipe a fait deviné.
-(set:_reponse to &quot;0&quot;)(dropdown: bind _reponse,&quot;0&quot;,&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8&quot;,&quot;9&quot;,&quot;10&quot;,&quot;11&quot;,&quot;12&quot;,&quot;13+&quot;)(link-rerun:&#39;&lt;span id =&quot;enter&quot;&gt;Valider &amp;#x21A9;&lt;/span&gt;&#39;)[
+(set:_reponse to &quot;0&quot;)(dropdown: bind _reponse,&quot;0&quot;,&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8&quot;,&quot;9&quot;,&quot;10+&quot;)(link-rerun:&#39;&lt;span id =&quot;enter&quot;&gt;Valider &amp;#x21A9;&lt;/span&gt;&#39;)[
 
-(if:(a:&quot;0&quot;,&quot;1&quot;,&quot;2&quot;) contains _reponse)[
+(if:(a:&quot;0&quot;,&quot;1&quot;) contains _reponse)[
 	&lt;p&gt;Pas facile de faire passer ses idées. Vous pourriez aussi faire un petit effort sur vos figures. Malgré tout ... &lt;/p&gt;
     ]
     
-(else-if:(a:&quot;3&quot;,&quot;4&quot;,&quot;5&quot;) contains _reponse)[
+(else-if:(a:&quot;2&quot;,&quot;3&quot;) contains _reponse)[
 	&lt;p&gt;Difficile d&#39;être clair.e.s et concis.e.s n&#39;est-ce pas? Mais vous avez su faire passer les idées principales à travers vos figures, faisant que ... &lt;/p&gt;
     ]
     
-(else-if:(a:&quot;6&quot;,&quot;7&quot;,&quot;8&quot;) contains _reponse)[
+(else-if:(a:&quot;4&quot;,&quot;5&quot;,&quot;6&quot;) contains _reponse)[
 	&lt;p&gt;Beau travail! Vos figures sont de bonne qualité et aideront les lecteurs et lectrices à mieux comprendre votre travail. Du coup... &lt;/p&gt;
     ]
     
-(else-if:(a:&quot;9&quot;,&quot;10&quot;,&quot;11&quot;) contains _reponse)[
+(else-if:(a:&quot;7&quot;,&quot;8&quot;,&quot;9&quot;) contains _reponse)[
 	&lt;p&gt;Excellent! Vos figures sont d&#39;une qualité exceptionelle et, au-delà d&#39;une esthétique irréprochable, elles aideront les lecteurs et lectrices à mieux comprendre votre travail. Grâce à ça... &lt;/p&gt;
     ]
     
@@ -1062,29 +1087,29 @@ Entrez le total des mots que l&#39;équipe a fait deviné.
 
 (print:$pictodés)
 
-(link:&quot;C&#39;est fait&quot;)[
+(link:&quot;On a tous eu notre feedback!&quot;)[
 (if:$nRedaction&lt;1)[
-  (if:$nAnalyse &lt;2)[
-      &lt;p&gt;Malgré tous vos efforts, votre publication est imparfaite et nécessite des corrections pour être publiée dans une revue scientifique. Vous vous êtes sûrement laissé.e.s emporter par votre enthousiasme en faisant peu d&#39;analyses!&lt;/p&gt;
+	(if:$nAnalyse &lt;2)[
+		&lt;p&gt;Malgré tous vos efforts, votre publication est imparfaite et nécessite des corrections pour être publiée dans une revue scientifique. Vous vous êtes sûrement laissé.e.s emporter par votre enthousiasme en faisant peu d&#39;analyses!&lt;/p&gt;
 
-      &lt;ol class=&quot;passage-link&quot;&gt;
-      &lt;li&gt;Vous acceptez les remarques et vous (link: &quot;retournez faire une analyse&quot;)[(go-to:&quot;randomAnalyse&quot;)] supplémentaire.&lt;/li&gt;
-      &lt;li&gt;Vous (link:&quot;poursuivez quand meme votre rédaction&quot;)[(go-to:(either:&quot;redaction_2&quot;,&quot;redaction_4&quot;,&quot;redaction_5&quot;))], en prenant tout de même en compte les critiques.&lt;/li&gt;
-      &lt;li&gt;Vous n&#39;avez plus l&#39;énergie, donc vous reformulez simplement les quelques phrases qui ont été critiquées pour plaire aux relecteurs et (link:&quot;publiez quand même votre rédaction&quot;)[(go-to:&quot;End&quot;)].&lt;/li&gt;
-      &lt;/ol&gt;
-      ]
+		&lt;ol class=&quot;passage-link&quot;&gt;
+		&lt;li&gt;Vous acceptez les remarques et vous (link: &quot;retournez faire une analyse&quot;)[(go-to:&quot;randomAnalyse&quot;)] supplémentaire.&lt;/li&gt;
+		&lt;li&gt;Vous (link:&quot;poursuivez quand meme votre rédaction&quot;)[(go-to:(either:&quot;redaction_2&quot;,&quot;redaction_4&quot;,&quot;redaction_5&quot;))], en prenant tout de même en compte les critiques.&lt;/li&gt;
+		&lt;li&gt;Vous n&#39;avez plus l&#39;énergie, donc vous reformulez simplement les quelques phrases qui ont été critiquées pour plaire aux relecteurs et (link:&quot;publiez quand même votre rédaction&quot;)[(go-to:&quot;End&quot;)].&lt;/li&gt;
+		&lt;/ol&gt;
+		]
 
-  (else:)[
-      &lt;p&gt;Vous avez pris le temps de faire plusieurs analyses, ce qui rend votre publication  plus complète et fiable. Faites quand même attention à être sélectif.ve.s et partagez uniquement vos trouvailles les plus interessantes dans votre publication!&lt;/p&gt;
+	(else:)[
+		&lt;p&gt;Vous avez pris le temps de faire plusieurs analyses, ce qui rend votre publication  plus complète et fiable. Faites quand même attention à être sélectif.ve.s et partagez uniquement vos trouvailles les plus interessantes dans votre publication!&lt;/p&gt;
 
-      &lt;ol class=&quot;passage-link&quot;&gt;
-      &lt;li&gt;Vous acceptez les critiques et (link:&quot;poursuivez votre rédaction&quot;)[(go-to:(either:&quot;redaction_2&quot;,&quot;redaction_4&quot;,&quot;redaction_5&quot;))] pour parfaire votre document.&lt;/li&gt;
-      &lt;li&gt;Vous êtes prêt.e.s à (link:&quot;publier&quot;)[(go-to:&quot;End&quot;)]!&lt;/li&gt;
-      &lt;/ol&gt;
-      ]
+		&lt;ol class=&quot;passage-link&quot;&gt;
+		&lt;li&gt;Vous acceptez les critiques et (link:&quot;poursuivez votre rédaction&quot;)[(go-to:(either:&quot;redaction_2&quot;,&quot;redaction_4&quot;,&quot;redaction_5&quot;))] pour parfaire votre document.&lt;/li&gt;
+    	&lt;li&gt;Vous êtes prêt.e.s à (link:&quot;publier&quot;)[(go-to:&quot;End&quot;)]!&lt;/li&gt;
+    	&lt;/ol&gt;
+    	]
 
-  &lt;!--(display:&quot;RandomEvent&quot;)--&gt;
-  ]
+	&lt;!--(display:&quot;RandomEvent&quot;)--&gt;
+    ]
 
 &lt;!--NOTE: If $nRedaction est &gt;=1, cela veut dire que $nAnalyse est &gt;=1 aussi.--&gt;
 (else:)[
@@ -1102,7 +1127,7 @@ Entrez le total des mots que l&#39;équipe a fait deviné.
 (print:$pictodés)
 
 Entrez le total des mots que l&#39;équipe a fait deviné.
-(set:_reponse to &quot;0&quot;)(dropdown: bind _reponse,&quot;0&quot;,&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8&quot;,&quot;9&quot;,&quot;10&quot;,&quot;11&quot;,&quot;12&quot;,&quot;13+&quot;)(link-rerun:&#39;&lt;span id =&quot;enter&quot;&gt;Valider &amp;#x21A9;&lt;/span&gt;&#39;)[
+(set:_reponse to &quot;0&quot;)(dropdown: bind _reponse,&quot;0&quot;,&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8&quot;,&quot;9&quot;,&quot;10&quot;,&quot;11&quot;,&quot;12+&quot;)(link-rerun:&#39;&lt;span id =&quot;enter&quot;&gt;Valider &amp;#x21A9;&lt;/span&gt;&#39;)[
 (if:(a:&quot;0&quot;,&quot;1&quot;,&quot;2&quot;) contains _reponse)[
 	&lt;li&gt;Pas facile de faire passer ses idées. Vous pourriez aussi faire un petit effort sur vos choix de mots. Malgré tout ...&lt;/li&gt;
     ]
@@ -1139,17 +1164,17 @@ Entrez le total des mots que l&#39;équipe a fait deviné.
 &lt;!--(display:&quot;RandomEvent&quot;)--&gt;
 &lt;/ol&gt;
 ]</tw-passagedata><tw-passagedata pid="47" name="Redaction_5" tags="" position="1500,1100" size="100,100">&lt;h2&gt;25. Corrections et relecture&lt;/h2&gt;
-&lt;p&gt;Vous avez reçu l&#39;aprobation des relecteurs de votre nouvel article. Il y a toutefois quelques détails à corriger avant d&#39;envoyer la version définitive.&lt;/p&gt;
+&lt;p&gt;Vous avez reçu l&#39;approbation des relecteurs de votre nouvel article. Il y a toutefois quelques détails à corriger avant d&#39;envoyer la version définitive.&lt;/p&gt;
 
 (print:$pictodés)
 
-Combien d&#39;erreurs comptez-vous?
+Combien d&#39;erreurs avez-vous compté?
 (set:_reponse to 8+)(dropdown: bind _reponse,&quot;3-&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8+&quot;)&lt;/div&gt;
 (link-rerun:&#39;&lt;span id =&quot;enter&quot;&gt;Vérifier &amp;#x21A9;&lt;/span&gt;&#39;)[
 
 &lt;ol class =&quot;passage-link&quot;&gt;
 (if:_reponse is &quot;8+&quot;)[
-	&lt;p&gt;Vous avez l&#39;œil! Il y avait effectivement pas mal d&#39;erreurs, que vous arrivez à corriger sans souci.&lt;/p&gt;
+	&lt;p&gt;Vous avez l&#39;œil! Il y avait effectivement pas mal d&#39;erreurs, que vous arrivez à corriger sans souci. La &lt;/p&gt;
     
 	(if:$nRedaction&lt;1)[
     	&lt;li&gt;Vous prenez plaisir à rédiger votre article et souhaitez (link:&quot;prendre le temps de l&#39;améliorer&quot;)[(go-to:(either:&quot;Redaction_2&quot;,&quot;Redaction_4&quot;))] encore un peu.&lt;/li&gt;
@@ -1253,12 +1278,12 @@ Prof. Maryna Viazovska est professeure titulaire de la Chaire d&#39;arithmétiqu
 &lt;b&gt;Définition&lt;/b&gt; (Défense de Thèse). &lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="espritCritique" tags="definition" position="600,1700" size="100,100">&lt;div class =&quot;definition&quot;&gt;
 &lt;b&gt;Définition&lt;/b&gt; (Esprit critique). &lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="etatdart" tags="definition" position="700,1100" size="100,100">&lt;div class =&quot;definition&quot;&gt;
 &lt;b&gt;Def&lt;/b&gt; (l&#39;état de l&#39;art). L&#39;état de l&#39;art est l&#39;état des connaissances dans un domaine à un instant donné. Ce terme est souvent associé aux systèmes à la pointe de la connaissance et de la technique. Une recherche bibliographique devrait, en principe, permettre de s&#39;informer sur l&#39;état de l&#39;art. 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="footer" tags="footer" position="600,600" size="100,100">(unless: (passage:)&#39;s tags contains &quot;no-footer&quot; or &quot;definition&quot; or &quot;spécial&quot;)[&lt;hr&gt;&lt;div class = &quot;row&quot;&gt;&lt;div class = &quot;column&quot; id=&quot;bottomLogo&quot; style=&quot;text-align:left;font-size:70%;&quot;&gt;&lt;b&gt;(link:&quot;&lt;img style=\&#39;max-width:60%;text-align:center;\&#39; src=&quot;+$logo_scientastic+&quot;&gt;&quot;)[(go-to:&quot;CREDITS&quot;)]&lt;/b&gt;&lt;/div&gt;&lt;div class = &quot;column&quot; style=&quot;text-align:center;font-size:60%;flex:90%;line-height:1;&quot;&gt;(print:$nomProjet)&lt;/div&gt;&lt;div class = &quot;column footer&quot; style=&quot;text-align:right;font-size:60%;&quot;&gt;(print:$nomGroupe)&lt;/div&gt;&lt;/div&gt;](if: (passage:)&#39;s tags contains &quot;definition&quot;)[(link-goto:&quot;Retour&quot;, (history:)&#39;s last)]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="footer" tags="footer" position="600,600" size="100,100">&lt;!--
+(unless: (passage:)&#39;s tags contains &quot;no-footer&quot; or &quot;definition&quot; or &quot;spécial&quot;)[&lt;hr&gt;&lt;div class = &quot;row&quot;&gt;&lt;div class = &quot;column&quot; id=&quot;bottomLogo&quot; style=&quot;text-align:left;font-size:70%;&quot;&gt;&lt;b&gt;(link:&quot;&lt;img style=\&#39;max-width:60%;text-align:center;\&#39; src=&quot;+$logo_scientastic+&quot;&gt;&quot;)[(go-to:&quot;CREDITS&quot;)]&lt;/b&gt;&lt;/div&gt;&lt;div class = &quot;column&quot; style=&quot;text-align:center;font-size:60%;flex:90%;line-height:1;&quot;&gt;(print:$nomProjet)&lt;/div&gt;&lt;div class = &quot;column footer&quot; style=&quot;text-align:right;font-size:60%;&quot;&gt;(print:$nomGroupe)&lt;/div&gt;&lt;/div&gt;](if: (passage:)&#39;s tags contains &quot;definition&quot;)[(link-goto:&quot;Retour&quot;, (history:)&#39;s last)]
+--&gt;
 
-
-&lt;!--
 (unless: (passage:)&#39;s tags contains &quot;no-footer&quot; or &quot;definition&quot; or &quot;spécial&quot;)[&lt;hr&gt;&lt;div class = &quot;row&quot;&gt;&lt;div class = &quot;column&quot; id=&quot;bottomLogo&quot; style=&quot;text-align:left;font-size:70%;&quot;&gt;&lt;b&gt;(print:&quot;&lt;img style=\&#39;max-width:60%;text-align:center;\&#39; src=&quot;+$logo_scientastic+&quot;&gt;&quot;)&lt;/b&gt;&lt;/div&gt;&lt;div class = &quot;column&quot; style=&quot;text-align:center;font-size:60%;flex:90%;line-height:1;&quot;&gt;(print:$nomProjet)&lt;/div&gt;&lt;div class = &quot;column footer&quot; style=&quot;text-align:right;font-size:60%;&quot;&gt;(print:$nomGroupe)&lt;/div&gt;&lt;/div&gt;](if: (passage:)&#39;s tags contains &quot;definition&quot;)[(link-goto:&quot;Retour&quot;, (history:)&#39;s last)]
---&gt;</tw-passagedata><tw-passagedata pid="66" name="header" tags="header" position="700,600" size="100,100">{
+</tw-passagedata><tw-passagedata pid="66" name="header" tags="header" position="700,600" size="100,100">{
 (print: &quot;&lt;script&gt;$(&#39;tw-story&#39;).removeClass(\)&lt;/script&gt;&quot;)
 (for: each _tag, ...(passage:)&#39;s tags)[
 (print: &quot;&lt;script&gt;$(&#39;tw-story&#39;).addClass(&#39;&quot; + _tag+ &quot;&#39;\)&lt;/script&gt;&quot;)
