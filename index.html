@@ -313,7 +313,7 @@ function updateHealthBar (maxHealth, health) {
 (print:$pictodés)
 
 L&#39;outil le plus adapté est: 
-(set:$solutionOutil to &quot;Un Spectroscope&quot;)(dropdown: 2bind $reponseOutil, &quot;Un Kaléiodscope&quot;, &quot;Un Spectroscope&quot;, &quot;Un Prisme&quot;, &quot;Un mirroir&quot;)
+(set:$solutionOutil to &quot;Un Spectroscope&quot;)(dropdown: 2bind $reponseOutil, &quot;(Cliquez ici pour choisir)&quot;, &quot;Un Kaléiodscope&quot;, &quot;Un Spectroscope&quot;, &quot;Un Prisme&quot;, &quot;Un mirroir&quot;)
 (link-rerun: &#39;&lt;span id =&quot;enter&quot;&gt;Vérifier &amp;#x21A9;&lt;/span&gt;&#39;)[
 (if: $reponseOutil is $solutionOutil)[
 	&lt;p&gt;Effectivement, un spectroscope permet de séparer toutes les longeurs d&#39;ondes émises par une source lumineuse.&lt;/p&gt;
@@ -332,6 +332,10 @@ L&#39;outil le plus adapté est:
 	&lt;/ol&gt;
     ]
 
+(else-if: $réponseOutil is &quot;Un Prisme&quot;)[
+	&lt;li&gt;Un prisme peut en effet décomposer la lumière, mais un autre outil sur cette table reproduit mieux le spectre indiqué.... Réessayez un coup!&lt;/li&gt;
+    ]
+    
 (else:)[
 	Hmmm... cet objet ne semble pas reproduire le même spectre que sur l&#39;image fournie... Réessayez!
     ]
@@ -350,7 +354,7 @@ L&#39;outil le plus adapté est:
 (set:$solutionAuteur to &quot;Théla&quot;)(input: bind $reponseAuteur,&quot;XX=&quot;,$reponseAuteur)&lt;/div&gt; 
 (link-rerun: &#39;&lt;span id =&quot;enter&quot;&gt;Vérifier &amp;#x21A9;&lt;/span&gt;&#39;)[
 (if: $reponseAuteur is $solutionAuteur or $reponseAuteur contains &#39;Thela&#39; or $reponseAuteur contains &#39;théla&#39; or $reponseAuteur contains &#39;thela&#39;)[
-	&lt;p&gt;Bravo, vous avez su suivre votre bonne étoile ! $reponseAuteur a effectivement toutes les propriétés recherchées. Vous êtes vous servi.e.s du calque pour la retrouver sur la photo?&lt;/p&gt;
+	&lt;p&gt;Bravo, vous avez su suivre votre bonne étoile ! $reponseAuteur, qui s&#39;appelle en réalité &lt;i&gt;Théta&lt;sup&gt;2&lt;/sup&gt; Sagittarii&lt;/i&gt;, a effectivement toutes les propriétés recherchées et vous avez pu corriger votre catalogue. Vous êtes vous servi.e.s du calque pour la retrouver sur la photo?&lt;/p&gt;
 	&lt;ol class =&quot;passage-link&quot;&gt;
     (if:$n_analyse &lt;1)[
     	&lt;li&gt;C&#39;est un bon début, mais vous pensez qu&#39;il serait préférable de (link:&quot;continuer à analyser vos résultats&quot;)[(go-to:&quot;randomAnalyse&quot;)].&lt;/li&gt;
@@ -381,7 +385,7 @@ L&#39;outil le plus adapté est:
 (print:$pictodés)
 
 La structure sous jacente répétée (le &lt;i&gt;monomère&lt;/i&gt;) est représentée sur l&#39;image : 
-(set:$solutionMonomer to &quot;D&quot;)(dropdown: 2bind $reponseMonomer, &quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;)
+(set:$solutionMonomer to &quot;D&quot;)(dropdown: 2bind $reponseMonomer, &quot;(Cliquez ici pour choisir)&quot;,&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;)
 (link-rerun: &#39;&lt;span id =&quot;enter&quot;&gt;Vérifier &amp;#x21A9;&lt;/span&gt;&#39;)[
 (if: $reponseMonomer is $solutionMonomer)[
 	&lt;p&gt; C&#39;est juste! C&#39;est en identifant des patterns comme ici que les plus grandes découvertes ont eu lieu.&lt;/p&gt;
@@ -458,9 +462,9 @@ Si vous ne le savez pas, vous devriez (link: &quot;réviser vos connaissances de
 (print:$pictodés)
 
 Notre interprétation est que la mesure de 
-(set:$solutionMesure to &quot;Humidité&quot;)(dropdown: 2bind $reponseMesure, &quot; &quot;,&quot;Température&quot;,&quot;Humidité&quot;,&quot;Pression&quot;)
+(set:$solutionMesure to &quot;Humidité&quot;)(dropdown: 2bind $reponseMesure, &quot;(Cliquez ici pour choisir)&quot;,&quot;Température&quot;,&quot;Humidité&quot;,&quot;Pression&quot;)
 Affichée par la station
-(set:$solutionStation to &quot;1&quot;)(dropdown: 2bind $reponseStation,&quot; &quot;,&quot;1&quot;,&quot;2&quot;)
+(set:$solutionStation to &quot;1&quot;)(dropdown: 2bind $reponseStation,&quot;(Cliquez ici pour choisir)&quot;,&quot;1&quot;,&quot;2&quot;)
 est aberrante.
 
 (link-rerun: &#39;&lt;span id =&quot;enter&quot;&gt;Vérifier votre interprétation &amp;#x21A9;&lt;/span&gt;&#39;)[
@@ -499,7 +503,7 @@ est aberrante.
 &lt;/ol&gt;</tw-passagedata><tw-passagedata pid="7" name="CREDITS" tags="info no-footer no-header" position="1000,100" size="100,100">&lt;h1&gt;Le Gymkhana du labo&lt;/h1&gt;
 &lt;h4&gt;La recherche dont vous êtes les héros&lt;/h4&gt;
 &lt;h3&gt;Scientastic 2024 - EPFL&lt;/h3&gt;
-&lt;div class = &quot;authors&quot;&gt;A. Reverdin&lt;sup&gt;1&lt;/sup&gt;, J. Mégret &lt;sup&gt;1&lt;/sup&gt;, Inspiration&lt;sup&gt;2,3&lt;/sup&gt;, Remerciements&lt;sup&gt;4&lt;/sup&gt;&lt;/div&gt;
+&lt;div class = &quot;authors&quot;&gt;A. Reverdin&lt;sup&gt;1&lt;/sup&gt;, J. Mégret &lt;sup&gt;1&lt;/sup&gt;, J. Marabotto&lt;sup&gt;1&lt;/sup&gt;, P. Morand&lt;sup&gt;1&lt;/sup&gt;&lt;/div&gt;, Inspiration&lt;sup&gt;2,3&lt;/sup&gt;, Remerciements&lt;sup&gt;4&lt;/sup&gt;
 
 &lt;sup&gt;1&lt;/sup&gt; Développé par &lt;a href=&quot;http://sps.epfl.ch/&quot;&gt;SPS EPFL&lt;/a&gt;, 2024
 
@@ -550,7 +554,7 @@ EN DEVELOPPEMENT
 (if: $reponseInterprétation is $solutionInterprétation)[En effet, cela semble être la bonne interprétation selon les données que vous avez à disposition.
 ](else:)[]]</tw-passagedata><tw-passagedata pid="10" name="End" tags="" position="1250,1300" size="100,100">&lt;h2&gt;Publication acceptée!&lt;/h2&gt;
 
-&lt;p&gt;(print:$nomProjet) a été publié dans un journal renommé dans votre domaine de recherche. La découverte est acclamée par la communauté scientifique et vous reçevez des |definition&gt;[[[prix-&gt;distinctions]]] à une conférence. (Un petit cri de groupe pour célébrer?) Cela ne vous aura pris que (print:$dureeProjet) mois. Vous avez vécu des hauts et de bas, des imprévus, mais surtout pleins d&#39;émotions: c&#39;est ça la |definition&gt;[[[vie de scientifiques-&gt;vieDeScientifique]]]! &lt;/p&gt;
+&lt;p&gt;(print:$nomProjet) a été publié dans un journal renommé dans votre domaine de recherche. La découverte est acclamée par la communauté scientifique et vous reçevez des distinctions&lt;!--|definition&gt;[[[prix-&gt;distinctions]]]--&gt; à une conférence. (Un petit cri de groupe pour célébrer?) Cela ne vous aura pris que (print:$dureeProjet) mois. Vous avez vécu des hauts et de bas, des imprévus, mais surtout pleins d&#39;émotions: c&#39;est ça la vie de scientifique&lt;!--|definition&gt;[[[vie de scientifiques-&gt;vieDeScientifique]]]-&gt; !&lt;/p&gt;
 
 &lt;div class=&quot;consigne&quot;&gt;Apportez votre pierre à l&#39;édifice en déposant votre brique de connaissance sur la pyramide du savoir. &lt;/div&gt;
 
@@ -586,11 +590,18 @@ data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAACFYAAAPLCAYAAAB/hZ+yAAAACXBIWXMAAC
 (if: $reponseProtocol contains $solutionProtocol)[
 --&gt;
 
-(link:&quot;C&#39;est fait !&quot;)[
+(link:&quot;C&#39;est réussi !&quot;)[
 Bien joué! Les étapes de la démarche scientifiques sont très importantes à suivre pour mener à bout votre projet.
 &lt;ol class =&quot;passage-link&quot;&gt;
 &lt;li&gt;Il faut maintenant (link: &quot;répéter les expériences maintes fois&quot;)[(go-to:(either:&quot;Labo_2&quot;,&quot;Labo_5&quot;))] pour collecter des données.&lt;/li&gt;
-&lt;li&gt;Vous préférez savoir (link:&quot;comment collaborer avec d&#39;autres scientifiques&quot;)[(go-to:(either:&quot;Labo_3&quot;,&quot;Labo_4&quot;))] pourrait améliorer vos expériences.&lt;/li&gt;
+&lt;li&gt;Vous préférez voir comment une (link:&quot;collaboration avec d&#39;autres scientifiques&quot;)[
+(if: (visited: &quot;Labo_4&quot;))[
+	(go-to:&quot;Labo_3&quot;)
+    ]
+(else:)[
+	(go-to:(either:&quot;Labo_3&quot;,&quot;Labo_4&quot;))
+    ]
+] pourrait améliorer vos expériences.&lt;/li&gt;
 
 (else:)[
 	&lt;li&gt;Ces résultats vous suffisent et vous souhaitez directement (link:&quot;les analyser&quot;)[(go-to:&quot;randomAnalyse&quot;)].&lt;/li&gt;
@@ -672,28 +683,29 @@ Bien joué! Les étapes de la démarche scientifiques sont très importantes à 
 	]
 ]</tw-passagedata><tw-passagedata pid="20" name="Labo_5" tags="" position="1500,800" size="100,100">&lt;h2&gt;15. Recueil des résultats&lt;/h2&gt;
 &lt;p&gt;Il est important de correctement recenser les résultats des expériences pour pouvoir les analyser plus tard sans s&#39;y perdre. Cela vous permettra d&#39;avoir confiance en la fiabilité de vos résultats.&lt;/p&gt;
-&lt;p&gt;Les gammares sont des crustacés d&#39;eau douce, dont la présence en haute quantité indique la bonne santé d&#39;un cours d&#39;eau. 
+
+(print:$pictodés)
 
 &lt;div class = &quot;consigne&quot;&gt;Combien d&#39;antennes possède le gammare?&lt;/div&gt;
 &lt;!-- Combien de cellules compte-t-on? --&gt;
-(set:$solutionMicroscope to &quot;4&quot;)(dropdown: bind $reponseMicroscope, &quot;0&quot;,&quot;2&quot;,&quot;4&quot;,&quot;6&quot;)
+(set:$solutionMicroscope to &quot;4&quot;)(dropdown: bind $reponseMicroscope, &quot;(Cliquez ici pour choisir)&quot;,&quot;0&quot;,&quot;2&quot;,&quot;4&quot;,&quot;6&quot;)
 (link-rerun: &#39;&lt;span id =&quot;enter&quot;&gt;Vérifier &amp;#x21A9;&lt;/span&gt;&#39;)[
 (if: $reponseMicroscope is $solutionMicroscope)[
 	&lt;p&gt;Exactement! Votre travail précis vous promet de superbes résultats et simplifiera vos analyses.&lt;/p&gt;
     &lt;ol class =&quot;passage-link&quot;&gt;
-    
+
     (if: $nLabo&lt;1)[
 		&lt;li&gt;Vous pensez qu&#39;il serait judicieux de (link: &quot;collaborer avec d&#39;autres scientifiques&quot;)[(go-to:(either:&quot;Labo_3&quot;,&quot;Labo_4&quot;))] avant de passer à l&#39;analyse.&lt;/li&gt;
     	&lt;li&gt;Vous pensez avoir récolté assez de données et vous souhaitez déjà (link: &quot;les analyser&quot;)[(go-to:&quot;randomLabo&quot;)].&lt;/li&gt;
     	]
-    
+
 	(else:)[
 		&lt;li&gt;Vous avez maintenant récolté assez de données, il est temps de (link:&quot;les analyser&quot;)[(go-to:&quot;randomAnalyse&quot;)].&lt;/li&gt;
     	]
 	
 	&lt;/ol&gt;
 	]
-    
+
 (else:)[
 	Incorrect, scrutez bien votre spécimen!
     ]
@@ -711,6 +723,7 @@ Bien joué! Les étapes de la démarche scientifiques sont très importantes à 
 &lt;ol class=&quot;passage-link&quot;&gt;
 &lt;li&gt; vous décidez à (link: &quot;lire les articles&quot;)[(go-to: &quot;Lecture_2&quot;)] proposés par les membres du groupe.&lt;/li&gt;
 &lt;li&gt; préférez (link:&quot;approfondir vos connaissances informatiques&quot;)[(go-to: &quot;Lecture_4&quot;)], ce qui pourrait vous servir pour la suite.&lt;/li&gt;
+&lt;li&gt;Vous ne savez pas trop quoi faire et (link:&quot;manquez d&#39;inspiration&quot;)[(go-to:&quot;Lecture_5&quot;)].&lt;/li&gt;
 &lt;li&gt; préférez directement (link: &quot;faire des expériences&quot;)[
 (if:$nLecture&lt;3)[(go-to:&quot;zéroExpérience&quot;)]
 (else:)[(go-to:&quot;randomPrototypage&quot;)]].&lt;/li&gt;
@@ -740,7 +753,7 @@ Bien joué! Les étapes de la démarche scientifiques sont très importantes à 
         
 	(else:)[
     	&lt;li&gt;Vous voulez maintenant (link: &quot;passer à la pratique&quot;)[(go-to: (either:&quot;Prototypage_3&quot;,&quot;Prototypage_5&quot;))]. &lt;/li&gt;
-        &lt;li&gt;Fini les bouquins, vous commencez à réfléchir à (link:&quot;par où commencer&quot;)[(go-to: (either:&quot;Prototypage_2&quot;,&quot;Prototypage_4&quot;))].&lt;/li&gt;
+        &lt;li&gt;Fini les bouquins, vous réfléchissez maintenant à (link:&quot;par où commencer&quot;)[(go-to: (either:&quot;Prototypage_2&quot;,&quot;Prototypage_4&quot;))].&lt;/li&gt;
     	]
     &lt;!-- (display:&quot;RandomEvent&quot;) --&gt;
     &lt;/ol&gt;
@@ -786,8 +799,8 @@ Bien joué! Les étapes de la démarche scientifiques sont très importantes à 
         ]
 
     (else:)[
-    	&lt;li&gt;Vous êtes prêt.e.s à (link:&quot;passer à la pratique&quot;)[(go-to: &quot;randomPrototypage&quot;)]!&lt;/li&gt;
-    	&lt;li&gt;Vous partez maintenant (link: &quot;préparer des expériences.&quot;)[(go-to:&quot;randomPrototypage&quot;)].&lt;/li&gt;
+    	&lt;li&gt;Vous êtes prêt.e.s à (link:&quot;passer à la pratique&quot;)[(go-to: (either:&quot;Prototypage_3&quot;,&quot;Prototypage_4&quot;))]!&lt;/li&gt;
+    	&lt;li&gt;Vous partez maintenant (link: &quot;préparer des expériences.&quot;)[(go-to: (either:&quot;Prototypage_2&quot;,&quot;Prototypage_5&quot;))].&lt;/li&gt;
         ]
     ]
 
@@ -846,8 +859,8 @@ Rentrez le code de l&#39;ordinateur:
     ]
     
 (else-if:$nPrototypage &lt;1)[
-	&lt;li&gt; Cela vous fait avancer et vous donne des idées de ce qui pourrait être amélioré. (link:&quot;Lancez vous dans plus de tests préliminaires&quot;)[(go-to:&quot;randomPrototypage&quot;)].&lt;/li&gt;
-    &lt;li&gt;Ces méthodes étaient ce qui vous manquait pour optimiser votre processus de prise de mesure. Vois choisissez dès à présent de (link:&quot;passer au laboratoire&quot;)[(go-to:&quot;randomLabo&quot;)] pour commencer à prendre des mesures.&lt;/li&gt;
+	&lt;li&gt;Cela vous fait avancer et vous donne des idées de ce qui pourrait être amélioré. (link:&quot;Lancez vous dans plus de tests préliminaires&quot;)[(go-to:&quot;randomPrototypage&quot;)].&lt;/li&gt;
+    &lt;li&gt;Vous choisissez dès à présent de (link:&quot;développer un protocole expérimental&quot;)[(go-to:&quot;randomPrototypage&quot;)] pour commencer à prendre des mesures.&lt;/li&gt;
     ]
 
 (else:)[
@@ -1240,7 +1253,12 @@ Prof. Maryna Viazovska est professeure titulaire de la Chaire d&#39;arithmétiqu
 &lt;b&gt;Définition&lt;/b&gt; (Défense de Thèse). &lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="espritCritique" tags="definition" position="600,1700" size="100,100">&lt;div class =&quot;definition&quot;&gt;
 &lt;b&gt;Définition&lt;/b&gt; (Esprit critique). &lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="etatdart" tags="definition" position="700,1100" size="100,100">&lt;div class =&quot;definition&quot;&gt;
 &lt;b&gt;Def&lt;/b&gt; (l&#39;état de l&#39;art). L&#39;état de l&#39;art est l&#39;état des connaissances dans un domaine à un instant donné. Ce terme est souvent associé aux systèmes à la pointe de la connaissance et de la technique. Une recherche bibliographique devrait, en principe, permettre de s&#39;informer sur l&#39;état de l&#39;art. 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="footer" tags="footer" position="600,600" size="100,100">(unless: (passage:)&#39;s tags contains &quot;no-footer&quot; or &quot;definition&quot; or &quot;spécial&quot;)[&lt;hr&gt;&lt;div class = &quot;row&quot;&gt;&lt;div class = &quot;column&quot; id=&quot;bottomLogo&quot; style=&quot;text-align:left;font-size:70%;&quot;&gt;&lt;b&gt;(link:&quot;&lt;img style=\&#39;max-width:60%;text-align:center;\&#39; src=&quot;+$logo_scientastic+&quot;&gt;&quot;)[(go-to:&quot;CREDITS&quot;)]&lt;/b&gt;&lt;/div&gt;&lt;div class = &quot;column&quot; style=&quot;text-align:center;font-size:60%;flex:90%;line-height:1;&quot;&gt;(print:$nomProjet)&lt;/div&gt;&lt;div class = &quot;column footer&quot; style=&quot;text-align:right;font-size:60%;&quot;&gt;(print:$nomGroupe)&lt;/div&gt;&lt;/div&gt;](if: (passage:)&#39;s tags contains &quot;definition&quot;)[(link-goto:&quot;Retour&quot;, (history:)&#39;s last)]</tw-passagedata><tw-passagedata pid="66" name="header" tags="header" position="700,600" size="100,100">{
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="footer" tags="footer" position="600,600" size="100,100">(unless: (passage:)&#39;s tags contains &quot;no-footer&quot; or &quot;definition&quot; or &quot;spécial&quot;)[&lt;hr&gt;&lt;div class = &quot;row&quot;&gt;&lt;div class = &quot;column&quot; id=&quot;bottomLogo&quot; style=&quot;text-align:left;font-size:70%;&quot;&gt;&lt;b&gt;(link:&quot;&lt;img style=\&#39;max-width:60%;text-align:center;\&#39; src=&quot;+$logo_scientastic+&quot;&gt;&quot;)[(go-to:&quot;CREDITS&quot;)]&lt;/b&gt;&lt;/div&gt;&lt;div class = &quot;column&quot; style=&quot;text-align:center;font-size:60%;flex:90%;line-height:1;&quot;&gt;(print:$nomProjet)&lt;/div&gt;&lt;div class = &quot;column footer&quot; style=&quot;text-align:right;font-size:60%;&quot;&gt;(print:$nomGroupe)&lt;/div&gt;&lt;/div&gt;](if: (passage:)&#39;s tags contains &quot;definition&quot;)[(link-goto:&quot;Retour&quot;, (history:)&#39;s last)]
+
+
+&lt;!--
+(unless: (passage:)&#39;s tags contains &quot;no-footer&quot; or &quot;definition&quot; or &quot;spécial&quot;)[&lt;hr&gt;&lt;div class = &quot;row&quot;&gt;&lt;div class = &quot;column&quot; id=&quot;bottomLogo&quot; style=&quot;text-align:left;font-size:70%;&quot;&gt;&lt;b&gt;(print:&quot;&lt;img style=\&#39;max-width:60%;text-align:center;\&#39; src=&quot;+$logo_scientastic+&quot;&gt;&quot;)&lt;/b&gt;&lt;/div&gt;&lt;div class = &quot;column&quot; style=&quot;text-align:center;font-size:60%;flex:90%;line-height:1;&quot;&gt;(print:$nomProjet)&lt;/div&gt;&lt;div class = &quot;column footer&quot; style=&quot;text-align:right;font-size:60%;&quot;&gt;(print:$nomGroupe)&lt;/div&gt;&lt;/div&gt;](if: (passage:)&#39;s tags contains &quot;definition&quot;)[(link-goto:&quot;Retour&quot;, (history:)&#39;s last)]
+--&gt;</tw-passagedata><tw-passagedata pid="66" name="header" tags="header" position="700,600" size="100,100">{
 (print: &quot;&lt;script&gt;$(&#39;tw-story&#39;).removeClass(\)&lt;/script&gt;&quot;)
 (for: each _tag, ...(passage:)&#39;s tags)[
 (print: &quot;&lt;script&gt;$(&#39;tw-story&#39;).addClass(&#39;&quot; + _tag+ &quot;&#39;\)&lt;/script&gt;&quot;)
@@ -1303,7 +1321,7 @@ Prof. Maryna Viazovska est professeure titulaire de la Chaire d&#39;arithmétiqu
 (go-to:_goingTo)</tw-passagedata><tw-passagedata pid="79" name="refusDePublication" tags="spécial" position="1625,300" size="100,100">&lt;h2&gt;Refus de publication&lt;/h2&gt;
 &lt;p&gt;Vos modifications ne sont malheuresement pas suffisantes et votre publication est rejetée. Les retours vous demandent de (link: &quot;retourner au travail&quot;)[(go-to:&quot;randomAnalyse&quot;)] afin de revenir avec de meilleures analyses.&lt;/p&gt;</tw-passagedata><tw-passagedata pid="80" name="séminaire" tags="definition" position="600,1200" size="100,100">&lt;div class =&quot;definition&quot;&gt;
 &lt;b&gt;Définition&lt;/b&gt; (séminaire). La plupart des groupes de recherche se regroupent régulèrement afin que les membre puisse présenter sa recherche et en discuter, souvent dans le cadre d&#39;une série de présentations parfois ouvertes au public.
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="81" name="vieDeScientifique" tags="definition" position="500,1700" size="100,100">&lt;div class =&quot;definition&quot;&gt;Synthèse de par ou on est passé. Faire de la recherch à différents niveau. Renouvellement. Publication ouvre d&#39;autres possibles. &lt;/div&gt;</tw-passagedata><tw-passagedata pid="82" name="zéroExpérience" tags="spécial" position="1525,300" size="100,100">&lt;p&gt;Vous arrivez au labo mais n&#39;avez aucune idée de ce que vous devez expérimenter. Il serait judicieux de [[lire quelques documents de recherche-&gt;Lecture_2]] avant d&#39;essayer quoi que ce soit.&lt;/p&gt;</tw-passagedata></tw-storydata>
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="81" name="vieDeScientifique" tags="definition" position="500,1700" size="100,100">&lt;div class =&quot;definition&quot;&gt;Synthèse de par ou on est passé. Faire de la recherch à différents niveau. Renouvellement. Publication ouvre d&#39;autres possibles. &lt;/div&gt;</tw-passagedata><tw-passagedata pid="82" name="zéroExpérience" tags="spécial" position="1525,300" size="100,100">&lt;p&gt;Vous arrivez au labo mais n&#39;avez aucune idée de ce que vous devez expérimenter. Il serait judicieux de (link:&quot;lire quelques documents de recherche&quot;)[(go-to:&quot;Lecture_2&quot;)] ou de (link:&quot;chercher de l&#39;inspiration auprès de vos collègues&quot;)[(go-to:&quot;Lecture_5&quot;)] avant d&#39;essayer quoi que ce soit.&lt;/p&gt;</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
