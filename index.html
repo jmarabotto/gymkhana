@@ -426,7 +426,7 @@ Entrez la fonction à utiliser:
     (if: (history:) contains &quot;Lecture_4&quot;)[
     	(set:$count_Analyse4 to 2)
         ]
-    (else-if: (history:) does not contain &quot;lecture_4&quot;)[
+    (else-if: (history:) does not contain &quot;Lecture_4&quot;)[
     	(set:$count_Analyse4 to 1)
         ]
     
@@ -1088,7 +1088,7 @@ Entrez le total des mots que l&#39;équipe a fait deviné.
 
 		&lt;ol class=&quot;passage-link&quot;&gt;
 		&lt;li&gt;Vous acceptez les remarques et vous (link: &quot;retournez faire une analyse&quot;)[(go-to:&quot;randomAnalyse&quot;)] supplémentaire.&lt;/li&gt;
-		&lt;li&gt;Vous (link:&quot;poursuivez quand meme votre rédaction&quot;)[(go-to:(either:&quot;redaction_2&quot;,&quot;redaction_4&quot;,&quot;redaction_5&quot;))], en prenant tout de même en compte les critiques.&lt;/li&gt;
+		&lt;li&gt;Vous (link:&quot;poursuivez quand meme votre rédaction&quot;)[(go-to:(either:&quot;Redaction_2&quot;,&quot;Redaction_4&quot;,&quot;Redaction_5&quot;))], en prenant tout de même en compte les critiques.&lt;/li&gt;
 		&lt;li&gt;Vous n&#39;avez plus l&#39;énergie, donc vous reformulez simplement les quelques phrases qui ont été critiquées pour plaire aux relecteurs et (link:&quot;publiez quand même votre rédaction&quot;)[(go-to:&quot;End&quot;)].&lt;/li&gt;
 		&lt;/ol&gt;
 		]
@@ -1097,7 +1097,7 @@ Entrez le total des mots que l&#39;équipe a fait deviné.
 		&lt;p&gt;Vous avez pris le temps de faire plusieurs analyses, ce qui rend votre publication  plus complète et fiable. Faites quand même attention à être sélectif.ve.s et partagez uniquement vos trouvailles les plus interessantes dans votre publication!&lt;/p&gt;
 
 		&lt;ol class=&quot;passage-link&quot;&gt;
-		&lt;li&gt;Vous acceptez les critiques et (link:&quot;poursuivez votre rédaction&quot;)[(go-to:(either:&quot;redaction_2&quot;,&quot;redaction_4&quot;,&quot;redaction_5&quot;))] pour parfaire votre document.&lt;/li&gt;
+		&lt;li&gt;Vous acceptez les critiques et (link:&quot;poursuivez votre rédaction&quot;)[(go-to:(either:&quot;Redaction_2&quot;,&quot;Redaction_4&quot;,&quot;Redaction_5&quot;))] pour parfaire votre document.&lt;/li&gt;
     	&lt;li&gt;Vous êtes prêt.e.s à (link:&quot;publier&quot;)[(go-to:&quot;End&quot;)]!&lt;/li&gt;
     	&lt;/ol&gt;
     	]
