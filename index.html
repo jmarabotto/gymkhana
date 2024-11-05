@@ -412,7 +412,7 @@ Le motif répété dans le ploystyrène est le motif :
 (display:&quot;RandomEvent&quot;)
 &lt;/ol&gt;](else:)[Mmmh ce n&#39;est pas ça, il ne reste plus qu&#39;à essayer l&#39;autre solution... Mais pourquoi l&#39;autre serait juste?]]
 --&gt;</tw-passagedata><tw-passagedata pid="4" name="Analyse_4" tags="" position="1375,950" size="100,100">&lt;h2&gt;19. Utiliser ses connaissances&lt;/h2&gt;
-&lt;p&gt;Les outils informatiques sont essentiels pour filtrer et manipuler vos données. Pour ceci, il faut parfois avoir recours à des connaissances apprises il y a bien longtemps et faire marcher sa mémoire !&lt;/p&gt;
+&lt;p&gt;Vous cherchez une bibliothèque qui vous permettra de calculer la moyenne de votre jeu de données. Pour ceci, il faut parfois avoir recours à des connaissances apprises il y a bien longtemps et faire marcher sa mémoire !&lt;/p&gt;
 
 (print:$pictodés)
 
@@ -745,7 +745,6 @@ Bien joué! Les étapes de votre protocole sont très importantes à suivre pour
 &lt;ol class=&quot;passage-link&quot;&gt;
 &lt;li&gt; vous décidez à (link: &quot;lire les articles&quot;)[(go-to: &quot;Lecture_2&quot;)] proposés par les membres du groupe.&lt;/li&gt;
 &lt;li&gt; préférez (link:&quot;approfondir vos connaissances informatiques&quot;)[(go-to: &quot;Lecture_4&quot;)], ce qui pourrait vous servir pour la suite.&lt;/li&gt;
-&lt;li&gt;Vous ne savez pas trop quoi faire et (link:&quot;manquez d&#39;inspiration&quot;)[(go-to:&quot;Lecture_5&quot;)].&lt;/li&gt;
 &lt;li&gt; préférez directement (link: &quot;faire des expériences&quot;)[
 (if:$nLecture&lt;3)[(go-to:&quot;zéroExpérience&quot;)]
 (else:)[(go-to:&quot;randomPrototypage&quot;)]].&lt;/li&gt;
@@ -956,7 +955,7 @@ Rentrez le code de l&#39;ordinateur:
 &lt;li&gt;Mais il vous conseille de (link: &quot;retourner dans vos bouquins&quot;)[(go-to: &quot;randomLecture&quot;)] pour en apprendre un peu plus car vous avez l&#39;air un peu hésitant au niveau théorique...&lt;/li&gt;]
 --&gt;
 &lt;!--(else-if:$nPrototypage &lt;1)--&gt;
-(if:$nPrototypage &lt;1)[
+(if:$nPrototypage &lt;2)[
 	&lt;li&gt;Son travail vous inspire d&#39;(link:&quot;essayer de nouvelles idées&quot;)[(go-to:&quot;randomPrototypage&quot;)]. &lt;/li&gt;
     &lt;li&gt;Pendant votre travail, vous avez discuté avec votre collègue et cela vous a aidé à mieux comprendre vos recherches que vous préférez directement (link:&quot;tester en laboratoire&quot;)[(go-to:&quot;randomLabo&quot;)].&lt;/li&gt;
     ]
