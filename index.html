@@ -469,7 +469,8 @@ est aberrante.
 
 (link-rerun: &#39;&lt;span id =&quot;enter&quot;&gt;Vérifier votre interprétation &amp;#x21A9;&lt;/span&gt;&#39;)[
 (if: $reponseMesure is $solutionMesure and $reponseStation is $solutionStation)[
-	&lt;p&gt;Quel œil! Une humidité de 92% est en effet une mesure erronée, l&#39;humidité ambiante idéale se situant généralement entre 40 et 60 % en intérieur. La température intérieure fluctue généralement autour des 20 &lt;sup&gt;o&lt;/sup&gt;C et la pression de l&#39;air, qui varie en fonction de l&#39;altitude, se situe autour de 1000 hPa à Lausanne.&lt;/p&gt; 
+	&lt;p&gt;Quel œil! Une humidité de 92% est en effet une mesure erronée, l&#39;humidité ambiante idéale se situant généralement entre 40 et 60 % en intérieur. On mesurerait plutôt une humidité aussi élevée dans un hammam ou dans une forêt tropicale.&lt;/p&gt;
+    &lt;p&gt;La température intérieure fluctue généralement autour des 20 &lt;sup&gt;o&lt;/sup&gt;C et la pression de l&#39;air, qui varie en fonction de l&#39;altitude, se situe autour de 1000 hPa à Lausanne.&lt;/p&gt; 
 
 &lt;!--
 &lt;p&gt;Selon les relevés de Météo Suisse, la température moyenne en Suisse en automne sur les dernières années est de 6,3&lt;sup&gt;o&lt;/sup&gt;C (mais de 8,5&lt;sup&gt;o&lt;/sup&gt; en 2023!) et la pression de l&#39;air de 1020hPa.&lt;/p&gt;
@@ -766,7 +767,6 @@ Bien joué! Les étapes de votre protocole sont très importantes à suivre pour
 	--&gt;&lt;ol class=&quot;passage-link&quot;&gt;
     (if:$nLecture&lt;2)[
 		&lt;li&gt;Grâce au système de citations&lt;!--|definition&gt;[[[références et citations-&gt;Citations]]]--&gt;, les publications générales sur votre sujet vous ont mené vers d&#39;autres publications intéressantes. Vous n’êtes pas rassasié.e.s de vos lectures et vous voulez en savoir plus ! Vous décidez donc de (link: &quot;lire plus d&#39;articles scientifiques&quot;)[(set:$connaissances to it+1)(go-to: (either:&quot;Lecture_3&quot;, &quot;Lecture_5&quot;))].&lt;/li&gt;
-        &lt;li&gt;Maintenant que vous connaissez la littérature, (link:&quot;renseignez vous sur les outils numériques&quot;)[(go-to:&quot;Lecture_4&quot;)] à votre disposition.&lt;/li&gt;
 		&lt;li&gt;Vous voulez plutôt (link: &quot;tester&quot;)[(set:$chapitre to 2,$numCase to 4)(go-to: &quot;Prototypage_1&quot;)] les méthodes de cet article de recherche. &lt;/li&gt;
         ]&lt;!--
         
